@@ -14,7 +14,7 @@ export default function PyqBankPage() {
       <p className="font-mono text-xs uppercase tracking-wider text-amber-700 dark:text-amber-300">GATE DA · trends</p>
       <h1 className="mt-2 text-3xl sm:text-4xl font-serif font-medium tracking-tight">Question bank</h1>
       <p className="mt-2 mb-8 max-w-3xl text-zinc-600 dark:text-zinc-400">
-        All {bank.questions.length} questions from 2024–2026 by subject, area and topic. Open any question, attempt it, then check the key. IDs follow the PYQ book (Q1.26.19 = chapter 1, 2026, question 19).
+        All {bank.questions.length} questions from 2024–2026 by subject, area and topic. Open any question, attempt it, then check the key.
       </p>
       <PyqBank questions={bank.questions} subjects={bank.subjects} sizes={sizes} />
     </main>

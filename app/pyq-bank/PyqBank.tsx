@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Check, ChevronDown, Eye, EyeOff, Shuffle, RotateCcw, Flag, Search, SlidersHorizontal } from 'lucide-react';
 
-type Q = { id: string; subject: string; year: number; type: string; marks: number; area: string; topic: string; key: string };
+type Q = { id: string; no: number; subject: string; year: number; type: string; marks: number; area: string; topic: string; key: string };
 type Status = 'solved' | 'review';
 const KEY = 'gate-da-pyq-v1';
 const chip = (on: boolean) => `rounded-full border px-3 py-1 text-xs ${on ? 'border-amber-500 bg-amber-500/10' : 'border-zinc-200 dark:border-white/10 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400'}`;
@@ -33,7 +33,7 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
   const needle = q.trim().toLowerCase();
   const base = (x: Q) =>
     (!years.length || years.includes(x.year)) && (!types.length || types.includes(x.type)) && (!marks.length || marks.includes(x.marks)) &&
-    (!needle || `${x.topic} ${x.area} ${x.id}`.toLowerCase().includes(needle)) &&
+    (!needle || `${x.topic} ${x.area}`.toLowerCase().includes(needle)) &&
     (show === 'all' || (show === 'todo' ? !status[x.id] : status[x.id] === show));
   const inScope = questions.filter(base);
   const list = inScope.filter((x) => subject === 'All' || x.subject === subject);
@@ -68,7 +68,7 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
     <div className="space-y-5 text-sm">
       <label className="flex items-center gap-2 rounded-xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-zinc-900/40 px-3 py-2">
         <Search className="h-4 w-4 text-zinc-400" />
-        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Topic or ID, e.g. A* or Q1.26" className="flex-1 bg-transparent outline-none" />
+        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search topics, e.g. Poisson or A*" className="flex-1 bg-transparent outline-none" />
       </label>
       <div>
         <p className="mb-2 font-mono text-[11px] uppercase tracking-wider text-zinc-500">Subject</p>
@@ -129,15 +129,11 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
             <section key={g.subject}>
               {subject === 'All' && <h2 className="font-serif text-2xl mb-3">{g.subject}</h2>}
               <div className="space-y-3">
-                {g.areas.map((a, ai) => (
-                  <details key={a.area} open={subject !== 'All' || needle !== '' || ai === 0} className="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-zinc-900/40 p-4">
+                {g.areas.map((a) => (
+                  <details key={a.area} open={needle !== ''} className="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-zinc-900/40 p-4">
                     <summary className="cursor-pointer font-medium">{a.area} <span className="ml-2 font-mono text-xs text-zinc-500">{a.topics.reduce((n, t) => n + t.qs.length, 0)} Qs · {a.marks}M</span></summary>
-                    <ul className="mt-3 space-y-3">
-                      {a.topics.map((t) => (
-                        <li key={t.topic}>
-                          <p className="text-sm">{t.topic}</p>
-                          <div className="mt-1.5 grid gap-1.5">
-                            {t.qs.map((x) => {
+                    <div className="mt-3 grid gap-1.5">
+                      {a.topics.flatMap((t) => t.qs).sort((p, q2) => q2.year - p.year || q2.marks - p.marks).map((x) => {
                               const open = showAll || revealed[x.id];
                               const st = status[x.id];
                               const isOpen = !!expanded[x.id];
@@ -146,10 +142,9 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
                                 <div key={x.id} id={x.id} className={`rounded-lg border text-xs transition-colors ${focus === x.id ? 'border-amber-500 bg-amber-500/10' : st === 'solved' ? 'border-emerald-500/30 bg-emerald-500/5' : st === 'review' ? 'border-amber-500/40 bg-amber-500/5' : 'border-zinc-200 dark:border-white/10'}`}>
                                   <div className="flex items-center gap-1.5 pr-2">
                                     <button onClick={() => setExpanded((e) => ({ ...e, [x.id]: !e[x.id] }))} aria-expanded={isOpen} aria-controls={`img-${x.id}`}
-                                      className="flex flex-1 min-w-0 items-center gap-3 px-3 py-2 text-left hover:bg-zinc-100/60 dark:hover:bg-white/5 rounded-l-lg">
+                                      className="flex flex-1 min-w-0 items-center gap-3 px-3 py-2.5 text-left hover:bg-zinc-100/60 dark:hover:bg-white/5 rounded-l-lg">
                                       <ChevronDown className={`h-4 w-4 shrink-0 text-zinc-400 transition-transform ${isOpen ? 'rotate-180' : '-rotate-90'}`} />
-                                      <span className="font-mono font-medium text-sm">{x.id}</span>
-                                      <span className="font-mono text-zinc-500">{x.year} · {x.type} · {x.marks}M</span>
+                                      <span className="font-mono text-sm font-medium whitespace-nowrap">{x.year} · Q{x.no} · {x.type} · {x.marks}M</span>
                                       {!isOpen && <span className="hidden sm:inline text-zinc-400">Click to view question</span>}
                                     </button>
                                     <button onClick={() => mark(x.id, 'review')} aria-pressed={st === 'review'} title="Mark for review" className={`rounded-md border p-1.5 ${st === 'review' ? 'border-amber-500 text-amber-600' : 'border-zinc-200 dark:border-white/10 text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'}`}><Flag className="h-3.5 w-3.5" /></button>
@@ -158,7 +153,7 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
                                   {isOpen && (
                                     <div id={`img-${x.id}`} className="border-t border-zinc-200 dark:border-white/10 p-3 space-y-3">
                                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img src={`/pyq/${x.id}.webp`} alt={`Question ${x.id}: ${x.topic}`} width={dim?.w} height={dim?.h} loading="lazy"
+                                      <img src={`/pyq/${x.id}.webp`} alt={`GATE DA ${x.year} question ${x.no}, ${x.area}`} width={dim?.w} height={dim?.h} loading="lazy"
                                         className="w-full max-w-xl h-auto rounded-md bg-white border border-zinc-200" />
                                       <div className="flex flex-wrap items-center gap-2">
                                         <button onClick={() => setRevealed((r) => ({ ...r, [x.id]: !r[x.id] }))} className="rounded-md border border-zinc-300 dark:border-white/15 px-3 py-1 font-mono hover:border-amber-500">
@@ -171,11 +166,8 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
                                   )}
                                 </div>
                               );
-                            })}
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
+                      })}
+                    </div>
                   </details>
                 ))}
               </div>

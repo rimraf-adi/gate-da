@@ -59,18 +59,23 @@ for pn, page in enumerate(doc):
             if not m:
                 continue
             qid = m.group(0)
-            pieces[qid] = [shot(page, pymupdf.Rect(x0 + 38 if col == 0 else x0 + 12, s[1] - PAD, 309 if col == 0 else x1 - 38, min(end, BOTTOM)))]
+            qb = next((b for b in cb if s[1] <= b[1] < end and QID.search(b[4])), s)
+            # start below the book's header strip (topic line and Q-number badge row); only the question itself is kept
+            pieces[qid] = [shot(page, pymupdf.Rect(x0 + 38 if col == 0 else x0 + 12, qb[3] + 6, 309 if col == 0 else x1 - 38, min(end, BOTTOM)))]
             last = qid
 
 sizes = {}
+# our own id: year * 100 + question number in the actual paper (2026, Q19 -> 202619); matches tools/build_pyq_index.py
+newid = {o: f"{2000 + int(QID.match(o).group(2))}{int(QID.match(o).group(3)):02d}" for o in pieces}
+assert len(set(newid.values())) == len(newid)
 for qid, imgs in pieces.items():
     w = max(i.width for i in imgs)
     canvas = Image.new('RGB', (w, sum(i.height for i in imgs)), 'white')
     y = 0
     for i in imgs:
         canvas.paste(i, (0, y)); y += i.height
-    canvas.save(os.path.join(OUT, qid + '.webp'), quality=88, method=6)
-    sizes[qid] = {'w': canvas.width, 'h': canvas.height}
+    canvas.save(os.path.join(OUT, newid[qid] + '.webp'), quality=88, method=6)
+    sizes[newid[qid]] = {'w': canvas.width, 'h': canvas.height}
 json.dump(sizes, open(os.path.join(ROOT, 'data', 'pyq-images.json'), 'w'), indent=0)
 bank = {q['id'] for q in json.load(open(os.path.join(ROOT, 'data', 'pyq-bank.json')))['questions']}
 print(len(sizes), 'images;', 'missing:', sorted(bank - set(sizes))[:10], 'extra:', sorted(set(sizes) - bank)[:5])

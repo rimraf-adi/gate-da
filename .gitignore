@@ -6,3 +6,6 @@
 next-env.d.ts
 .vercel
 .env*
+
+# third-party book used only to build data/images locally; never publish
+/source/
