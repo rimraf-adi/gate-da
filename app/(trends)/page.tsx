@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import data from '@/data/pyq-analysis.json';
 import bank from '@/data/pyq-bank.json';
+import map from '@/data/syllabus-map.json';
 
 export const metadata: Metadata = {
-  title: 'GATE DA PYQ Pattern Analysis',
+  title: 'GATE DA Trends — what the exam rewards',
   description: 'Subject weightage, question-format mix and year-by-year evolution of GATE Data Science & AI, 2024–2026, with a prep playbook.',
 };
 
@@ -30,14 +31,39 @@ export default function PyqAnalysisPage() {
   });
   const sum = (k: 'mcq' | 'msq' | 'nat' | 'q1' | 'q2') => mix.reduce((a, m) => a + m[k], 0);
 
+  const yrs = [2024, 2025, 2026];
+  const heat = (m: number) => `rgba(245, 158, 11, ${Math.min(0.08 + (m / 22) * 0.62, 0.72).toFixed(2)})`;
+  const spark = (v: number[]) => {
+    const max = 22, W = 72, H = 24;
+    const pts = v.map((m, i) => `${(i / (v.length - 1)) * W},${H - (m / max) * H}`).join(' ');
+    return <svg width={W} height={H + 4} viewBox={`0 -2 ${W} ${H + 4}`} aria-hidden className="overflow-visible"><polyline points={pts} fill="none" stroke="currentColor" strokeWidth="1.6" className="text-amber-600" /><circle cx={W} cy={H - (v[v.length - 1] / max) * H} r="2.4" className="fill-amber-600" /></svg>;
+  };
+  const byYear = yrs.map((y) => {
+    const q = qs.filter((x) => x.year === y);
+    return { y, mcq: q.filter((x) => x.type === 'MCQ').length, msq: q.filter((x) => x.type === 'MSQ').length, nat: q.filter((x) => x.type === 'NAT').length };
+  });
+  const asked = map.topics.filter((t) => t.questions > 0);
+  const delta = (t: (typeof asked)[number]) => t.marks['2026'] - t.marks['2024'];
+  const rising = [...asked].sort((a, b) => delta(b) - delta(a) || b.totalMarks - a.totalMarks).filter((t) => delta(t) > 0).slice(0, 7);
+  const fading = [...asked].sort((a, b) => delta(a) - delta(b) || b.totalMarks - a.totalMarks).filter((t) => delta(t) < 0).slice(0, 7);
+  const staples = asked.filter((t) => t.yearsAsked === 3).sort((a, b) => b.totalMarks - a.totalMarks).slice(0, 10);
+  const oneOffs = asked.filter((t) => t.yearsAsked === 1).length;
+  const never = map.topics.filter((t) => t.questions === 0);
+  const moverRow = (t: (typeof asked)[number]) => (
+    <li key={t.id} className="flex items-baseline justify-between gap-3 text-sm">
+      <span className="min-w-0"><span className="truncate">{t.topic}</span><span className="block text-xs text-zinc-500">{t.section}</span></span>
+      <span className="shrink-0 font-mono text-xs">{t.marks['2024']} → {t.marks['2025']} → {t.marks['2026']}M</span>
+    </li>
+  );
+
   return (
     <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 space-y-14">
       <header>
-        <p className="font-mono text-xs uppercase tracking-wider text-amber-700 dark:text-amber-300">GATE DA · PYQ intelligence</p>
-        <h1 className="mt-2 text-3xl sm:text-4xl font-serif font-medium tracking-tight">Exam pattern analysis, 2024–2026</h1>
+        <p className="font-mono text-xs uppercase tracking-wider text-amber-700 dark:text-amber-300">GATE DA · trends</p>
+        <h1 className="mt-2 text-3xl sm:text-4xl font-serif font-medium tracking-tight">What the exam rewards, 2024–2026</h1>
         <p className="mt-3 max-w-3xl text-zinc-600 dark:text-zinc-400">
           195 questions across IISc Bengaluru (2024), IIT Roorkee (2025) and IIT Guwahati (2026), reduced to what should change how you study.
-          Source: {data.source}. <Link href="/pyq-bank" className="underline underline-offset-2">Question bank →</Link> · <Link href="/notes" className="underline underline-offset-2">GATE DA notes →</Link>
+          Source: {data.source}. <Link href="/pyq-bank" className="underline underline-offset-2">Question bank →</Link> · <Link href="/notes" className="underline underline-offset-2">Notes →</Link>
         </p>
         <dl className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
@@ -52,7 +78,62 @@ export default function PyqAnalysisPage() {
       </header>
 
       <section>
-        <h2 className="text-2xl font-serif mb-4">Marks by subject</h2>
+        <h2 className="text-2xl font-serif mb-1">Marks by subject and year</h2>
+        <p className="mb-4 text-sm text-zinc-500">Counted from the 195 questions. Darker means more marks. The line shows 2024 → 2026.</p>
+        <div className="overflow-x-auto rounded-2xl border border-zinc-200 dark:border-white/10">
+          <table className="w-full text-sm">
+            <thead className="bg-zinc-100/70 dark:bg-white/5"><tr><th className={th}>Subject</th>{yrs.map((y) => <th key={y} className={`${th} text-center`}>{y}</th>)}<th className={th}>Trend</th></tr></thead>
+            <tbody>
+              {mix.map((m) => {
+                const v = [m.counted[2], m.counted[1], m.counted[0]];
+                return (
+                  <tr key={m.name} className="border-t border-zinc-200 dark:border-white/10">
+                    <td className={`${td} font-medium`}>{m.name}</td>
+                    {v.map((x, i) => <td key={i} className="px-3 py-2.5 text-center font-mono" style={{ background: heat(x) }}>{x}M</td>)}
+                    <td className={td}>{spark(v)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-serif mb-1">Format mix by year</h2>
+        <p className="mb-4 text-sm text-zinc-500">Share of the 65 questions in each paper that carry no safety net (MSQ and NAT).</p>
+        <div className="space-y-3">
+          {byYear.map((b) => (
+            <div key={b.y} className="flex items-center gap-3">
+              <span className="w-12 font-mono text-sm">{b.y}</span>
+              <div className="flex h-8 flex-1 overflow-hidden rounded-lg text-[11px] font-mono text-white" role="img" aria-label={`${b.y}: ${b.mcq} MCQ, ${b.msq} MSQ, ${b.nat} NAT`}>
+                <div className="flex items-center justify-center bg-zinc-500" style={{ width: `${(b.mcq / 65) * 100}%` }}>{b.mcq} MCQ</div>
+                <div className="flex items-center justify-center bg-amber-600" style={{ width: `${(b.msq / 65) * 100}%` }}>{b.msq} MSQ</div>
+                <div className="flex items-center justify-center bg-rose-600" style={{ width: `${(b.nat / 65) * 100}%` }}>{b.nat} NAT</div>
+              </div>
+              <span className="w-14 text-right font-mono text-xs text-zinc-500">{Math.round(((b.msq + b.nat) / 65) * 100)}%</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-serif mb-1">Topic movers</h2>
+        <p className="mb-4 text-sm text-zinc-500">Marks per paper on each syllabus topic, 2024 → 2025 → 2026. A question can touch more than one topic, so do not add these up.</p>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className={card}><h3 className="font-serif text-lg">Rising since 2024</h3><ul className="mt-3 space-y-2.5">{rising.map(moverRow)}</ul></div>
+          <div className={card}><h3 className="font-serif text-lg">Fading since 2024</h3><ul className="mt-3 space-y-2.5">{fading.map(moverRow)}</ul></div>
+          <div className={card}><h3 className="font-serif text-lg">Asked in every paper</h3><ul className="mt-3 space-y-2.5">{staples.map(moverRow)}</ul></div>
+          <div className={card}>
+            <h3 className="font-serif text-lg">In the syllabus, never asked</h3>
+            <p className="mt-1 text-xs text-zinc-500">{never.length} topics had no questions in three papers; another {oneOffs} appeared in only one. Low priority, not zero.</p>
+            <ul className="mt-3 space-y-1.5 text-sm">{never.map((t) => <li key={t.id}>{t.topic}<span className="text-xs text-zinc-500"> · {t.section}</span></li>)}</ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-serif mb-4">Marks by subject <span className="text-sm font-sans text-zinc-500">(as printed in the source book)</span></h2>
         <div className="overflow-x-auto rounded-2xl border border-zinc-200 dark:border-white/10">
           <table className="w-full text-sm">
             <thead className="bg-zinc-100/70 dark:bg-white/5"><tr>

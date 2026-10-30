@@ -3,7 +3,7 @@
 Standalone GATE DA website (Next.js 16), split out of garden-of-eden.
 
 ```
-app/        Next.js routes: / , /notes, /notes/[slug], /pyq-bank, /pyq-analysis
+app/        Next.js routes: / (trends), /pyq-bank, /notes, /notes/[slug]
 components/ Navbar, Footer, Logo, book/ (KaTeX block renderer)
 features/   search/CommandPalette (Cmd+K over chapters and sections)
 lib/        books.ts (types + chapter index), books.server.ts (reads data/chapters)

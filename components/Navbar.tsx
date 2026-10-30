@@ -49,7 +49,7 @@ export default function Navbar() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-5 text-sm text-zinc-600 dark:text-zinc-400">
-            {[['/notes', 'Notes'], ['/pyq-analysis', 'Trends']].map(([href, label]) => (
+            {[['/', 'Trends'], ['/notes', 'Notes']].map(([href, label]) => (
               <Link key={href} href={href} className="hover:text-amber-700 dark:hover:text-amber-300 transition-colors">{label}</Link>
             ))}
           </nav>
