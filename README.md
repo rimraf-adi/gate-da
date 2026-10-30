@@ -3,9 +3,9 @@
 Standalone GATE DA website (Next.js 16), split out of garden-of-eden.
 
 ```
-app/        Next.js routes: / , /board, /notes, /notes/[slug], /pyq-bank, /pyq-analysis
+app/        Next.js routes: / , /notes, /notes/[slug], /pyq-bank, /pyq-analysis
 components/ Navbar, Footer, Logo, book/ (KaTeX block renderer)
-features/   search/CommandPalette (Cmd+K over syllabus topics and note sections)
+features/   search/CommandPalette (Cmd+K over chapters and sections)
 lib/        books.ts (types + chapter index), books.server.ts (reads data/chapters)
 data/       generated JSON: index.json, chapters/, pyq-bank, pyq-analysis, syllabus-map
 raw/        downloaded GateXAIML HTML notes (tools/fetch_gate_da.py)

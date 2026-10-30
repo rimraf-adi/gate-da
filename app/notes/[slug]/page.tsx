@@ -27,6 +27,7 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
   return (
     <BookReaderClient
       book={BOOK}
+      slug={slug}
       pathHref="/notes"
       bookTitle={INDEX.title}
       chapterLabel={chapter.label}

@@ -4,7 +4,6 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Search } from 'lucide-react';
 import { INDEX, texToPlain } from '@/lib/books';
-import map from '@/data/syllabus-map.json';
 
 type Hit = { title: string; sub: string; href: string };
 
@@ -14,7 +13,6 @@ export default function CommandPalette({ isOpen, onClose }: { isOpen: boolean; o
   const input = useRef<HTMLInputElement>(null);
 
   const all = useMemo<Hit[]>(() => [
-    ...map.topics.map((t) => ({ title: t.topic, sub: `Syllabus · ${t.section}`, href: '/board' })),
     ...INDEX.chapters.map((c) => ({ title: texToPlain(c.title), sub: `Notes · ${c.tag}`, href: `/notes/${c.slug}` })),
     ...INDEX.chapters.flatMap((c) => c.sections.map((s) => ({ title: texToPlain(s.title), sub: `${texToPlain(c.title)} · section ${s.id}`, href: `/notes/${c.slug}#sec-${s.id}` }))),
   ], []);

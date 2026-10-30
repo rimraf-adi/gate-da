@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import MathText from '@/components/book/MathText';
 import { ArrowLeft, ArrowRight, Clock, FileText, Copy, Check, Menu, X, Type, ListOrdered } from 'lucide-react';
@@ -13,6 +13,7 @@ interface NavChapter {
 
 interface Props {
   book: string;
+  slug: string;
   pathHref: string;
   bookTitle: string;
   chapterLabel: string;
@@ -30,8 +31,11 @@ interface Props {
 const labelOf = (l: string) => (/^[A-Z]$/.test(l) ? `Appendix ${l}` : `Chapter ${l}`);
 
 export default function BookReaderClient({
-  book, pathHref, bookTitle, chapterLabel, title, tag, readingTimeMin, wordCount, sections, prev, next, tex, children,
+  book, slug, pathHref, bookTitle, chapterLabel, title, tag, readingTimeMin, wordCount, sections, prev, next, tex, children,
 }: Props) {
+  useEffect(() => {
+    try { localStorage.setItem('gate-da-last-chapter', slug); } catch {}
+  }, [slug]);
   const [showTex, setShowTex] = useState(false);
   const [copied, setCopied] = useState(false);
   const [serif, setSerif] = useState(true);

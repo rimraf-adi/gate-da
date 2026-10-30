@@ -11,7 +11,7 @@ export default function Footer() {
           <span className="text-xs">Syllabus, notes, PYQs and trends in one place.</span>
         </div>
         <nav className="flex gap-5 text-xs font-mono">
-          <Link href="/board">Prep board</Link><Link href="/notes">Notes</Link><Link href="/pyq-bank">PYQ bank</Link><Link href="/pyq-analysis">Trends</Link>
+          <Link href="/notes">Notes</Link><Link href="/pyq-analysis">Trends</Link>
         </nav>
       </div>
     </footer>

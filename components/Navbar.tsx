@@ -49,7 +49,7 @@ export default function Navbar() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-5 text-sm text-zinc-600 dark:text-zinc-400">
-            {[['/board', 'Prep board'], ['/notes', 'Notes'], ['/pyq-bank', 'PYQ bank'], ['/pyq-analysis', 'Trends']].map(([href, label]) => (
+            {[['/notes', 'Notes'], ['/pyq-analysis', 'Trends']].map(([href, label]) => (
               <Link key={href} href={href} className="hover:text-amber-700 dark:hover:text-amber-300 transition-colors">{label}</Link>
             ))}
           </nav>
@@ -79,10 +79,10 @@ export default function Navbar() {
 
             {/* Frosted Glass "Explore" Pill Button */}
             <Link
-              href="/board"
+              href="/notes"
               className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-900/90 dark:bg-white/90 hover:bg-zinc-950 dark:hover:bg-white text-white dark:text-zinc-950 text-xs font-medium transition-all shadow-md shadow-zinc-950/10 dark:shadow-white/10 backdrop-blur-xs"
             >
-              <span>Start prep</span>
+              <span>Open notes</span>
               <ArrowRight className="h-3 w-3" />
             </Link>
           </div>

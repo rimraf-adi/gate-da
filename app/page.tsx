@@ -9,10 +9,8 @@ export default function Home() {
     return { s, topics: ts.length, avg: ts.reduce((a, t) => a + t.totalMarks, 0) / 3, gaps: ts.filter((t) => t.status !== 'covered').length };
   });
   const cards = [
-    ['/board', 'Prep board', 'Every official syllabus topic with its notes, PYQs, trend and your own progress.'],
-    ['/notes', 'Notes', `${INDEX.chapters.length} chapters across the syllabus, with worked examples and figures.`],
-    ['/pyq-bank', 'PYQ bank', 'All 195 questions from 2024–26 by subject, area and topic, with answer keys.'],
-    ['/pyq-analysis', 'Trends', 'Marks by subject, question mix and how the exam changed year to year.'],
+    ['/notes', 'Notes', `${INDEX.chapters.length} chapters across the syllabus, with worked examples, figures and progress tracking.`],
+    ['/pyq-analysis', 'Trends', 'Marks by subject, question mix and how the exam changed, plus the full 195-question bank with answer keys and progress tracking.'],
   ];
   return (
     <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 space-y-14">
@@ -22,8 +20,8 @@ export default function Home() {
         <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
           The official GATE 2027 DA syllabus, mapped to notes and to every question asked in 2024–26, with the trend for each topic.
         </p>
-        <Link href="/board" className="mt-6 inline-flex items-center gap-2 rounded-full bg-zinc-900 dark:bg-white px-5 py-2.5 text-sm font-medium text-white dark:text-zinc-950">
-          Open the prep board <ArrowRight className="h-4 w-4" />
+        <Link href="/notes" className="mt-6 inline-flex items-center gap-2 rounded-full bg-zinc-900 dark:bg-white px-5 py-2.5 text-sm font-medium text-white dark:text-zinc-950">
+          Open the notes <ArrowRight className="h-4 w-4" />
         </Link>
       </header>
       <section className="grid sm:grid-cols-2 gap-4">
