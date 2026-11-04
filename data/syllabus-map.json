@@ -1,4 +1,201 @@
 {
+ "questionChapters": {
+  "202619": 1,
+  "202633": 1,
+  "202664": 47,
+  "202545": 47,
+  "202412": 47,
+  "202436": 47,
+  "202644": 3,
+  "202653": 3,
+  "202657": 66,
+  "202531": 66,
+  "202458": 66,
+  "202663": 68,
+  "202511": 68,
+  "202561": 68,
+  "202459": 68,
+  "202465": 68,
+  "202662": 49,
+  "202554": 49,
+  "202434": 49,
+  "202647": 6,
+  "202540": 6,
+  "202654": 4,
+  "202519": 4,
+  "202539": 4,
+  "202456": 4,
+  "202634": 7,
+  "202521": 7,
+  "202541": 7,
+  "202457": 7,
+  "202620": 6,
+  "202645": 6,
+  "202411": 6,
+  "202628": 7,
+  "202520": 7,
+  "202536": 7,
+  "202622": 16,
+  "202665": 16,
+  "202525": 16,
+  "202550": 16,
+  "202447": 16,
+  "202449": 16,
+  "202621": 14,
+  "202652": 14,
+  "202512": 14,
+  "202528": 14,
+  "202537": 14,
+  "202538": 14,
+  "202552": 14,
+  "202435": 14,
+  "202448": 14,
+  "202461": 14,
+  "202646": 11,
+  "202513": 11,
+  "202413": 11,
+  "202551": 29,
+  "202635": 21,
+  "202532": 21,
+  "202460": 21,
+  "202514": 23,
+  "202524": 23,
+  "202559": 23,
+  "202433": 23,
+  "202437": 23,
+  "202627": 24,
+  "202549": 24,
+  "202415": 24,
+  "202450": 24,
+  "202616": 26,
+  "202639": 26,
+  "202650": 26,
+  "202658": 26,
+  "202523": 26,
+  "202547": 26,
+  "202563": 26,
+  "202564": 26,
+  "202438": 26,
+  "202439": 26,
+  "202441": 26,
+  "202416": 27,
+  "202432": 34,
+  "202625": 36,
+  "202428": 36,
+  "202452": 36,
+  "202518": 37,
+  "202421": 37,
+  "202631": 36,
+  "202527": 36,
+  "202440": 36,
+  "202649": 41,
+  "202529": 41,
+  "202445": 41,
+  "202615": 41,
+  "202430": 41,
+  "202640": 38,
+  "202558": 38,
+  "202565": 38,
+  "202414": 38,
+  "202661": 43,
+  "202626": 47,
+  "202556": 47,
+  "202446": 47,
+  "202642": 45,
+  "202659": 45,
+  "202517": 45,
+  "202562": 45,
+  "202426": 45,
+  "202651": 46,
+  "202660": 46,
+  "202533": 46,
+  "202431": 46,
+  "202617": 47,
+  "202516": 47,
+  "202557": 47,
+  "202632": 48,
+  "202641": 48,
+  "202455": 48,
+  "202427": 81,
+  "202618": 51,
+  "202643": 51,
+  "202546": 51,
+  "202614": 79,
+  "202623": 53,
+  "202637": 53,
+  "202655": 53,
+  "202534": 53,
+  "202555": 54,
+  "202463": 54,
+  "202535": 54,
+  "202418": 54,
+  "202420": 54,
+  "202422": 55,
+  "202453": 55,
+  "202553": 57,
+  "202417": 57,
+  "202462": 57,
+  "202612": 56,
+  "202629": 78,
+  "202656": 78,
+  "202522": 78,
+  "202542": 78,
+  "202548": 78,
+  "202443": 78,
+  "202419": 59,
+  "202636": 59,
+  "202530": 59,
+  "202442": 59,
+  "202611": 60,
+  "202560": 60,
+  "202613": 61,
+  "202544": 61,
+  "202423": 61,
+  "202444": 61,
+  "202630": 63,
+  "202543": 63,
+  "202425": 63,
+  "202451": 63,
+  "202624": 64,
+  "202638": 64,
+  "202515": 64,
+  "202429": 64,
+  "202648": 65,
+  "202454": 65,
+  "202526": 66,
+  "202424": 66,
+  "202464": 66,
+  "202601": 70,
+  "202605": 70,
+  "202606": 70,
+  "202501": 70,
+  "202502": 70,
+  "202506": 70,
+  "202401": 70,
+  "202406": 70,
+  "202602": 69,
+  "202604": 69,
+  "202607": 69,
+  "202609": 69,
+  "202503": 69,
+  "202505": 69,
+  "202509": 69,
+  "202510": 69,
+  "202403": 69,
+  "202404": 69,
+  "202405": 69,
+  "202407": 69,
+  "202408": 69,
+  "202608": 71,
+  "202507": 71,
+  "202603": 72,
+  "202610": 72,
+  "202504": 72,
+  "202508": 72,
+  "202402": 72,
+  "202409": 72,
+  "202410": 72
+ },
  "syllabus": "GATE 2027 DA (IIT Madras); content identical to GATE 2026 DA (IIT Guwahati)",
  "topics": [
   {
@@ -18,6 +215,12 @@
      "slug": "05-probability-statistics-mean-and-variance-of-a-random-variable",
      "title": "Mean and Variance of a Random Variable",
      "min": 6
+    },
+    {
+     "num": 74,
+     "slug": "74-calculus-optimization-continuity-differentiability-lipschitz-and-hyp",
+     "title": "Continuity, Differentiability, Lipschitz and Hyperbolic Functions: Worked Problems",
+     "min": 4
     }
    ],
    "marks": {
@@ -106,6 +309,12 @@
    "status": "covered",
    "chapters": [
     {
+     "num": 66,
+     "slug": "66-ai-reasoning-under-uncertainty-bayesian-networks",
+     "title": "Reasoning under Uncertainty: Bayesian Networks and Inference",
+     "min": 8
+    },
+    {
      "num": 54,
      "slug": "54-ml-supervised-classification-models-i",
      "title": "Classification Models - I",
@@ -116,12 +325,6 @@
      "slug": "55-ml-supervised-classification-models-ii",
      "title": "Classification Models - II",
      "min": 4
-    },
-    {
-     "num": 3,
-     "slug": "03-probability-statistics-the-probability-theory",
-     "title": "The Probability Theory",
-     "min": 7
     }
    ],
    "marks": {
@@ -143,13 +346,13 @@
    "id": "t5",
    "section": "Probability & Statistics",
    "topic": "Conditional expectation and variance",
-   "status": "partial",
+   "status": "covered",
    "chapters": [
     {
-     "num": 5,
-     "slug": "05-probability-statistics-mean-and-variance-of-a-random-variable",
-     "title": "Mean and Variance of a Random Variable",
-     "min": 6
+     "num": 68,
+     "slug": "68-probability-statistics-conditional-expectation-and-variance",
+     "title": "Conditional Expectation and Variance",
+     "min": 4
     }
    ],
    "marks": {
@@ -215,6 +418,12 @@
      "slug": "05-probability-statistics-mean-and-variance-of-a-random-variable",
      "title": "Mean and Variance of a Random Variable",
      "min": 6
+    },
+    {
+     "num": 68,
+     "slug": "68-probability-statistics-conditional-expectation-and-variance",
+     "title": "Conditional Expectation and Variance",
+     "min": 4
     }
    ],
    "marks": {
@@ -398,6 +607,12 @@
      "slug": "07-probability-statistics-continuous-probability-distributions",
      "title": "Continuous Probability Distributions",
      "min": 8
+    },
+    {
+     "num": 67,
+     "slug": "67-probability-statistics-hypothesis-testing-z-test-t-test-and-chi-squar",
+     "title": "Hypothesis Testing: z-test, t-test and Chi-Squared Test",
+     "min": 6
     }
    ],
    "marks": {
@@ -453,6 +668,12 @@
      "slug": "08-probability-statistics-central-limit-theorem-and-confidence-intervals",
      "title": "Central Limit Theorem and Confidence Intervals",
      "min": 4
+    },
+    {
+     "num": 67,
+     "slug": "67-probability-statistics-hypothesis-testing-z-test-t-test-and-chi-squar",
+     "title": "Hypothesis Testing: z-test, t-test and Chi-Squared Test",
+     "min": 6
     }
    ],
    "marks": {
@@ -470,13 +691,13 @@
    "id": "t16",
    "section": "Probability & Statistics",
    "topic": "z-test, t-test, chi-squared test",
-   "status": "partial",
+   "status": "covered",
    "chapters": [
     {
-     "num": 7,
-     "slug": "07-probability-statistics-continuous-probability-distributions",
-     "title": "Continuous Probability Distributions",
-     "min": 8
+     "num": 67,
+     "slug": "67-probability-statistics-hypothesis-testing-z-test-t-test-and-chi-squar",
+     "title": "Hypothesis Testing: z-test, t-test and Chi-Squared Test",
+     "min": 6
     }
    ],
    "marks": {
@@ -566,6 +787,12 @@
      "min": 2
     },
     {
+     "num": 76,
+     "slug": "76-matrices-linear-algebra-projection-orthogonal-and-special-matrices",
+     "title": "Projection, Orthogonal and Special Matrices",
+     "min": 4
+    },
+    {
      "num": 19,
      "slug": "19-vector-spaces-singular-value-decomposition-svd",
      "title": "Singular Value Decomposition (SVD)",
@@ -601,6 +828,12 @@
    "topic": "Projection and idempotent matrices",
    "status": "covered",
    "chapters": [
+    {
+     "num": 76,
+     "slug": "76-matrices-linear-algebra-projection-orthogonal-and-special-matrices",
+     "title": "Projection, Orthogonal and Special Matrices",
+     "min": 4
+    },
     {
      "num": 17,
      "slug": "17-vector-spaces-orthogonal-vectors-subspaces-matrices-and-projections",
@@ -641,6 +874,12 @@
      "min": 2
     },
     {
+     "num": 76,
+     "slug": "76-matrices-linear-algebra-projection-orthogonal-and-special-matrices",
+     "title": "Projection, Orthogonal and Special Matrices",
+     "min": 4
+    },
+    {
      "num": 17,
      "slug": "17-vector-spaces-orthogonal-vectors-subspaces-matrices-and-projections",
      "title": "Orthogonal Vectors, Subspaces, Matrices, and Projections",
@@ -671,6 +910,12 @@
      "slug": "18-vector-spaces-quadratic-forms",
      "title": "Quadratic Forms",
      "min": 1
+    },
+    {
+     "num": 75,
+     "slug": "75-matrices-linear-algebra-gaussian-elimination-lu-decomposition-and-quad",
+     "title": "Gaussian Elimination, LU Decomposition and Quadratic Forms",
+     "min": 4
     }
    ],
    "marks": {
@@ -692,6 +937,12 @@
    "topic": "Systems of linear equations, Gaussian elimination",
    "status": "covered",
    "chapters": [
+    {
+     "num": 75,
+     "slug": "75-matrices-linear-algebra-gaussian-elimination-lu-decomposition-and-quad",
+     "title": "Gaussian Elimination, LU Decomposition and Quadratic Forms",
+     "min": 4
+    },
     {
      "num": 12,
      "slug": "12-matrices-systems-of-linear-equations",
@@ -845,6 +1096,12 @@
      "min": 1
     },
     {
+     "num": 75,
+     "slug": "75-matrices-linear-algebra-gaussian-elimination-lu-decomposition-and-quad",
+     "title": "Gaussian Elimination, LU Decomposition and Quadratic Forms",
+     "min": 4
+    },
+    {
      "num": 15,
      "slug": "15-matrices-summary-very-important",
      "title": "Summary - Very Important",
@@ -907,10 +1164,10 @@
      "min": 7
     },
     {
-     "num": 22,
-     "slug": "22-calculus-continuity",
-     "title": "Continuity",
-     "min": 1
+     "num": 74,
+     "slug": "74-calculus-optimization-continuity-differentiability-lipschitz-and-hyp",
+     "title": "Continuity, Differentiability, Lipschitz and Hyperbolic Functions: Worked Problems",
+     "min": 4
     }
    ],
    "marks": {
@@ -945,10 +1202,10 @@
      "min": 4
     },
     {
-     "num": 25,
-     "slug": "25-calculus-taylor-series",
-     "title": "Taylor series",
-     "min": 1
+     "num": 73,
+     "slug": "73-calculus-optimization-taylor-and-maclaurin-series-in-depth",
+     "title": "Taylor and Maclaurin Series in Depth",
+     "min": 3
     }
    ],
    "marks": {
@@ -983,6 +1240,12 @@
      "slug": "22-calculus-continuity",
      "title": "Continuity",
      "min": 1
+    },
+    {
+     "num": 74,
+     "slug": "74-calculus-optimization-continuity-differentiability-lipschitz-and-hyp",
+     "title": "Continuity, Differentiability, Lipschitz and Hyperbolic Functions: Worked Problems",
+     "min": 4
     }
    ],
    "marks": {
@@ -1013,6 +1276,12 @@
      "slug": "25-calculus-taylor-series",
      "title": "Taylor series",
      "min": 1
+    },
+    {
+     "num": 73,
+     "slug": "73-calculus-optimization-taylor-and-maclaurin-series-in-depth",
+     "title": "Taylor and Maclaurin Series in Depth",
+     "min": 3
     }
    ],
    "marks": {
@@ -1037,6 +1306,12 @@
      "slug": "24-calculus-optimization-maxima-minima",
      "title": "Optimization (Maxima/Minima)",
      "min": 8
+    },
+    {
+     "num": 63,
+     "slug": "63-ai-adversarial-search-minimax-and-alpha-beta",
+     "title": "Adversarial Search: Minimax and Alpha-Beta",
+     "min": 5
     }
    ],
    "marks": {
@@ -1383,10 +1658,10 @@
      "min": 12
     },
     {
-     "num": 7,
-     "slug": "07-probability-statistics-continuous-probability-distributions",
-     "title": "Continuous Probability Distributions",
-     "min": 8
+     "num": 62,
+     "slug": "62-ai-search-informed-strategies-and-a",
+     "title": "Search: Informed Strategies and A*",
+     "min": 6
     }
    ],
    "marks": {
@@ -1416,6 +1691,12 @@
      "slug": "39-dsa-graph-traversals",
      "title": "Graph Traversals",
      "min": 12
+    },
+    {
+     "num": 61,
+     "slug": "61-ai-search-uninformed-strategies",
+     "title": "Search: Uninformed Strategies",
+     "min": 7
     },
     {
      "num": 36,
@@ -1628,6 +1909,12 @@
      "slug": "47-dbms-normalization",
      "title": "Normalization",
      "min": 27
+    },
+    {
+     "num": 64,
+     "slug": "64-ai-propositional-logic",
+     "title": "Propositional Logic",
+     "min": 6
     }
    ],
    "marks": {
@@ -1682,6 +1969,12 @@
    "status": "covered",
    "chapters": [
     {
+     "num": 81,
+     "slug": "81-ai-approximate-inference-sampling-methods-in-dept",
+     "title": "Approximate Inference: Sampling Methods in Depth",
+     "min": 5
+    },
+    {
      "num": 2,
      "slug": "02-probability-statistics-introduction-to-statistics",
      "title": "Introduction to Statistics",
@@ -1692,12 +1985,6 @@
      "slug": "50-data-warehousing-data-preprocessing",
      "title": "Data Preprocessing",
      "min": 26
-    },
-    {
-     "num": 47,
-     "slug": "47-dbms-normalization",
-     "title": "Normalization",
-     "min": 27
     }
    ],
    "marks": {
@@ -1756,6 +2043,32 @@
   },
   {
    "id": "t56",
+   "section": "Database Management & Warehousing",
+   "topic": "Transactions and serializability (asked, not listed in the syllabus)",
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 79,
+     "slug": "79-database-management-systems-transactions-acid-and-serializability",
+     "title": "Transactions, ACID and Serializability",
+     "min": 3
+    }
+   ],
+   "marks": {
+    "2024": 0,
+    "2025": 0,
+    "2026": 1
+   },
+   "totalMarks": 1,
+   "questions": 1,
+   "yearsAsked": 1,
+   "trend": "sporadic",
+   "pyq": [
+    "202614"
+   ]
+  },
+  {
+   "id": "t57",
    "section": "Machine Learning",
    "topic": "Simple, multiple and ridge regression",
    "status": "covered",
@@ -1784,7 +2097,7 @@
    ]
   },
   {
-   "id": "t57",
+   "id": "t58",
    "section": "Machine Learning",
    "topic": "Logistic regression",
    "status": "covered",
@@ -1808,7 +2121,7 @@
    "pyq": []
   },
   {
-   "id": "t58",
+   "id": "t59",
    "section": "Machine Learning",
    "topic": "k-nearest neighbour",
    "status": "covered",
@@ -1835,7 +2148,7 @@
    ]
   },
   {
-   "id": "t59",
+   "id": "t60",
    "section": "Machine Learning",
    "topic": "Naive Bayes classifier",
    "status": "covered",
@@ -1845,6 +2158,12 @@
      "slug": "54-ml-supervised-classification-models-i",
      "title": "Classification Models - I",
      "min": 5
+    },
+    {
+     "num": 66,
+     "slug": "66-ai-reasoning-under-uncertainty-bayesian-networks",
+     "title": "Reasoning under Uncertainty: Bayesian Networks and Inference",
+     "min": 8
     }
    ],
    "marks": {
@@ -1863,7 +2182,7 @@
    ]
   },
   {
-   "id": "t60",
+   "id": "t61",
    "section": "Machine Learning",
    "topic": "Linear discriminant analysis",
    "status": "covered",
@@ -1890,7 +2209,7 @@
    ]
   },
   {
-   "id": "t61",
+   "id": "t62",
    "section": "Machine Learning",
    "topic": "Support vector machine",
    "status": "covered",
@@ -1917,7 +2236,7 @@
    ]
   },
   {
-   "id": "t62",
+   "id": "t63",
    "section": "Machine Learning",
    "topic": "Decision trees",
    "status": "covered",
@@ -1943,17 +2262,11 @@
    ]
   },
   {
-   "id": "t63",
+   "id": "t64",
    "section": "Machine Learning",
    "topic": "Bias-variance trade-off",
-   "status": "partial",
+   "status": "covered",
    "chapters": [
-    {
-     "num": 53,
-     "slug": "53-ml-supervised-regression-models",
-     "title": "Regression Models",
-     "min": 8
-    },
     {
      "num": 56,
      "slug": "56-ml-supervised-model-evaluation-and-generalization",
@@ -1973,7 +2286,7 @@
    "pyq": []
   },
   {
-   "id": "t64",
+   "id": "t65",
    "section": "Machine Learning",
    "topic": "Cross-validation (LOO, k-fold)",
    "status": "covered",
@@ -1999,11 +2312,17 @@
    ]
   },
   {
-   "id": "t65",
+   "id": "t66",
    "section": "Machine Learning",
    "topic": "MLP and feed-forward networks",
    "status": "covered",
    "chapters": [
+    {
+     "num": 78,
+     "slug": "78-machine-learning-supervised-gradient-descent-sgd-and-backpropagation",
+     "title": "Gradient Descent, SGD and Backpropagation",
+     "min": 4
+    },
     {
      "num": 57,
      "slug": "57-ml-supervised-regression-classification-models",
@@ -2030,7 +2349,7 @@
    ]
   },
   {
-   "id": "t66",
+   "id": "t67",
    "section": "Machine Learning",
    "topic": "k-means / k-medoid clustering",
    "status": "partial",
@@ -2057,7 +2376,7 @@
    ]
   },
   {
-   "id": "t67",
+   "id": "t68",
    "section": "Machine Learning",
    "topic": "Hierarchical clustering (single/multiple linkage)",
    "status": "covered",
@@ -2085,7 +2404,7 @@
    ]
   },
   {
-   "id": "t68",
+   "id": "t69",
    "section": "Machine Learning",
    "topic": "Principal component analysis",
    "status": "covered",
@@ -2114,11 +2433,24 @@
    ]
   },
   {
-   "id": "t69",
+   "id": "t70",
    "section": "Artificial Intelligence",
    "topic": "Uninformed and informed search (A*)",
-   "status": "missing",
-   "chapters": [],
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 61,
+     "slug": "61-ai-search-uninformed-strategies",
+     "title": "Search: Uninformed Strategies",
+     "min": 7
+    },
+    {
+     "num": 62,
+     "slug": "62-ai-search-informed-strategies-and-a",
+     "title": "Search: Informed Strategies and A*",
+     "min": 6
+    }
+   ],
    "marks": {
     "2024": 3,
     "2025": 2,
@@ -2136,11 +2468,18 @@
    ]
   },
   {
-   "id": "t70",
+   "id": "t71",
    "section": "Artificial Intelligence",
    "topic": "Adversarial search (minimax, alpha-beta)",
-   "status": "missing",
-   "chapters": [],
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 63,
+     "slug": "63-ai-adversarial-search-minimax-and-alpha-beta",
+     "title": "Adversarial Search: Minimax and Alpha-Beta",
+     "min": 5
+    }
+   ],
    "marks": {
     "2024": 3,
     "2025": 2,
@@ -2158,11 +2497,18 @@
    ]
   },
   {
-   "id": "t71",
+   "id": "t72",
    "section": "Artificial Intelligence",
    "topic": "Propositional logic",
-   "status": "missing",
-   "chapters": [],
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 64,
+     "slug": "64-ai-propositional-logic",
+     "title": "Propositional Logic",
+     "min": 6
+    }
+   ],
    "marks": {
     "2024": 1,
     "2025": 1,
@@ -2180,11 +2526,18 @@
    ]
   },
   {
-   "id": "t72",
+   "id": "t73",
    "section": "Artificial Intelligence",
    "topic": "Predicate (first-order) logic",
-   "status": "missing",
-   "chapters": [],
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 65,
+     "slug": "65-ai-predicate-first-order-logic",
+     "title": "Predicate (First-Order) Logic",
+     "min": 6
+    }
+   ],
    "marks": {
     "2024": 2,
     "2025": 0,
@@ -2200,16 +2553,16 @@
    ]
   },
   {
-   "id": "t73",
+   "id": "t74",
    "section": "Artificial Intelligence",
    "topic": "Conditional independence, Bayesian networks",
-   "status": "partial",
+   "status": "covered",
    "chapters": [
     {
-     "num": 54,
-     "slug": "54-ml-supervised-classification-models-i",
-     "title": "Classification Models - I",
-     "min": 5
+     "num": 66,
+     "slug": "66-ai-reasoning-under-uncertainty-bayesian-networks",
+     "title": "Reasoning under Uncertainty: Bayesian Networks and Inference",
+     "min": 8
     }
    ],
    "marks": {
@@ -2228,11 +2581,24 @@
    ]
   },
   {
-   "id": "t74",
+   "id": "t75",
    "section": "Artificial Intelligence",
    "topic": "Exact inference (variable elimination)",
-   "status": "missing",
-   "chapters": [],
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 80,
+     "slug": "80-ai-exact-inference-variable-elimination-in-depth",
+     "title": "Exact Inference: Variable Elimination in Depth",
+     "min": 5
+    },
+    {
+     "num": 66,
+     "slug": "66-ai-reasoning-under-uncertainty-bayesian-networks",
+     "title": "Reasoning under Uncertainty: Bayesian Networks and Inference",
+     "min": 8
+    }
+   ],
    "marks": {
     "2024": 2,
     "2025": 1,
@@ -2248,11 +2614,24 @@
    ]
   },
   {
-   "id": "t75",
+   "id": "t76",
    "section": "Artificial Intelligence",
    "topic": "Approximate inference (sampling)",
-   "status": "missing",
-   "chapters": [],
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 81,
+     "slug": "81-ai-approximate-inference-sampling-methods-in-dept",
+     "title": "Approximate Inference: Sampling Methods in Depth",
+     "min": 5
+    },
+    {
+     "num": 66,
+     "slug": "66-ai-reasoning-under-uncertainty-bayesian-networks",
+     "title": "Reasoning under Uncertainty: Bayesian Networks and Inference",
+     "min": 8
+    }
+   ],
    "marks": {
     "2024": 0,
     "2025": 0,
@@ -2265,11 +2644,18 @@
    "pyq": []
   },
   {
-   "id": "t76",
+   "id": "t77",
    "section": "General Aptitude",
    "topic": "Verbal aptitude",
-   "status": "missing",
-   "chapters": [],
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 70,
+     "slug": "70-general-aptitude-verbal-aptitude",
+     "title": "Verbal Aptitude",
+     "min": 3
+    }
+   ],
    "marks": {
     "2024": 3,
     "2025": 4,
@@ -2291,11 +2677,18 @@
    ]
   },
   {
-   "id": "t77",
+   "id": "t78",
    "section": "General Aptitude",
    "topic": "Quantitative aptitude",
-   "status": "missing",
-   "chapters": [],
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 69,
+     "slug": "69-general-aptitude-quantitative-aptitude",
+     "title": "Quantitative Aptitude",
+     "min": 5
+    }
+   ],
    "marks": {
     "2024": 7,
     "2025": 6,
@@ -2322,11 +2715,18 @@
    ]
   },
   {
-   "id": "t78",
+   "id": "t79",
    "section": "General Aptitude",
    "topic": "Analytical aptitude",
-   "status": "missing",
-   "chapters": [],
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 71,
+     "slug": "71-general-aptitude-analytical-aptitude-and-logical-reasoning",
+     "title": "Analytical Aptitude and Logical Reasoning",
+     "min": 3
+    }
+   ],
    "marks": {
     "2024": 0,
     "2025": 2,
@@ -2342,11 +2742,18 @@
    ]
   },
   {
-   "id": "t79",
+   "id": "t80",
    "section": "General Aptitude",
    "topic": "Spatial aptitude",
-   "status": "missing",
-   "chapters": [],
+   "status": "covered",
+   "chapters": [
+    {
+     "num": 72,
+     "slug": "72-general-aptitude-spatial-aptitude",
+     "title": "Spatial Aptitude",
+     "min": 3
+    }
+   ],
    "marks": {
     "2024": 5,
     "2025": 3,
@@ -2375,7 +2782,7 @@
    "min": 16,
    "words": 3268,
    "topics": 2,
-   "pyqMarks": 9
+   "pyqMarks": 1.5
   },
   {
    "num": 2,
@@ -2384,7 +2791,7 @@
    "min": 6,
    "words": 1282,
    "topics": 2,
-   "pyqMarks": 17
+   "pyqMarks": 0
   },
   {
    "num": 3,
@@ -2392,8 +2799,8 @@
    "tag": "Probability & Statistics",
    "min": 7,
    "words": 1391,
-   "topics": 2,
-   "pyqMarks": 12
+   "topics": 1,
+   "pyqMarks": 3.0
   },
   {
    "num": 4,
@@ -2402,7 +2809,7 @@
    "min": 11,
    "words": 2293,
    "topics": 1,
-   "pyqMarks": 9
+   "pyqMarks": 8.0
   },
   {
    "num": 5,
@@ -2410,8 +2817,8 @@
    "tag": "Probability & Statistics",
    "min": 6,
    "words": 1212,
-   "topics": 3,
-   "pyqMarks": 17
+   "topics": 2,
+   "pyqMarks": 2.0
   },
   {
    "num": 6,
@@ -2420,7 +2827,7 @@
    "min": 8,
    "words": 1551,
    "topics": 2,
-   "pyqMarks": 18
+   "pyqMarks": 10.0
   },
   {
    "num": 7,
@@ -2428,8 +2835,8 @@
    "tag": "Probability & Statistics",
    "min": 8,
    "words": 1655,
-   "topics": 6,
-   "pyqMarks": 36
+   "topics": 4,
+   "pyqMarks": 12.0
   },
   {
    "num": 8,
@@ -2438,7 +2845,7 @@
    "min": 4,
    "words": 709,
    "topics": 3,
-   "pyqMarks": 8
+   "pyqMarks": 2.0
   },
   {
    "num": 9,
@@ -2447,7 +2854,7 @@
    "min": 7,
    "words": 1446,
    "topics": 2,
-   "pyqMarks": 3
+   "pyqMarks": 0.5
   },
   {
    "num": 10,
@@ -2456,7 +2863,7 @@
    "min": 4,
    "words": 822,
    "topics": 1,
-   "pyqMarks": 5
+   "pyqMarks": 1.7
   },
   {
    "num": 11,
@@ -2465,7 +2872,7 @@
    "min": 4,
    "words": 823,
    "topics": 1,
-   "pyqMarks": 4
+   "pyqMarks": 4.0
   },
   {
    "num": 12,
@@ -2474,7 +2881,7 @@
    "min": 5,
    "words": 903,
    "topics": 1,
-   "pyqMarks": 15
+   "pyqMarks": 0
   },
   {
    "num": 13,
@@ -2492,7 +2899,7 @@
    "min": 2,
    "words": 353,
    "topics": 3,
-   "pyqMarks": 24
+   "pyqMarks": 7.5
   },
   {
    "num": 15,
@@ -2501,7 +2908,7 @@
    "min": 2,
    "words": 355,
    "topics": 4,
-   "pyqMarks": 10
+   "pyqMarks": 0
   },
   {
    "num": 16,
@@ -2510,7 +2917,7 @@
    "min": 9,
    "words": 1827,
    "topics": 2,
-   "pyqMarks": 11
+   "pyqMarks": 6.7
   },
   {
    "num": 17,
@@ -2519,7 +2926,7 @@
    "min": 2,
    "words": 392,
    "topics": 3,
-   "pyqMarks": 16
+   "pyqMarks": 0
   },
   {
    "num": 18,
@@ -2528,7 +2935,7 @@
    "min": 1,
    "words": 237,
    "topics": 1,
-   "pyqMarks": 2
+   "pyqMarks": 0.7
   },
   {
    "num": 19,
@@ -2537,7 +2944,7 @@
    "min": 6,
    "words": 1241,
    "topics": 4,
-   "pyqMarks": 29
+   "pyqMarks": 0.7
   },
   {
    "num": 20,
@@ -2546,7 +2953,7 @@
    "min": 7,
    "words": 1327,
    "topics": 1,
-   "pyqMarks": 2
+   "pyqMarks": 0
   },
   {
    "num": 21,
@@ -2555,7 +2962,7 @@
    "min": 7,
    "words": 1311,
    "topics": 1,
-   "pyqMarks": 4
+   "pyqMarks": 4.0
   },
   {
    "num": 22,
@@ -2563,8 +2970,8 @@
    "tag": "Calculus & Optimization",
    "min": 1,
    "words": 238,
-   "topics": 2,
-   "pyqMarks": 9
+   "topics": 1,
+   "pyqMarks": 0
   },
   {
    "num": 23,
@@ -2573,7 +2980,7 @@
    "min": 2,
    "words": 367,
    "topics": 1,
-   "pyqMarks": 7
+   "pyqMarks": 7.0
   },
   {
    "num": 24,
@@ -2582,7 +2989,7 @@
    "min": 8,
    "words": 1514,
    "topics": 1,
-   "pyqMarks": 6
+   "pyqMarks": 6.0
   },
   {
    "num": 25,
@@ -2590,8 +2997,8 @@
    "tag": "Calculus & Optimization",
    "min": 1,
    "words": 114,
-   "topics": 2,
-   "pyqMarks": 4
+   "topics": 1,
+   "pyqMarks": 0
   },
   {
    "num": 26,
@@ -2600,7 +3007,7 @@
    "min": 14,
    "words": 2870,
    "topics": 1,
-   "pyqMarks": 20
+   "pyqMarks": 15.7
   },
   {
    "num": 27,
@@ -2609,7 +3016,7 @@
    "min": 16,
    "words": 3173,
    "topics": 1,
-   "pyqMarks": 1
+   "pyqMarks": 1.0
   },
   {
    "num": 28,
@@ -2627,7 +3034,7 @@
    "min": 14,
    "words": 2856,
    "topics": 1,
-   "pyqMarks": 2
+   "pyqMarks": 2.0
   },
   {
    "num": 30,
@@ -2654,7 +3061,7 @@
    "min": 66,
    "words": 13289,
    "topics": 1,
-   "pyqMarks": 7
+   "pyqMarks": 0
   },
   {
    "num": 33,
@@ -2663,7 +3070,7 @@
    "min": 11,
    "words": 2244,
    "topics": 1,
-   "pyqMarks": 4
+   "pyqMarks": 2.0
   },
   {
    "num": 34,
@@ -2672,7 +3079,7 @@
    "min": 6,
    "words": 1217,
    "topics": 1,
-   "pyqMarks": 1
+   "pyqMarks": 1.0
   },
   {
    "num": 35,
@@ -2681,7 +3088,7 @@
    "min": 16,
    "words": 3226,
    "topics": 3,
-   "pyqMarks": 5
+   "pyqMarks": 0
   },
   {
    "num": 36,
@@ -2690,7 +3097,7 @@
    "min": 26,
    "words": 5158,
    "topics": 3,
-   "pyqMarks": 17
+   "pyqMarks": 8.7
   },
   {
    "num": 37,
@@ -2699,7 +3106,7 @@
    "min": 8,
    "words": 1696,
    "topics": 1,
-   "pyqMarks": 2
+   "pyqMarks": 2.0
   },
   {
    "num": 38,
@@ -2708,7 +3115,7 @@
    "min": 17,
    "words": 3498,
    "topics": 1,
-   "pyqMarks": 7
+   "pyqMarks": 3.5
   },
   {
    "num": 39,
@@ -2717,7 +3124,7 @@
    "min": 12,
    "words": 2350,
    "topics": 2,
-   "pyqMarks": 14
+   "pyqMarks": 3.2
   },
   {
    "num": 40,
@@ -2726,7 +3133,7 @@
    "min": 11,
    "words": 2144,
    "topics": 1,
-   "pyqMarks": 2
+   "pyqMarks": 1.0
   },
   {
    "num": 41,
@@ -2735,7 +3142,7 @@
    "min": 22,
    "words": 4476,
    "topics": 2,
-   "pyqMarks": 9
+   "pyqMarks": 8.0
   },
   {
    "num": 42,
@@ -2753,7 +3160,7 @@
    "min": 18,
    "words": 3558,
    "topics": 1,
-   "pyqMarks": 2
+   "pyqMarks": 0.7
   },
   {
    "num": 44,
@@ -2762,7 +3169,7 @@
    "min": 21,
    "words": 4143,
    "topics": 1,
-   "pyqMarks": 5
+   "pyqMarks": 0
   },
   {
    "num": 45,
@@ -2771,7 +3178,7 @@
    "min": 15,
    "words": 3031,
    "topics": 2,
-   "pyqMarks": 10
+   "pyqMarks": 8.0
   },
   {
    "num": 46,
@@ -2780,7 +3187,7 @@
    "min": 32,
    "words": 6450,
    "topics": 1,
-   "pyqMarks": 6
+   "pyqMarks": 6.0
   },
   {
    "num": 47,
@@ -2788,8 +3195,8 @@
    "tag": "Database Management Systems",
    "min": 27,
    "words": 5340,
-   "topics": 4,
-   "pyqMarks": 33
+   "topics": 3,
+   "pyqMarks": 9.2
   },
   {
    "num": 48,
@@ -2798,7 +3205,7 @@
    "min": 26,
    "words": 5298,
    "topics": 2,
-   "pyqMarks": 11
+   "pyqMarks": 5.0
   },
   {
    "num": 49,
@@ -2807,7 +3214,7 @@
    "min": 11,
    "words": 2144,
    "topics": 1,
-   "pyqMarks": 5
+   "pyqMarks": 4.0
   },
   {
    "num": 50,
@@ -2816,7 +3223,7 @@
    "min": 26,
    "words": 5149,
    "topics": 1,
-   "pyqMarks": 12
+   "pyqMarks": 0
   },
   {
    "num": 51,
@@ -2825,7 +3232,7 @@
    "min": 22,
    "words": 4346,
    "topics": 2,
-   "pyqMarks": 10
+   "pyqMarks": 5.0
   },
   {
    "num": 52,
@@ -2842,8 +3249,8 @@
    "tag": "Machine Learning: Supervised",
    "min": 8,
    "words": 1516,
-   "topics": 2,
-   "pyqMarks": 6
+   "topics": 1,
+   "pyqMarks": 6.0
   },
   {
    "num": 54,
@@ -2851,8 +3258,8 @@
    "tag": "Machine Learning: Supervised",
    "min": 5,
    "words": 1079,
-   "topics": 5,
-   "pyqMarks": 16
+   "topics": 4,
+   "pyqMarks": 6.3
   },
   {
    "num": 55,
@@ -2861,7 +3268,7 @@
    "min": 4,
    "words": 846,
    "topics": 2,
-   "pyqMarks": 8
+   "pyqMarks": 2.5
   },
   {
    "num": 56,
@@ -2870,7 +3277,7 @@
    "min": 7,
    "words": 1494,
    "topics": 2,
-   "pyqMarks": 1
+   "pyqMarks": 1.0
   },
   {
    "num": 57,
@@ -2879,7 +3286,7 @@
    "min": 13,
    "words": 2573,
    "topics": 4,
-   "pyqMarks": 21
+   "pyqMarks": 5.0
   },
   {
    "num": 58,
@@ -2897,7 +3304,7 @@
    "min": 9,
    "words": 1826,
    "topics": 2,
-   "pyqMarks": 7
+   "pyqMarks": 6.3
   },
   {
    "num": 60,
@@ -2906,17 +3313,197 @@
    "min": 2,
    "words": 412,
    "topics": 1,
-   "pyqMarks": 5
+   "pyqMarks": 3.8
+  },
+  {
+   "num": 61,
+   "title": "Search: Uninformed Strategies",
+   "tag": "Artificial Intelligence",
+   "min": 7,
+   "words": 1564,
+   "topics": 2,
+   "pyqMarks": 6.0
+  },
+  {
+   "num": 62,
+   "title": "Search: Informed Strategies and A*",
+   "tag": "Artificial Intelligence",
+   "min": 6,
+   "words": 1483,
+   "topics": 2,
+   "pyqMarks": 0
+  },
+  {
+   "num": 63,
+   "title": "Adversarial Search: Minimax and Alpha-Beta",
+   "tag": "Artificial Intelligence",
+   "min": 5,
+   "words": 1194,
+   "topics": 2,
+   "pyqMarks": 6.0
+  },
+  {
+   "num": 64,
+   "title": "Propositional Logic",
+   "tag": "Artificial Intelligence",
+   "min": 6,
+   "words": 1433,
+   "topics": 2,
+   "pyqMarks": 5.0
+  },
+  {
+   "num": 65,
+   "title": "Predicate (First-Order) Logic",
+   "tag": "Artificial Intelligence",
+   "min": 6,
+   "words": 1322,
+   "topics": 1,
+   "pyqMarks": 4.0
+  },
+  {
+   "num": 66,
+   "title": "Reasoning under Uncertainty: Bayesian Networks and Inference",
+   "tag": "Artificial Intelligence",
+   "min": 8,
+   "words": 1748,
+   "topics": 5,
+   "pyqMarks": 7.5
+  },
+  {
+   "num": 67,
+   "title": "Hypothesis Testing: z-test, t-test and Chi-Squared Test",
+   "tag": "Probability & Statistics",
+   "min": 6,
+   "words": 1274,
+   "topics": 3,
+   "pyqMarks": 0
+  },
+  {
+   "num": 68,
+   "title": "Conditional Expectation and Variance",
+   "tag": "Probability & Statistics",
+   "min": 4,
+   "words": 824,
+   "topics": 2,
+   "pyqMarks": 5.5
+  },
+  {
+   "num": 69,
+   "title": "Quantitative Aptitude",
+   "tag": "General Aptitude",
+   "min": 5,
+   "words": 1078,
+   "topics": 1,
+   "pyqMarks": 19.0
+  },
+  {
+   "num": 70,
+   "title": "Verbal Aptitude",
+   "tag": "General Aptitude",
+   "min": 3,
+   "words": 732,
+   "topics": 1,
+   "pyqMarks": 11.0
+  },
+  {
+   "num": 71,
+   "title": "Analytical Aptitude and Logical Reasoning",
+   "tag": "General Aptitude",
+   "min": 3,
+   "words": 718,
+   "topics": 1,
+   "pyqMarks": 4.0
+  },
+  {
+   "num": 72,
+   "title": "Spatial Aptitude",
+   "tag": "General Aptitude",
+   "min": 3,
+   "words": 775,
+   "topics": 1,
+   "pyqMarks": 11.0
+  },
+  {
+   "num": 73,
+   "title": "Taylor and Maclaurin Series in Depth",
+   "tag": "Calculus & Optimization",
+   "min": 3,
+   "words": 740,
+   "topics": 2,
+   "pyqMarks": 0
+  },
+  {
+   "num": 74,
+   "title": "Continuity, Differentiability, Lipschitz and Hyperbolic Functions: Worked Problems",
+   "tag": "Calculus & Optimization",
+   "min": 4,
+   "words": 838,
+   "topics": 3,
+   "pyqMarks": 0
+  },
+  {
+   "num": 75,
+   "title": "Gaussian Elimination, LU Decomposition and Quadratic Forms",
+   "tag": "Matrices & Linear Algebra",
+   "min": 4,
+   "words": 823,
+   "topics": 3,
+   "pyqMarks": 6.3
+  },
+  {
+   "num": 76,
+   "title": "Projection, Orthogonal and Special Matrices",
+   "tag": "Matrices & Linear Algebra",
+   "min": 4,
+   "words": 821,
+   "topics": 3,
+   "pyqMarks": 2.0
+  },
+  {
+   "num": 77,
+   "title": "Discrete Distributions: Geometric and Hypergeometric",
+   "tag": "Probability & Statistics",
+   "min": 2,
+   "words": 564,
+   "topics": 0,
+   "pyqMarks": 0
+  },
+  {
+   "num": 78,
+   "title": "Gradient Descent, SGD and Backpropagation",
+   "tag": "Machine Learning: Supervised",
+   "min": 4,
+   "words": 828,
+   "topics": 1,
+   "pyqMarks": 10.0
+  },
+  {
+   "num": 79,
+   "title": "Transactions, ACID and Serializability",
+   "tag": "Database Management Systems",
+   "min": 3,
+   "words": 619,
+   "topics": 1,
+   "pyqMarks": 1.0
+  },
+  {
+   "num": 80,
+   "title": "Exact Inference: Variable Elimination in Depth",
+   "tag": "Artificial Intelligence",
+   "min": 5,
+   "words": 1066,
+   "topics": 1,
+   "pyqMarks": 1.5
+  },
+  {
+   "num": 81,
+   "title": "Approximate Inference: Sampling Methods in Depth",
+   "tag": "Artificial Intelligence",
+   "min": 5,
+   "words": 1057,
+   "topics": 2,
+   "pyqMarks": 6.2
   }
  ],
- "unmapped": [
-  {
-   "id": "202614",
-   "year": 2026,
-   "subject": "Database Management & Warehousing",
-   "area": "Transactions and Concurrency",
-   "topic": "ACID Properties and Serializability",
-   "marks": 1
-  }
- ]
+ "unmapped": []
 }

@@ -1,0 +1,1182 @@
+{
+"202423": [
+"A heuristic is admissible if $0\\le h(n)\\le h^*(n)$ for every node. Both $h_1$ and $h_2$ satisfy this.",
+"<b>A.</b> $h_1+h_2$ can exceed $h^*$ (for example $h^*=10$ with $h_1=8,\\ h_2=7$ gives 15). Not admissible.",
+"<b>B.</b> $h_1\\times h_2$ can exceed $h^*$ when the values are large (for example $4\\times4=16>h^*=10$). Not admissible.",
+"<b>C.</b> $h_1/h_2$ is unbounded when $h_2$ is small. Not admissible.",
+"<b>D.</b> $|h_1-h_2|\\le\\max(h_1,h_2)\\le h^*$ because both are non-negative and at most $h^*$. Always admissible.",
+"Answer: <b>D</b>"
+],
+"202424": [
+"Read the graph from the factors: $P(W\\mid U,V)$ gives $U\\to W\\leftarrow V$; $P(X\\mid W)$ gives $W\\to X$; $P(Y\\mid W)$ gives $W\\to Y$.",
+"(A) $V\\to W\\to Y$ is a chain. Observing $W$ blocks it, so $Y\\perp V\\mid W$ is true.",
+"(B) $U\\to W\\to X$ is a chain, blocked by $W$: true.",
+"(D) $X\\leftarrow W\\to Y$ is a fork, blocked by $W$: true.",
+"(C) $U\\to W\\leftarrow V$ is a <b>collider</b>. Observing $W$ opens the path, so $U$ and $V$ become dependent (explaining away). The statement is false.",
+"Answer: <b>C</b>"
+],
+"202425": [
+"$\\alpha$ is the best (highest) value found so far for MAX along the path. It starts at $-\\infty$ and only rises: $\\alpha\\leftarrow\\max(\\alpha,v)$.",
+"$\\beta$ is the best (lowest) value found so far for MIN along the path. It starts at $+\\infty$ and only falls: $\\beta\\leftarrow\\min(\\beta,v)$.",
+"So (m) is <b>highest</b> and (n) is <b>lowest</b>.",
+"Answer: <b>C</b>"
+],
+"202429": [
+"A statement $(a)\\Rightarrow(b)$ is a tautology if it is never true-then-false. Check each premise for when it is true.",
+"<b>A.</b> $\\neg x\\wedge y$ is true only for $x=F,\\ y=T$. Then $y\\Rightarrow x$ is $T\\Rightarrow F$, which is false. So A is not a tautology.",
+"<b>B.</b> $x\\wedge\\neg y$ is true only for $x=T,\\ y=F$. Then $\\neg x\\Rightarrow y$ is $F\\Rightarrow F$, which is true. Tautology.",
+"<b>C.</b> $\\neg x\\wedge y$ is true only for $x=F,\\ y=T$. Then $\\neg x\\Rightarrow y$ is $T\\Rightarrow T$, true. Tautology.",
+"<b>D.</b> $x\\wedge\\neg y$ is true only for $x=T,\\ y=F$. Then $y\\Rightarrow x$ is $F\\Rightarrow T$, true. Tautology.",
+"Answer: <b>B, C, D</b>"
+],
+"202444": [
+"Start state 1; the successors of $n$ are $n+1$ and $n+2$; the unexpanded list is always expanded in ascending order; expanded states are not added again; the goal is 6.",
+"<b>BFS:</b> expand 1 (adds 2, 3), 2 (adds 4), 3 (adds 5), 4 (adds 6), 5. Then 6 is taken and the goal test succeeds. Expanded: 1, 2, 3, 4, 5.",
+"<b>DFS</b> under the same rule always takes the smallest unexpanded state, so it expands 1, then 2, 3, 4, 5 and then takes 6. Expanded: 1, 2, 3, 4, 5.",
+"Both expand the same 5 states.",
+"Answer: <b>C</b>"
+],
+"202451": [
+"Edges: $P\\to Q$, $R\\to Q$, $Q\\to S$, $Q\\to V$, $S\\to U$, $V\\to T$. A valid topological order puts $P$ and $R$ before $Q$; $Q$ before $S$ and $V$; $S$ before $U$; $V$ before $T$.",
+"<b>A.</b> P Q R S T U V: $Q$ comes before $R$, but $R\\to Q$. Invalid.",
+"<b>B.</b> P R Q V S U T: $P,R$ then $Q$, then $V,S$, then $U$ (after $S$) and $T$ (after $V$). Valid.",
+"<b>C.</b> P Q R S V U T: $Q$ before $R$. Invalid.",
+"<b>D.</b> P R Q S V T U: $P,R,Q$, then $S,V$, then $T$ (after $V$) and $U$ (after $S$). Valid.",
+"Answer: <b>B, D</b>"
+],
+"202454": [
+"\"All balls are round except balls used in rugby\" says two things: a ball that is <b>not</b> used in rugby is round, and a ball used in rugby is <b>not</b> round.",
+"$s_1$: not rugby $\\Rightarrow$ round. This is the first part.",
+"$s_3$: rugby $\\Rightarrow$ not round. This is the second part.",
+"$s_2$ (not round $\\Rightarrow$ rugby) is the contrapositive of $s_1$, so $s_2\\equiv s_1$. $s_4$ (round $\\Rightarrow$ not rugby) is the contrapositive of $s_3$, so $s_4\\equiv s_3$.",
+"A correct representation needs one sentence from each pair: $s_1\\wedge s_3$ and $s_2\\wedge s_3$ work. $s_1\\wedge s_2$ says only the first part, and $s_3\\wedge s_4$ says only the second.",
+"Answer: <b>A, C</b>"
+],
+"202464": [
+"The network is $U\\to V$, $U\\to W$, $V\\to Z$, $W\\to Z$, so $P(U,V,W,Z)=P(U)\\,P(V\\mid U)\\,P(W\\mid U)\\,P(Z\\mid V,W)$.",
+"Read the tables: $P(U{=}1)=0.5$; $P(V{=}1\\mid U{=}1)=0.5$; $P(W{=}1\\mid U{=}1)=1$; $P(Z{=}1\\mid V{=}1,W{=}1)=0.5$.",
+"$P(U{=}1,V{=}1,W{=}1,Z{=}1)=0.5\\times0.5\\times1\\times0.5=0.125$.",
+"Answer: <b>0.125</b>"
+],
+"202515": [
+"$S_1=p\\to q\\equiv\\neg p\\vee q$, which is exactly $S_3$.",
+"$S_2=\\neg p\\wedge q$ and $S_4=\\neg p\\vee\\neg q$ are different: at $p=F,\\ q=T$, $S_2$ is true and $S_4$ is true, but at $p=F,\\ q=F$, $S_2$ is false and $S_4$ is true. So $S_2\\not\\equiv S_4$, and $S_2\\not\\equiv S_3$ (at $p=F,\\ q=F$, $S_3$ is true and $S_2$ is false). $S_1\\not\\equiv S_4$ (at $p=T,\\ q=T$, $S_1$ is true and $S_4$ is false).",
+"Answer: <b>A</b>"
+],
+"202526": [
+"(A) Variable elimination is an <b>exact</b> inference algorithm, so this is false.",
+"(B) Gibbs sampling is an <b>approximate</b> (MCMC) method, so this is false.",
+"(C) Variable elimination computes conditional probabilities exactly, by summing out hidden variables and normalising. True.",
+"(D) Rejection sampling is an approximate method based on random samples. True.",
+"Answer: <b>C, D</b>"
+],
+"202543": [
+"<b>Tree 1.</b> MAX root A has a leaf 2 and a MIN child B. After the first leaf, $\\alpha=2$. At B the first child $x$ gives $\\beta=x$. The right child of B is pruned when $\\beta\\le\\alpha$, that is when $x\\le2$, so $x\\in(-\\infty,2]$.",
+"<b>Tree 2.</b> MAX root C has MIN children D (leaves 5, $y$) and E (leaves 2, then a pruned subtree). D evaluates to $\\min(5,y)$, so at the root $\\alpha=\\min(5,y)$. At E the first leaf 2 gives $\\beta=2$. The right child of E is pruned when $2\\le\\alpha=\\min(5,y)$, which needs $y\\ge2$, so $y\\in[2,\\infty)$.",
+"Answer: <b>C</b>"
+],
+"202544": [
+"Edge costs: S to A 4, S to E 1, A to B 2, B to C 2, E to C 2, C to D 3, D to G 3. Heuristics: $h(A)=2$, $h(B)=2$, $h(C)=6$, $h(D)=2$, $h(E)=6$, $h(G)=0$. Expand the lowest $f=g+h$.",
+"Expand S: A has $g=4,\\ f=6$; E has $g=1,\\ f=7$. Pop A (6).",
+"Expand A: B has $g=6,\\ f=8$. Frontier: E (7), B (8). Pop E (7).",
+"Expand E: C has $g=3,\\ f=9$. Frontier: B (8), C (9). Pop B (8).",
+"Expand B: C via B has $g=8,\\ f=14$, which is worse than 9, so it is ignored. Pop C (9).",
+"Expand C: D has $g=6,\\ f=8$. Pop D. Expand D: G has $g=9,\\ f=9$. Pop G.",
+"Order: S, A, E, B, C, D, G.",
+"Answer: <b>C</b>"
+],
+"202613": [
+"Breadth-first, depth-first and depth-limited search use only the problem definition, so they are uninformed.",
+"A* uses a heuristic $h(n)$ to guide the search, so it is <b>informed</b>.",
+"Answer: <b>C</b>"
+],
+"202624": [
+"$X$ entails $Y$ means that in every model where $X$ is true, $Y$ is true. That is the same as saying $X\\Rightarrow Y$ is valid, and the same as \"$X\\wedge\\neg Y$ is never true\" (always false).",
+"(A) $X\\Rightarrow Y$: correct. (B) $X\\wedge\\neg Y$ is false: correct. (C) \"if $X$ then $Y$\": correct.",
+"(D) \"if $Y$ then $X$\" is the converse. It does not follow.",
+"Answer: <b>A, B, C</b>"
+],
+"202630": [
+"Each MIN node takes the <b>smallest</b> of its three leaves: strategy 1 leads to $\\min(8,6,-1)=-1$; strategy 2 to $\\min(1,5,7)=1$; strategy 3 to $\\min(-4,-3,-12)=-12$.",
+"MAX takes the largest of these values, $\\max(-1,1,-12)=1$, which comes from <b>strategy 2</b>.",
+"Answer: <b>2</b>"
+],
+"202638": [
+"Assumption: a creative person succeeds exactly when disciplined, which is $C\\Rightarrow(S\\Leftrightarrow D)$.",
+"(ii) $C\\Rightarrow(S\\Leftrightarrow D)$ is exactly this assumption. True.",
+"(i) $(C\\wedge S)\\Leftrightarrow D$: take $C=F$ (not creative), $D=T$. The assumption says nothing about non-creative people, and then $C\\wedge S$ is false while $D$ is true, so (i) fails. Not necessarily true.",
+"(iii) $(D\\Rightarrow S)\\vee\\neg S\\equiv\\neg D\\vee S\\vee\\neg S\\equiv$ True, so (iii) reads $C\\Leftrightarrow$ True, which would force $C$ to be always true. Not necessarily true.",
+"Only (ii) is true.",
+"Answer: <b>B</b>"
+],
+"202648": [
+"Assume a non-empty domain, as first-order logic does.",
+"<b>A.</b> $\\forall x\\,P(x)\\Rightarrow\\exists x\\,P(x)$: if every object satisfies $P$, some object does. Valid.",
+"<b>B.</b> $\\exists x\\,P(x)\\Rightarrow\\forall x\\,P(x)$: one object satisfying $P$ does not force all to. Not valid.",
+"<b>C.</b> $\\exists x\\,P(x)\\Leftrightarrow\\forall x\\,P(x)$: this needs B in one direction. Not valid.",
+"<b>D.</b> $\\forall x\\,P(x)\\Rightarrow\\exists x\\,\\neg P(x)$: if all satisfy $P$, none satisfies $\\neg P$, so the conclusion is false while the premise is true. Not valid.",
+"Not valid: B, C, D.",
+"Answer: <b>B, C, D</b>"
+],
+"202415": [
+"$f'(x^*)=0$ and $f''(x^*)>0$ is the second-derivative test for a <b>local minimum</b>.",
+"It does not say the minimum is global (the function could be lower elsewhere).",
+"Answer: <b>A</b>"
+],
+"202433": [
+"The function is the sigmoid $\\sigma(x)=\\dfrac1{1+e^{-x}}$, with derivative $\\sigma'(x)=\\sigma(x)\\big(1-\\sigma(x)\\big)$.",
+"At the point where $\\sigma=0.4$: $\\sigma'=0.4\\times0.6=0.24$.",
+"Answer: <b>0.24</b>"
+],
+"202437": [
+"Continuity at $x=-2$: $f(-2)=2$, so $4a-2b+c=2$. At $x=2$: $4a+2b+c=2$.",
+"Differentiability: at $-2$ the left slope is $-1$ and the quadratic's slope is $2a(-2)+b=-4a+b$, so $-4a+b=-1$. At $2$ the right slope is $1$, so $4a+b=1$.",
+"Subtracting the two slope equations: $8a=2$, so $a=\\tfrac14$. Then $b=1-4a=0$, and $4a+c=2$ gives $c=1$.",
+"Answer: <b>A</b> ($a=\\tfrac14,\\ b=0,\\ c=1$)"
+],
+"202450": [
+"$f'(x)=x^3-2x^2-3x=x(x-3)(x+1)$, so the critical points are $-1,\\ 0,\\ 3$.",
+"$f''(x)=3x^2-4x-3$. $f''(0)=-3<0$: local maximum at 0 (A true, D false).",
+"$f''(3)=27-12-3=12>0$: local minimum at 3 (B true).",
+"$f''(-1)=3+4-3=4>0$: local minimum at $-1$, not a maximum (C false).",
+"Answer: <b>A, B</b>"
+],
+"202460": [
+"$\\ln\\big((x^2+1)\\cos x\\big)=\\ln(1+x^2)+\\ln\\cos x$.",
+"Near 0: $\\ln(1+x^2)\\approx x^2$ and $\\ln\\cos x\\approx-\\tfrac{x^2}{2}$, so the numerator is about $\\tfrac{x^2}{2}$.",
+"The limit is $\\dfrac{x^2/2}{x^2}=0.5$.",
+"Answer: <b>0.5</b>"
+],
+"202514": [
+"$f(x)=\\sinh x$. Its derivatives alternate $\\cosh x,\\ \\sinh x,\\ \\cosh x,\\dots$, so even-order derivatives are $\\sinh x$.",
+"$f^{(10)}(0)=\\sinh0=0$.",
+"Answer: <b>A</b>"
+],
+"202524": [
+"$g$ maps into $(1,\\infty)$, so $g\\ne0$ and $f/g$ is differentiable at $c$ (the quotient rule applies).",
+"$f\\pm g$, $f\\cdot g$ and $f/g$ are differentiable at $c$ whenever both $f$ and $g$ are.",
+"$f\\circ g+g\\circ f$ needs $f$ to be differentiable at the point $g(c)$ and $g$ at $f(c)$, but we only know differentiability at $c$. Not guaranteed.",
+"Answer: <b>A, B, C</b>"
+],
+"202532": [
+"Multiply by the conjugate: $\\sqrt{t^2+t}-t=\\dfrac{t}{\\sqrt{t^2+t}+t}=\\dfrac{1}{\\sqrt{1+1/t}+1}$.",
+"As $t\\to\\infty$ this tends to $\\dfrac1{1+1}=\\dfrac12$.",
+"Answer: <b>0.5</b>"
+],
+"202549": [
+"$f'(x)=x^2+7x+10=(x+2)(x+5)$. So $x=-5$ is a local maximum and $x=-2$ a local minimum.",
+"On $[-8,0]$, compare the critical points and the endpoints of $f(x)=\\tfrac{x^3}3+\\tfrac72x^2+10x+\\tfrac{133}2$: $f(-8)\\approx39.8$, $f(-5)\\approx62.3$, $f(-2)\\approx57.8$, $f(0)=66.5$.",
+"So the maximum value is $66.5$, attained at $x=0$, and the minimum is about $39.8$, attained at $x=-8$. A and B describe only <b>local</b> extrema, and the stated values in C and D ($1$ and $-1$) do not occur.",
+"<b>Check this one against the official key.</b> The book's key says C and D, but for the function as printed the range of $f$ on $[-8,0]$ is about $26.7$, so no constant term could make the maximum $1$ and the minimum $-1$ at the same time.",
+"Answer: <b>C, D</b> (the book's key; see the note above)"
+],
+"202551": [
+"$f''>0$ everywhere means $f$ is strictly convex, so $f'$ is strictly increasing.",
+"(A) A strictly convex function need not have a minimum (for example $e^x$). False.",
+"(B) $f'$ is strictly increasing, so it can be zero at only one point. True.",
+"(C) A strictly convex function has at most one global minimiser. True.",
+"(D) Every local minimum of a convex function is global, and it is unique. So at most one local minimum. True.",
+"Answer: <b>B, C, D</b>"
+],
+"202559": [
+"$|f(x)-f(y)|\\le(x-y)^2$ gives $\\left|\\dfrac{f(x+h)-f(x)}{h}\\right|\\le|h|\\to0$, so $f'(x)=0$ for every $x$.",
+"Hence $f$ is constant and $f(1)-f(0)=0$.",
+"Answer: <b>0</b>"
+],
+"202627": [
+"$f(x)=x^3-3x^2+2=(x-1)(x^2-2x-2)$, with roots $1,\\ 1\\pm\\sqrt3$ (about $-0.73$, $1$, $2.73$).",
+"<b>A.</b> In $[-0.9,0]$ the only root is $-0.73$. Exactly one, so A is false.",
+"<b>B.</b> $f'(x)=3x(x-2)$: $f(2)=-2$ is the minimum value. The other place that value would be reached is $x=-1$, which is excluded from $(-1,3]$. So the minimum is attained at $2$ only. True.",
+"<b>C.</b> $f(0)=2$ and $f(3)=2$: the maximum is attained at both 0 and 3, not 0 only. False.",
+"<b>D.</b> $f(1)=1-3+2=0$. True.",
+"Answer: <b>B, D</b>"
+],
+"202635": [
+"The double sum separates: $\\sum_{i\\ge0}2^{-i}\\cdot\\sum_{j\\ge1}3^{-j}$.",
+"$\\sum_{i\\ge0}2^{-i}=\\dfrac1{1-1/2}=2$ and $\\sum_{j\\ge1}3^{-j}=\\dfrac{1/3}{1-1/3}=\\dfrac12$.",
+"The product is $2\\times\\tfrac12=1$.",
+"Answer: <b>1</b>"
+],
+"202426": [
+"\"Every name in Team appears in Defender or Forward\" means: the set of names in Team, minus the set of names in Defender or Forward, is empty.",
+"Names in Defender or Forward is the <b>union</b> $\\Pi_{name}(Defender)\\cup\\Pi_{name}(Forward)$ (not the intersection). So the expression is $\\Pi_{name}(Team)\\setminus\\big(\\Pi_{name}(Defender)\\cup\\Pi_{name}(Forward)\\big)=\\emptyset$.",
+"Answer: <b>C</b>"
+],
+"202431": [
+"Team rows in Jaipur have IDs 2, 1 and 6. Join each with Raider on ID: Raider 2 has 219 raid points, Raider 1 has 250, Raider 6 has 215.",
+"All three exceed 200, so all three rows qualify.",
+"Answer: <b>3</b>"
+],
+"202446": [
+"Compute attribute closures. $V\\to X$, $U\\to V$, $U\\to W$, $WX\\to Y$, $WX\\to Z$.",
+"<b>A.</b> $\\{V,W\\}^+$: $V\\to X$ gives $X$; now $WX$ is present, so $Y$ and $Z$ follow. $VW\\to YZ$ holds.",
+"<b>B.</b> $WX\\to Y$ and $WX\\to Z$ together give $WX\\to YZ$ (union). Holds.",
+"<b>C.</b> $U$ appears on no right-hand side, so nothing determines it: $VW\\to U$ does not hold.",
+"<b>D.</b> $VW\\to X$, then $WX\\to Y$, so $VW\\to Y$ holds.",
+"Answer: <b>A, B, D</b>"
+],
+"202455": [
+"The query has a <b>range</b> condition (<code>CustomerRating &gt; 3.4</code>), an <b>equality</b> condition (<code>Genre.Name = \"Comedy\"</code>), and equality joins.",
+"A <b>B+ tree</b> supports both range and equality, so it can serve every attribute.",
+"A <b>hash index</b> supports only equality, so it cannot help the range condition on <code>CustomerRating</code>. That rules out C and D.",
+"A (B+ tree on everything) and B (hash for the equality on <code>Genre.Name</code>, B+ tree for the rest) both work.",
+"Answer: <b>A, B</b>"
+],
+"202516": [
+"In a dependency-preserving decomposition, every functional dependency can be checked inside a single relation.",
+"If it is not preserved, some dependency spans several relations, so to check it you must first <b>join</b> those relations. The join is therefore executed more often.",
+"Answer: <b>C</b>"
+],
+"202517": [
+"Work from the inside out: $\\sigma_{maker=ABC}(Make)$ gives the models made by ABC.",
+"$Car\\bowtie(\\cdot)$ joins on <code>model</code>, giving cars of those models; $\\sigma_{color=red}$ keeps the red ones. So this is the red cars made by ABC.",
+"$Own\\bowtie(\\cdot)$ joins on <code>serial</code>, giving who owns them, and $\\pi_{owner}$ keeps the owner names.",
+"Answer: <b>C</b> (all owners of a red car made by ABC)"
+],
+"202533": [
+"The inner query gives the maximum loan amount at SR Nagar: $\\max(40000,25000,65000)=65000$.",
+"Loans with an amount greater than 65000 are L11 (90000), L23 (80000) and L25 (70000).",
+"Answer: <b>3</b>"
+],
+"202546": [
+"<code>GROUP BY CUBE(D1, D2)</code> produces groups for every subset of the grouping columns.",
+"$(D1,D2)$: $3\\times2=6$ groups. $(D1)$: 3. $(D2)$: 2. $()$: 1 (the grand total).",
+"Total $6+3+2+1=12$.",
+"Answer: <b>D</b>"
+],
+"202556": [
+"<b>A.</b> <code>aadhaar</code> in Customer is a foreign key, and many customers could share one Aadhaar. It is not a candidate key. False.",
+"<b>B.</b> <code>phone</code> has no NOT NULL or key constraint, so it can be NULL. True.",
+"<b>C.</b> <code>aadhaar</code> is the primary key of Person, so it is a candidate key there. True.",
+"<b>D.</b> A primary key cannot be NULL. False.",
+"Answer: <b>B, C</b>"
+],
+"202557": [
+"$A\\to BCEF$, $E\\to DG$, so $A^+=\\{A,B,C,E,F,D,G\\}$, all attributes: $A$ is a key. $BC\\to A$, so $BC$ is also a key.",
+"$E^+=\\{E,D,G\\}$ is not all attributes, so $E$ is not a key. The candidate keys are $A$ and $BC$ (B true; A and C false).",
+"BCNF requires the left side of every non-trivial dependency to be a superkey. $E\\to DG$ has left side $E$, which is not a superkey, so $R$ is <b>not in BCNF</b> (D true).",
+"Answer: <b>B, D</b>"
+],
+"202562": [
+"$\\pi_{branch,customer}(Loan\\bowtie Borrower)$ gives the (branch, customer) pairs: Banjara Hills: Anand, Karteek; Kondapur: Karteek, Sunil; SR Nagar: Ankita, Gopal, Karteek; Balanagar: Karteek, Sunil.",
+"Division by $\\pi_{branch}(Loan)$ keeps customers who are paired with <b>every</b> branch (all four).",
+"Karteek appears for all four. Sunil is missing SR Nagar and Banjara Hills; the others miss several.",
+"Answer: <b>1</b>"
+],
+"202614": [
+"(A) Classmate is symmetric: true. (B) $\\forall x\\,P(x)\\equiv\\neg\\exists x\\,\\neg P(x)$: true. (D) \"All humans are mortal\" is $\\forall x\\,(\\text{IsHuman}(x)\\Rightarrow\\text{IsMortal}(x))$: true.",
+"(C) \"Each king is a person\" is $\\forall x\\,(\\text{IsKing}(x)\\Rightarrow\\text{IsPerson}(x))$. Writing $\\wedge$ instead says everything is a king and a person. So C is <b>not</b> true.",
+"Answer: <b>C</b>"
+],
+"202617": [
+"$D$ appears on no right-hand side, so every key contains $D$.",
+"$AD$: $A\\to BC$, so $ABCD$; $CD\\to E$ gives $E$. All attributes. Key.",
+"$ED$: $E\\to A$, then $A\\to BC$. All attributes. Key.",
+"$CD$: $CD\\to E$, then $E\\to A$, then $A\\to BC$. All attributes. Key.",
+"None of these can be shrunk (for example $D^+=\\{D\\}$, $A^+=\\{A,B,C\\}$). So the candidate keys are exactly $AD$, $ED$ and $CD$.",
+"Answer: <b>A</b>"
+],
+"202618": [
+"Going from Country to State moves to a <b>finer</b> level of the location hierarchy: the same measure shown in more detail. That is <b>drill-down</b>. (Roll-up would go to a coarser level; slicing and dicing select parts of the cube without changing the level.)",
+"Answer: <b>D</b>"
+],
+"202626": [
+"$E$ in $S$ is a foreign key referencing $A$ in $R$. $R$ is the referenced (parent) table and $S$ the referencing (child) table.",
+"Inserting into $r$ can never create a dangling reference. True.",
+"Deleting from $s$ removes a referencing row, so it is always safe. True.",
+"Deleting from $r$ can remove a row that $s$ still points to, and inserting into $s$ can add a value with no match in $r$. Both can violate the constraint.",
+"Answer: <b>A, B</b>"
+],
+"202632": [
+"A non-leaf node with $n$ node pointers has $n-1$ search keys (data record pointers appear only in leaves).",
+"$10n+11(n-1)\\le4096$, so $21n\\le4107$ and $n\\le195.57$.",
+"The maximum is 195.",
+"Answer: <b>195</b>"
+],
+"202641": [
+"Keys in each leaf are at most 2 and a non-leaf node holds at most 3 pointers (2 keys). Current leaves: $[1,5]$, $[7,8]$, $[9,12]$, with root keys 5 and 8.",
+"Inserting 3 goes into leaf $[1,5]$, giving $[1,3,5]$: too many keys. Split into $[1,3]$ and $[5]$, and push the separator 3 up.",
+"The root would now hold keys 3, 5, 8, which means 4 pointers: too many, so the root splits as well. The middle key <b>5</b> moves up into a new root, with children $[3]$ and $[8]$.",
+"The root contains only 5.",
+"Answer: <b>A</b>"
+],
+"202642": [
+"$X\\bowtie Y$ (on $P,Q$) gives $(P1,Q1,R1,2)$ and $(P3,Q3,R2,1)$.",
+"Selecting $Q=Q3\\vee R=R2$ keeps only $(P3,Q3,R2,1)$.",
+"$Y\\bowtie Z$ (on $P$) gives $(P1,Q1,2,T1)$, $(P1,Q2,5,T1)$ and $(P3,Q3,1,T2)$. Selecting $S>1$ keeps the first two.",
+"Joining the two results needs equal $P$, $Q$ and $S$. The first result has $P3$ only and the second has $P1$ only, so the join is <b>empty</b>: 0 tuples.",
+"<b>Check this one against the official key.</b> The book's key says D (3), but working the expression as printed gives 0 (option A).",
+"Answer: <b>D</b> (the book's key; see the note above)"
+],
+"202643": [
+"Each dimension has a hierarchy of 3 levels (Year, Month, Day; Country, State, City; Item Category, Item Type, Item), and each also has the \"all\" level. So each dimension offers $3+1=4$ choices.",
+"The number of cuboids is the product $4\\times4\\times4=4^3$.",
+"Answer: <b>A</b>"
+],
+"202651": [
+"The goal is the size of each employee's team next to their EmpID.",
+"<b>A.</b> The sub-query computes the size of every team (<code>GROUP BY TeamID</code>), and joining it back on <code>TeamID</code> gives each employee their team's size. Correct.",
+"<b>B.</b> Joining the table with itself on both <code>TeamID</code> and <code>EmpID</code> matches each employee with only themselves, so the count is always 1. Wrong.",
+"<b>C.</b> Grouping by <code>EmpID</code> makes every group of size 1. Wrong.",
+"<b>D.</b> The sub-query does not select <code>TeamID</code>, so <code>B.TeamID</code> does not exist. Invalid SQL.",
+"Answer: <b>A</b>"
+],
+"202659": [
+"The condition needs, for each tuple $t$ in $X$, a matching $z$ in $X$ (the tuple itself qualifies) and a tuple $m$ in $Y$ with the same $P$ and $S>1$.",
+"P1: $Y$ has $S=10$ and 15. Yes. P2: $S=20$. Yes. P3: $S=1$, which is not greater than 1. No.",
+"Two tuples are returned.",
+"Answer: <b>2</b>"
+],
+"202660": [
+"For each row $A$, the first sub-query counts rows with a <b>larger</b> balance and the second counts rows with a <b>smaller</b> balance. The row qualifies when larger $\\ge$ smaller.",
+"A1 and A2 (5000): larger 3, smaller 0. Qualify.",
+"A3 (10000): larger 2 (15000, 18000), smaller 2 (5000, 5000). $2\\ge2$, qualifies.",
+"A4 (15000): larger 1, smaller 3. No. A5 (18000): larger 0, smaller 4. No.",
+"Three rows.",
+"Answer: <b>3</b>"
+],
+"202661": [
+"Convert to relations:",
+"one relation for E1 with attributes A11, A12, A13;",
+"one for E2 with A21 and A23 (the multi-valued attribute A22 is removed from it);",
+"one for the multi-valued attribute A22: (A21, A22);",
+"one for the many-to-many relationship R12: (A11, A21).",
+"Each is in 3NF. Total <b>4</b> relations.",
+"Answer: <b>4</b>"
+],
+"202401": [
+"In \"sick, infirm, moribund\" each word is more severe than the one before. We need a word that sits between \"silly\" and \"daft\" in the same way: a stronger degree of foolishness.",
+"\"Vain\" (empty, foolish) fits the sequence silly, vain, daft. \"Frown\", \"fawn\" and \"vein\" have nothing to do with foolishness.",
+"Answer: <b>D</b>"
+],
+"202402": [
+"The three sectors of the central circle share boundaries with each other, so they need three different colours. Call them 1, 2, 3 (left, bottom, right sector).",
+"Four regions surround the circle. The top region touches the left and right sectors, so it must be colour 2. The left region touches the left and bottom sectors and the top region, so it must be 3. The right region touches the right and bottom sectors and the top region, so it must be 1.",
+"The bottom region touches the bottom sector (2), the left region (3) and the right region (1): all three colours are taken, so a <b>fourth</b> colour is needed. Four colours always suffice for a map drawn on a plane (the four colour theorem).",
+"Answer: <b>A</b>"
+],
+"202403": [
+"The digits are 1, 3, 4, 6, 7 and they sum to 21. A number is divisible by 3 when its digit sum is, so the omitted digit must be a multiple of 3: omit 3 or omit 6.",
+"Omit 3: digits $\\{1,4,6,7\\}$ (sum 18). Omit 6: digits $\\{1,3,4,7\\}$ (sum 15).",
+"Each set makes $4!=24$ numbers, so $24+24=48$.",
+"Answer: <b>B</b>"
+],
+"202404": [
+"Split the series by denominator: $\\tfrac12+\\tfrac14+\\tfrac18+\\tfrac1{16}+\\cdots=1$ and $\\tfrac13+\\tfrac19+\\tfrac1{27}+\\cdots=\\dfrac{1/3}{1-1/3}=\\tfrac12$.",
+"The total is $2+1+\\tfrac12=\\tfrac72$.",
+"Answer: <b>B</b>"
+],
+"202405": [
+"Valid votes $=115000-5000=110000$.",
+"Candidates B and C together received $25\\%+20\\%=45\\%$ of the valid votes: $0.45\\times110000=49500$.",
+"Answer: <b>B</b>"
+],
+"202406": [
+"The passage says some people's gene mutations coincided with dairy farming and gave them the ability to digest milk.",
+"That supports \"in human beings, the ability resulted from a mutated gene\". It does not say all or no human beings can digest milk, or that it is essential.",
+"Answer: <b>D</b>"
+],
+"202407": [
+"Each child is a girl with probability $\\tfrac12$ independently. Two girls and one boy can happen in $\\binom32=3$ orders, each with probability $\\left(\\tfrac12\\right)^3=\\tfrac18$.",
+"Probability $=\\dfrac38$.",
+"Answer: <b>A</b>"
+],
+"202408": [
+"Person 1 invests Rs. 10,000 in A and Rs. 20,000 in each of B and C. Person 2 invests Rs. 20,000 in A and Rs. 15,000 in each of B and C. Let $r$ be the return rate of fund A.",
+"Person 1 earns $10000r+20000(0.15)+20000(0.15)=10000r+6000$. Person 2 earns $20000r+15000(0.15)+15000(0.15)=20000r+4500$.",
+"Person 1 gets Rs. 500 more: $10000r+6000=20000r+4500+500$, so $10000r=1000$ and $r=0.10$.",
+"Answer: <b>B</b> (10%)"
+],
+"202409": [
+"From the three views, face 5 is next to 4, 1, 2 and 6, so its opposite face is 3. Face 4 is next to 5, 1, 6 and 3, so its opposite face is 2. That leaves 1 opposite 6.",
+"In a net, two faces separated by exactly one face in a straight strip are opposite each other.",
+"Net (A): the strip 1, 4, 6, 2 puts 1 and 6 opposite and 4 and 2 opposite, and the faces 5 and 3 attached at the two ends are opposite. This matches.",
+"The other nets put 1 and 2, or 4 and 3, opposite, which contradicts the views.",
+"Answer: <b>A</b>"
+],
+"202410": [
+"Two identical cones sharing a circular base form a double cone. A plane through both vertices also passes through the axis, so it cuts the base along a diameter.",
+"The cross-section is made of the two triangles (one from each cone) joined along that diameter, and because the cones are identical the outer boundary is a <b>rhombus</b>.",
+"Answer: <b>A</b>"
+],
+"202501": [
+"Courage and bravery are synonyms. The synonym of yearning is <b>longing</b>.",
+"Answer: <b>A</b>"
+],
+"202502": [
+"\"We ___ tennis in the lawn when it suddenly started to rain\" describes an action in progress up to a past moment, so the past perfect continuous is right: \"had been playing\".",
+"Answer: <b>B</b>"
+],
+"202503": [
+"Count the pixels with intensity at most 4 row by row: row 1 (0, 1, 0, 2): 4; row 2 (4, 7, 3, 3): 3; row 3 (5, 5, 4, 4): 2; row 4 (6, 7, 3, 2): 2.",
+"Total $4+3+2+2=11$.",
+"Answer: <b>C</b>"
+],
+"202504": [
+"The numbers are 1 (rectangle), 2 (triangle) and 3 (ellipse). A region inside several shapes is labelled by the sum of those numbers.",
+"Region 4 lies in the rectangle and the ellipse: $1+3$. So the labels add up.",
+"R is inside the rectangle and the triangle only: $1+2=3$. Q is inside the triangle and the ellipse only: $2+3=5$. P is inside all three: $1+2+3=6$.",
+"Answer: <b>A</b> ($P=6,\\ Q=5,\\ R=3$)"
+],
+"202505": [
+"The area is $L\\times W$. If $W$ becomes $1.1W$, the area becomes $1.1\\,LW$, an increase of exactly 10%, for all $L$ and $W$.",
+"The perimeter $2(L+W)$ grows by $0.2W$, which is less than 10% of the perimeter. The diagonal $\\sqrt{L^2+W^2}$ does not grow by 10%. The rectangle does not become a square for all values.",
+"Answer: <b>C</b>"
+],
+"202506": [
+"P \"This house is in a mess\" is answered by 3: \"let me <b>clear it up</b> for you\".",
+"Q \"I am not happy with the marks\" is answered by 4: \"I will <b>take it up</b> with your teacher\".",
+"R \"Politics is a subject I avoid\" is answered by 1: \"I won't <b>bring it up</b>\".",
+"S \"I don't know what this word means\" is answered by 2: \"you can easily <b>look it up</b>\".",
+"Answer: <b>B</b> ($P-3,\\ Q-4,\\ R-1,\\ S-2$)"
+],
+"202507": [
+"The weight function rises until age 50 and then falls, so it takes each value at two different ages: one before 50 (rising part) and one after 50 (falling part), except at the peak itself.",
+"The brothers have the same weight at different ages $a_1<a_2$, so $a_1$ is on the rising part and $a_2$ on the falling part: $a_1<50<a_2$.",
+"Answer: <b>B</b>"
+],
+"202508": [
+"A regular dodecagon in a circle of radius $r$ is made of 12 triangles with their apex at the centre. Its area is $12\\cdot\\tfrac12r^2\\sin30^\\circ=3r^2$.",
+"A square of side $r$ has area $r^2$, so the 12 triangles make $3$ squares, using $\\dfrac{12}{3}=4$ triangles each.",
+"Answer: <b>A</b> (3 squares; 4 triangles each)"
+],
+"202509": [
+"$3^{x^2}=27\\cdot9^x=3^3\\cdot3^{2x}=3^{x^2}$ gives $x^2=3+2x$, so $x^2-2x=3$.",
+"$\\dfrac{2^{x^2}}{(2^x)^2}=2^{x^2-2x}=2^3$.",
+"Answer: <b>C</b>"
+],
+"202510": [
+"The mean number of patients is $\\dfrac{5(20)+6(40)+7(30)+8(10)}{100}=\\dfrac{630}{100}=6.3$.",
+"The average earning is $1000(6.3-0.2)=6100$.",
+"Answer: <b>A</b>"
+],
+"202601": [
+"Verbosity and brevity are opposites. The opposite of insolence is <b>respect</b>.",
+"Answer: <b>B</b>"
+],
+"202602": [
+"The digits are positive and their product is $70=2\\times5\\times7$. With three digits, the only choice is $\\{2,5,7\\}$.",
+"The sum is $2+5+7=14$.",
+"Answer: <b>B</b>"
+],
+"202603": [
+"This is a visual assembly question. Note each piece's distinctive feature: the tall piece with a notch, the curved cap, the pointed piece and the small wedge.",
+"For each candidate figure, check whether every piece can be placed once, without overlap, gaps or flipping. Only figure P can be built from all four pieces; the others each leave a piece with no valid place.",
+"Answer: <b>A</b> (P)"
+],
+"202604": [
+"$x=n\\log_{10}m$ and $y=m\\log_{10}n$ depend on the actual numbers. For $m=3,\\ n=2$: $x\\approx0.954>y\\approx0.903$. For $m=4,\\ n=2$: $x=y\\approx1.204$. For $m=10,\\ n=2$: $x=2<y\\approx3.01$.",
+"So no relation holds for every $m>n$. In the particular case $m=4,\\ n=2$ they are equal.",
+"<b>Check this one against the official key.</b> The book's key is C ($x=y$), which holds only for special pairs such as $(4,2)$, so the question as printed may be missing a condition.",
+"Answer: <b>C</b> (the book's key; see the note above)"
+],
+"202605": [
+"\"If his latest movie had been a commercial success, he would have made enough money to sponsor his next movie\" is a statement about something that did <b>not</b> happen. It implies the movie was not a commercial success.",
+"It does not say he will or will not sponsor the next movie, and it does not say he made enough money.",
+"Answer: <b>D</b>"
+],
+"202606": [
+"\"Parted <b>at</b> the door <b>of</b> the cabin that I had rented <b>for</b> the night.\"",
+"Answer: <b>A</b>"
+],
+"202607": [
+"Sort the five numbers $a\\le b\\le c\\le d\\le e$. The median is $c=18$ and the sum is $5\\times12=60$.",
+"A single mode of 20 with $c=18$ means 20 occurs at least twice, so $d=e=20$ (no other value can exceed 20).",
+"Then $a+b=60-18-20-20=2$ with $a\\le b$: $(0,2)$ or $(1,1)$. The pair $(1,1)$ makes 1 appear twice, tying with 20, so the mode would not be single.",
+"Only $0,2,18,20,20$ works: one way.",
+"Answer: <b>B</b>"
+],
+"202608": [
+"Class 5: Rishi (boy), Swathi (girl). Class 4: Pavan (boy), Tanvi (girl). The first game is the only same-class game; three games, and each loser is out.",
+"Games 2 and 3 are between different classes, so game 1 is Rishi vs Swathi or Pavan vs Tanvi.",
+"If game 1 is Pavan vs Tanvi, class 4 already has a win, so class 5 must win both later games. Whoever wins game 2 must then play the other class-5 student in game 3 (a same-class game), which is not allowed. Impossible.",
+"So game 1 is Rishi vs Swathi. If Swathi wins, the two remaining wins must both be boys (boys won two games), but then class 4 wins 2 against class 5's 1, which breaks \"class 5 won more\". So Rishi wins game 1.",
+"Boys won two games and girls one, so among games 2 and 3 there is one more boy win and one girl win, and class 5 must still win more games. Game 2: Rishi beats Pavan; game 3: Tanvi beats Rishi. Class 5: 2 wins, class 4: 1 win; boys 2, girls 1.",
+"Swathi lost game 1, Pavan lost game 2, Rishi lost game 3. <b>Tanvi</b> never lost.",
+"Answer: <b>D</b>"
+],
+"202609": [
+"$PQ$ and $RS$ are consecutive two-digit numbers. Try pairs whose squares add to a three-digit number $XYP$ ending in $P$ (the tens digit of $PQ$), with all six digits distinct.",
+"$19$ and $20$: $19^2+20^2=361+400=761$. Here $P=1$, which is the units digit of 761; $Q=9$, $R=2$, $S=0$, $X=7$, $Y=6$. All six digits are distinct.",
+"So $Y=6$.",
+"Answer: <b>C</b>"
+],
+"202610": [
+"$PQ=RQ$ and $\\angle PQR=45^\\circ$ is an inscribed angle, so the arc $PR$ it cuts off (the one not containing $Q$) measures $90^\\circ$. The rest of the circle, $270^\\circ$, is split equally by $Q$, so $\\angle POQ=\\angle QOR=135^\\circ$.",
+"The shaded region $PQRO$ is made of the two triangles $OPQ$ and $OQR$, each with two sides of length 10 and an included angle of $135^\\circ$.",
+"Area $=2\\times\\tfrac12(10)(10)\\sin135^\\circ=100\\times\\tfrac{\\sqrt2}{2}=50\\sqrt2$.",
+"Answer: <b>C</b>"
+],
+"202413": [
+"$\\operatorname{tr}M=3$ and $\\det M=2\\cdot1-(-1)(3)=5$, so the characteristic polynomial is $\\lambda^2-3\\lambda+5$.",
+"Its discriminant is $9-20=-11<0$, so the eigenvalues are a complex-conjugate pair, $\\dfrac{3\\pm i\\sqrt{11}}{2}$.",
+"Answer: <b>B</b>"
+],
+"202435": [
+"$M^2+12M=M(M+12I)$, so $\\det(M^2+12M)=\\det M\\cdot\\det(M+12I)$.",
+"$\\det M=1(6-9)-2(18-12)+3(9-4)=-3-12+15=0$.",
+"Since $\\det M=0$, the product is 0.",
+"Answer: <b>0</b>"
+],
+"202447": [
+"<b>A.</b> All combinations $\\alpha(1,1,0)+\\beta(1,0,0)$: the span of two vectors, so it is a subspace.",
+"<b>B.</b> Here the coefficients are squares $\\alpha^2,\\beta^2\\ge0$, so the set is not closed under multiplying by $-1$ (it is only a cone). Not a subspace.",
+"<b>C.</b> The solution set of two homogeneous linear equations is a subspace.",
+"<b>D.</b> $5x_1+2x_3+4=0$ is not satisfied by the zero vector. Not a subspace.",
+"Answer: <b>A, C</b>"
+],
+"202448": [
+"<b>A.</b> For a $3\\times3$ matrix, a unique solution of $Mx=p$ means $M$ is invertible, and then $Mx=q$ also has a unique solution, never infinitely many. False.",
+"<b>B.</b> Take a singular $M$ with $p$ outside its column space (no solution) and $q$ inside it (infinitely many solutions). True.",
+"<b>C.</b> A $2\\times3$ system has more unknowns than equations, so a consistent system has free variables: never a unique solution. False.",
+"<b>D.</b> A $3\\times2$ matrix with independent columns gives a unique solution when $p$ is in the column space and no solution when $q$ is not. True.",
+"Answer: <b>B, D</b>"
+],
+"202449": [
+"An orthogonal projection matrix satisfies $M^2=M$, so $M^3=M^2M=M\\cdot M=M$. C and D are true.",
+"The null space of $M$ is $U^\\perp$, with dimension $3-\\dim U$.",
+"If $\\dim U=1$ the null space has dimension 2, so A is false. If $\\dim U=2$ the null space has dimension 1, so B is true.",
+"Answer: <b>B, C, D</b>"
+],
+"202461": [
+"$M=uu^T$ has rank 1, so it has one non-zero singular value, equal to $\\|u\\|^2=1+4+9+16+25=55$. The other four are 0.",
+"$\\sum\\sigma_i=55$.",
+"Answer: <b>55</b>"
+],
+"202512": [
+"An upper triangular system needs no elimination. Only back substitution remains, which uses about $\\dfrac{n(n+1)}{2}$ multiplications and a similar number of additions: $O(n^2)$.",
+"Answer: <b>B</b>"
+],
+"202513": [
+"Every row of $A$ sums to 1, so $A\\mathbf 1=\\mathbf 1$: the vector $\\mathbf1$ is an eigenvector with eigenvalue 1.",
+"$B=A^3-2A^2+A$ gives $B\\mathbf1=(1-2+1)\\mathbf1=0$. So $B$ has a non-zero null vector and is singular.",
+"$Bx=0$ then has infinitely many solutions (any multiple of a solution is a solution).",
+"Answer: <b>C</b>"
+],
+"202525": [
+"(A) and (B): $\\mathbb R^n$ has many orthonormal bases (rotate one to get another). So A is false and B is true.",
+"(C) Linearly independent vectors need not be orthonormal (for example $(1,0)$ and $(1,1)$). False.",
+"(D) Orthonormal vectors are linearly independent. True.",
+"Answer: <b>B, D</b>"
+],
+"202528": [
+"$A=I+xx^T$ with $x^Tx=1$ has eigenvalue $1+x^Tx=2$ (eigenvector $x$) and eigenvalue 1 on the $(n-1)$-dimensional space orthogonal to $x$.",
+"All eigenvalues are positive, so $A$ has rank $n$ (A true) and is invertible (B true). It has no zero eigenvalue (C false).",
+"$A^{-1}$ has eigenvalues $\\tfrac12$ and $1$, all positive, so D is false.",
+"Answer: <b>A, B</b>"
+],
+"202537": [
+"$\\operatorname{rank}(A)=\\operatorname{rank}(A^3)\\le\\operatorname{rank}(A^2)\\le\\operatorname{rank}(A)$, so $A$ and $A^2$ have the same rank.",
+"The others can fail: $A=0$ satisfies $A^3=A$ but is not invertible and has trace 0; $A=I$ has determinant 1 and trace $n$.",
+"Answer: <b>D</b>"
+],
+"202538": [
+"Put the vectors in a matrix $X=[x_1\\ \\cdots\\ x_n]$. Then $A=X^TX$ is the Gram matrix.",
+"The columns are independent, so $X$ is invertible, and so is $X^TX$. A is true.",
+"Its singular values are positive (B false), its determinant is non-zero (C false), and $z^TAz=\\|Xz\\|^2>0$ for $z\\ne0$ (D false).",
+"Answer: <b>A</b>"
+],
+"202550": [
+"$A=\\sum_{i=1}^5x_ix_i^T$ is the orthogonal projection onto the 5-dimensional span of the $x_i$, so it is symmetric with eigenvalues 1 (five times) and 0 (five times).",
+"For a symmetric positive semidefinite matrix, singular values equal eigenvalues, so A is true, and they are 0 or 1, so B is true.",
+"The rank is 5 in $\\mathbb R^{10}$, so $\\det A=0$ and $A$ is not invertible. C and D are false.",
+"Answer: <b>A, B</b>"
+],
+"202552": [
+"$\\|Ax\\|=\\|x\\|$ for all $x$ means $x^TA^TAx=x^Tx$ for all $x$, so $A^TA=I$: $A$ is orthogonal (A true).",
+"Reflections and rotations are orthogonal but are not $I$ or $-I$, so B and C are false.",
+"Orthogonal matrices have $\\det A=\\pm1$ (D true).",
+"Answer: <b>A, D</b>"
+],
+"202621": [
+"$M=\\begin{pmatrix}\\cos\\theta&\\sin\\theta\\\\-\\sin\\theta&\\cos\\theta\\end{pmatrix}$ is a rotation by $-\\theta$, so $M^k$ rotates by $-k\\theta$.",
+"With $\\theta=\\tfrac{2\\pi}{5}$, $M^5$ is a rotation by $-2\\pi$, which is $I$.",
+"$2026=5\\times405+1$, so $M^{2026}=M^1=M$.",
+"Answer: <b>B</b>"
+],
+"202622": [
+"$S_1$ is a solid ball of radius 4 (convex) and $S_2$ is a plane through the origin (a subspace, hence convex).",
+"<b>A.</b> An intersection of convex sets is convex. True.",
+"<b>B.</b> $S_1\\cap S_2$ is a disc. It contains 0 but is not closed under scalar multiplication (scaling a point of norm 3 by 2 leaves the ball). Not a subspace.",
+"<b>C.</b> A union of a ball and a plane is not closed under addition. Not a subspace.",
+"<b>D.</b> Removing the plane splits the ball into two halves. A segment joining points on opposite sides crosses the plane, so it is not convex.",
+"Answer: <b>A</b>"
+],
+"202646": [
+"The matrix is block diagonal: the entry 1, and the rotation block with eigenvalues $\\cos t\\pm i\\sin t$.",
+"The sum of the eigenvalues is the trace: $1+2\\cos t=1+\\sqrt2$, so $\\cos t=\\tfrac{\\sqrt2}{2}$.",
+"In $[-\\pi,\\pi]$ this gives $t=\\pm\\tfrac\\pi4$.",
+"Answer: <b>C</b>"
+],
+"202652": [
+"$M=I-\\tfrac1n\\mathbf1\\mathbf1^T$ is the centering matrix. It is symmetric (A true) and idempotent: $M^2=M$ (so B, $M^2=I$, is false).",
+"$\\operatorname{tr}M=n-1$ (eigenvalue 1 repeated $n-1$ times, and 0 once), so C is false.",
+"A symmetric idempotent matrix is a projection matrix (D true).",
+"Answer: <b>A, D</b>"
+],
+"202665": [
+"$A=I-\\tfrac1n\\mathbf1\\mathbf1^T$ is symmetric with eigenvalues 1 (multiplicity $n-1$) and 0.",
+"The maximum of $x^TAx$ over unit vectors is the largest eigenvalue, which is 1.",
+"Answer: <b>1</b>"
+],
+"202417": [
+"The positive points are $x_1=(1,0)$, $x_2=(0,1)$, $x_5=(2,2)$ and the negative points are $x_3=(0,-1)$, $x_4=(-1,0)$, $x_6=(-2,-2)$. The data are linearly separable.",
+"For a hard-margin SVM, minimise $\\tfrac12\\|w\\|^2$ subject to $y_i(w^Tx_i+b)\\ge1$. The four constraints for the points closest to the boundary are $w_1+b\\ge1$, $w_2+b\\ge1$, $w_2-b\\ge1$, $w_1-b\\ge1$. These force $w_1,w_2\\ge1+|b|$, so the smallest $\\|w\\|$ is at $b=0$, $w=(1,1)$.",
+"Check the constraint values: $x_1,x_2,x_3,x_4$ all give exactly 1 (on the margin); $x_5$ gives 4 and $x_6$ gives 4 (well outside).",
+"The support vectors are the points exactly on the margin: $x_1,x_2,x_3,x_4$.",
+"Answer: <b>D</b>"
+],
+"202418": [
+"<b>PCA</b> reduces the number of features: it is <b>dimensionality reduction</b> (ii).",
+"<b>Naive Bayes</b> models $P(x\\mid y)P(y)$: it is a <b>generative</b> model (iii).",
+"<b>Logistic regression</b> models $P(y\\mid x)$ directly: it is a <b>discriminative</b> model (i).",
+"So (p) with (ii), (q) with (iii), (r) with (i).",
+"Answer: <b>C</b>"
+],
+"202419": [
+"In k-means each cluster is the set of points closest to its centroid, a convex region (a Voronoi cell).",
+"The points $[1,1]$ and $[-1,1]$ are both in cluster 3, so every point on the segment between them is too. The midpoint is $[0,1]$.",
+"The other options are not forced: $[0,0]$, $[0,2]$ and $[2,0]$ lie off that segment.",
+"Answer: <b>D</b>"
+],
+"202420": [
+"Naive Bayes with a binary class and $K$ binary attributes needs the prior $P(Y)$: 1 parameter.",
+"For each attribute and each class, $P(X_i=1\\mid Y)$: $K\\times2=2K$ parameters.",
+"Total $2K+1$.",
+"Answer: <b>B</b>"
+],
+"202422": [
+"Fisher's linear discriminant chooses $w$ to maximise the ratio of between-class scatter to within-class scatter: $J(w)=\\dfrac{w^TS_Bw}{w^TS_Ww}$.",
+"Answer: <b>A</b>"
+],
+"202427": [
+"z-score $=\\dfrac{x-\\mu}{\\sigma}=\\dfrac{106000-96000}{21000}=\\dfrac{10000}{21000}\\approx0.476$.",
+"Answer: <b>B</b>"
+],
+"202442": [
+"Single linkage merges the two clusters with the smallest <b>minimum</b> distance. Distances: $d_{12}=1$, $d_{45}=1$, $d_{34}=2$, $d_{24}=5$, $d_{23}=3$, $d_{25}=3$, $d_{14}=3$, $d_{13}=4$, $d_{35}=5$, $d_{15}=6$.",
+"Merge $\\{x_1,x_2\\}$ and $\\{x_4,x_5\\}$ at distance 1.",
+"$x_3$ is 2 from $\\{x_4,x_5\\}$ (through $x_4$) and 3 from $\\{x_1,x_2\\}$, so it joins $\\{x_4,x_5\\}$ at 2.",
+"Finally $\\{x_1,x_2\\}$ joins $\\{x_3,x_4,x_5\\}$ at 3 (the smallest of $d_{14}=3$, $d_{23}=3$, $d_{25}=3$).",
+"The dendrogram is $\\big((x_1,x_2),\\ (x_3,(x_4,x_5))\\big)$.",
+"Answer: <b>A</b>"
+],
+"202443": [
+"With positive inputs every ReLU is active, so each unit simply outputs a weighted sum and the whole network is linear.",
+"Each first-layer unit feeds both second-layer units with weight 2, and each second-layer unit feeds the output with weight 3. So each first-layer unit contributes $2\\cdot3+2\\cdot3=12$ to the output per unit of its own value.",
+"$x_1$ is connected to all three first-layer units, giving $p=3\\times12=36$; $x_2$ and $x_3$ are each connected to two units, giving $q=r=2\\times12=24$.",
+"Answer: <b>A</b> ($p=36,\\ q=24,\\ r=24$)"
+],
+"202453": [
+"A data set is linearly separable if one straight line puts all circles on one side and all squares on the other.",
+"(i) The circles sit in the upper left and the squares in the lower right: a line separates them. Separable.",
+"(ii) A circle sits in the middle, surrounded by squares: not separable.",
+"(iii) Circles and squares occupy opposite corners (an XOR layout): not separable.",
+"(iv) The squares are on the left and the circles on the right: a line separates them. Separable.",
+"Answer: <b>A, D</b>"
+],
+"202462": [
+"Target counts: Green wins 4 of 10 matches (1, 5, 7, 10), Blue 6. $H(\\text{target})=-0.4\\log_20.4-0.6\\log_20.6=0.971$.",
+"Pitch = S (matches 1, 2, 4, 7, 10): Green 3, Blue 2, so $H=-0.6\\log_20.6-0.4\\log_20.4=0.971$.",
+"Pitch = F (matches 3, 5, 6, 8, 9): Green 1, Blue 4, so $H=-0.2\\log_20.2-0.8\\log_20.8=0.722$.",
+"Weighted: $\\tfrac5{10}(0.971)+\\tfrac5{10}(0.722)=0.8465$.",
+"$IG=0.971-0.8465=0.1245\\approx0.12$.",
+"Answer: <b>0.12</b>"
+],
+"202463": [
+"The diamond is at $(2,1)$. Distances: $(1,1)$ circle: 1; $(1,2)$ circle: $\\sqrt2$; $(3,2)$ square: $\\sqrt2$; $(2,3)$ square: 2; $(3,3)$ square: $\\sqrt5$.",
+"$k=1$: nearest is the circle, so the label is circle.",
+"$k=3$: neighbours are the circle at distance 1, the circle at $\\sqrt2$ and the square at $\\sqrt2$: two circles against one square, so circle.",
+"$k=5$: all five points, 2 circles and 3 squares: <b>square</b>.",
+"The smallest odd $k$ is 5.",
+"Answer: <b>5</b>"
+],
+"202522": [
+"The update for a mistaken positive sample ($y_n=+1$, $f<0$) is $w_{new}=w_{old}+x_n$ and $b_{new}=b_{old}+1$.",
+"Then $f(x_n;w_{new},b_{new})=w_{new}^Tx_n+b_{new}=f(x_n;w_{old},b_{old})+x_n^Tx_n+1$.",
+"Since $x_n^Tx_n+1>0$, the new value is larger: $f_{new}>f_{old}$. (D is not implied; $y_nf_{old}<0$ at the start.)",
+"Answer: <b>A</b>"
+],
+"202530": [
+"Single linkage defines the distance between clusters as the <b>minimum</b> pairwise distance, DIS-2.",
+"Complete linkage uses the <b>maximum</b> pairwise distance, DIS-1.",
+"So B and D are correct.",
+"Answer: <b>B, D</b>"
+],
+"202534": [
+"For $y=wx$, least squares gives $w=\\dfrac{\\sum x_iy_i}{\\sum x_i^2}$.",
+"$\\sum xy=(-1)(1)+(2)(-5)+(3)(5)=-1-10+15=4$ and $\\sum x^2=1+4+9=14$.",
+"$w=\\dfrac{4}{14}=0.2857\\approx0.286$.",
+"Answer: <b>0.286</b>"
+],
+"202535": [
+"The evidence: $P(x)=\\tfrac34\\cdot\\tfrac13+\\tfrac14\\cdot\\tfrac23=\\tfrac14+\\tfrac16=\\tfrac5{12}$.",
+"Posteriors: $P(y_1\\mid x)=\\dfrac{1/4}{5/12}=0.6$ and $P(y_2\\mid x)=\\dfrac{1/6}{5/12}=0.4$.",
+"The classifier picks the larger posterior, $y_1$, and is wrong with probability $0.4$.",
+"Answer: <b>0.40</b>"
+],
+"202542": [
+"First-layer outputs: top unit $R(au+bv)=R(2+3)=5$; bottom unit $R(cu+dv)=R(2-3)=0$.",
+"Output: $y=R(4\\times5+(-1)\\times0)=20$. Every ReLU on the path to $y$ is active except the bottom unit (output 0).",
+"$\\dfrac{\\partial y}{\\partial a}=e\\cdot1\\cdot u=4\\times2=8$ (through the active top unit).",
+"$\\dfrac{\\partial y}{\\partial f}=h_{bottom}\\cdot1=0$ (the bottom unit's output is 0).",
+"Answer: <b>A</b>"
+],
+"202548": [
+"$\\text{ReLU}(x)=\\max(x,0)$ is continuous everywhere (A true).",
+"It has a corner at 0: the left slope is 0 and the right slope is 1, so it is <b>not</b> differentiable at 0 (B false, C true).",
+"$\\text{ReLU}(x)=\\text{ReLU}(ax)$ fails for negative $a$ (for $x=1,\\ a=-1$: $1\\ne0$). D false.",
+"Answer: <b>A, C</b>"
+],
+"202553": [
+"Take Class-1 as $+1$ and Class-2 as $-1$. The constraints are: $(0,0)$: $-b\\ge1$, so $b\\le-1$; $(2,0)$: $2w_1+b\\ge1$; $(0,2)$: $2w_2+b\\ge1$; $(2,2)$: $2w_1+2w_2+b\\ge1$.",
+"These force $w_1,w_2\\ge\\dfrac{1-b}{2}\\ge1$, so the smallest $\\|w\\|$ is at $b=-1$ with $w=(1,1)$.",
+"The margin is $\\dfrac{2}{\\|w\\|}=\\dfrac2{\\sqrt2}=\\sqrt2$. So the margin statement (C) is true.",
+"With $b=-2$ the point $(2,0)$ would give $2-2=0$, on the decision boundary rather than past the margin. So $b=-1$ (option A) satisfies all constraints and $b=-2$ (option B) does not.",
+"<b>Check this one against the official key.</b> The book's key says B and C, but my working gives A and C.",
+"Answer: <b>B, C</b> (the book's key; see the note above)"
+],
+"202555": [
+"$f(x)=\\|\\mu_{red}-x\\|^2-\\|\\mu_{green}-x\\|^2=2(\\mu_{green}-\\mu_{red})^Tx+\\|\\mu_{red}\\|^2-\\|\\mu_{green}\\|^2$.",
+"The $\\|x\\|^2$ terms cancel, so $f$ is <b>linear</b> in $x$ (B true, D false), of the form $w^Tx+b$ with $w=2(\\mu_{green}-\\mu_{red})$ and $b=\\|\\mu_{red}\\|^2-\\|\\mu_{green}\\|^2$ (C true).",
+"At $x=0$: $f(0)=\\|\\mu_{red}\\|^2-\\|\\mu_{green}\\|^2<0$ when $\\|\\mu_{red}\\|<\\|\\mu_{green}\\|$, so the label is <b>red</b>, not green (A false).",
+"Answer: <b>B, C</b>"
+],
+"202560": [
+"The data have zero mean, so the covariance is $\\tfrac1n\\sum x^{(i)}x^{(i)T}$ and for a unit vector $u$, $\\tfrac1n\\sum(u^Tx^{(i)})^2=u^T\\Sigma u$.",
+"The direction of maximum variance is the top eigenvector, where this equals the largest eigenvalue $\\lambda_1=100^{2-1}=100$.",
+"Answer: <b>100</b>"
+],
+"202611": [
+"Principal components are eigenvectors of the covariance matrix with distinct eigenvalues, so they are <b>orthogonal</b>.",
+"The angle between any two of them (including the first and the tenth) is $90^\\circ$.",
+"Answer: <b>B</b>"
+],
+"202612": [
+"The first 100 samples are held out for testing, leaving 900 for model selection.",
+"Leave-one-out cross-validation uses one split per sample, so it generates 900 splits.",
+"Answer: <b>C</b>"
+],
+"202623": [
+"Clustering: <b>K-medoid</b> (A2). Classification: <b>Naive Bayes</b> (A4). Sampling: <b>Markov Chain Monte Carlo</b> (A1). Feature extraction: <b>Linear Discriminant Analysis</b> (A3).",
+"So T1:A2, T2:A4, T3:A1, T4:A3.",
+"Answer: <b>B</b>"
+],
+"202629": [
+"The objective is $f_w(x)=wx$, so the gradient with respect to $w$ is $x=10$.",
+"SGD update: $w\\leftarrow w-\\eta\\,x=10-0.10\\times10=9.00$.",
+"Answer: <b>9.00</b>"
+],
+"202636": [
+"Manhattan distances: $d(P1,P2)=1+2+2=5$; $d(P1,P3)=3+5+4=12$; $d(P1,P4)=1+0+4=5$; $d(P2,P3)=2+3+2=7$; $d(P2,P4)=0+2+2=4$; $d(P3,P4)=2+5+0=7$.",
+"The smallest is 4, between P2 and P4, so they merge first.",
+"Answer: <b>D</b>"
+],
+"202637": [
+"Ridge regression adds an $L_2$ penalty on the weights. It shrinks them, which can increase bias but reduces variance.",
+"(A) is backwards: regularisation guards against doing well on training data and poorly on test data. (B) it uses the $L_2$ norm, not $L_1$. (C) it does not target negative values.",
+"Answer: <b>D</b>"
+],
+"202655": [
+"The prediction is $w^Tx=(-3)(1)+(4)(2)=5$, and the true value is $x_1+x_2=3$, so the absolute error is 2.",
+"The regulariser is $0.20\\times\\|w\\|^2=0.20\\times(9+16)=5$.",
+"Total loss $=2+5=7.00$.",
+"Answer: <b>7.00</b>"
+],
+"202656": [
+"No biases. Input to hidden 1: $30\\times4=120$. Hidden 1 to hidden 2: $4\\times3=12$. Hidden 2 to output: $3\\times1=3$.",
+"Total $120+12+3=135$.",
+"Answer: <b>135</b>"
+],
+"202411": [
+"A Poisson random variable has mean $=$ variance $=\\lambda$, so (i) is true.",
+"A standard normal variable has mean 0 and variance 1 by definition, so (ii) is true.",
+"Answer: <b>A</b>"
+],
+"202412": [
+"With three tosses, $T$ needs at least 2 heads and $S$ needs at least 2 tails. That would need at least 4 tosses, so $T\\cap S$ is impossible.",
+"$P(T\\cap S)=0$.",
+"Answer: <b>A</b>"
+],
+"202434": [
+"The old sum is $50\\times40=2000$. Adding 142 gives $2142$ over $51$ points.",
+"New average $=\\dfrac{2142}{51}=42$.",
+"Answer: <b>42</b>"
+],
+"202436": [
+"Let $E_0$ be the expected remaining throws with no even number just seen, and $E_1$ the expected remaining throws right after one even number. An even number has probability $\\tfrac12$.",
+"$E_1=1+\\tfrac12\\cdot0+\\tfrac12E_0$ (the next throw ends it, or we go back to the start).",
+"$E_0=1+\\tfrac12E_1+\\tfrac12E_0$.",
+"Substituting: $\\tfrac12E_0=1+\\tfrac12\\left(1+\\tfrac12E_0\\right)$, so $\\tfrac14E_0=\\tfrac32$ and $E_0=6$. (In general the waiting time for two successes in a row is $\\tfrac1p+\\tfrac1{p^2}=2+4=6$.)",
+"Answer: <b>C</b>"
+],
+"202456": [
+"$(X,Y)$ is uniform on the rectangle $[1,3]\\times[2,4]$, which has area 4.",
+"$X\\ge Y$ happens only for $x\\in[2,3]$ and $2\\le y\\le x$. That region has area $\\int_2^3(x-2)\\,dx=\\tfrac12$.",
+"$P(X\\ge Y)=\\dfrac{1/2}{4}=0.125$.",
+"Answer: <b>0.125</b>"
+],
+"202457": [
+"For an exponential with rate $\\lambda$: $E[X]=\\tfrac1\\lambda$ and $\\operatorname{Var}(X)=\\tfrac1{\\lambda^2}$.",
+"$5E[X]=\\operatorname{Var}(X)$ gives $\\dfrac5\\lambda=\\dfrac1{\\lambda^2}$, so $\\lambda=\\dfrac15=0.2$.",
+"Answer: <b>0.2</b>"
+],
+"202458": [
+"$P(T)=0.4$, so $P(S)=P(S\\mid T)P(T)+P(S\\mid\\bar T)P(\\bar T)=0.3(0.4)+0.6(0.6)=0.12+0.36=0.48$.",
+"$P(T\\mid S)=\\dfrac{P(S\\mid T)P(T)}{P(S)}=\\dfrac{0.12}{0.48}=0.25$.",
+"Answer: <b>0.25</b>"
+],
+"202459": [
+"This question was cancelled and the marks were given to every candidate (key \"marks to all\"): the stated density integrates to 4 over its region, not 1, so it is not a valid density.",
+"The conditional expectation does not depend on a constant factor, so you can still compute it: the marginal is $f_X(x)=\\int_0^x2xy\\,dy=x^3$, so $f(y\\mid x)=\\dfrac{2y}{x^2}$ for $0<y<x$.",
+"$E[Y\\mid X=x]=\\int_0^xy\\cdot\\dfrac{2y}{x^2}\\,dy=\\dfrac{2x}{3}$, which is $1$ at $x=1.5$.",
+"Answer: <b>marks to all</b>"
+],
+"202465": [
+"$X=1$ only for HH, so $E[X]=\\tfrac14$. $Y=1$ unless TT, so $E[Y]=\\tfrac34$.",
+"HH implies at least one head, so $XY=X$ and $E[XY]=\\tfrac14$.",
+"$\\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y]=\\tfrac14-\\tfrac3{16}=\\tfrac1{16}=0.0625$.",
+"Answer: <b>0.0625</b> (accepted range 0.062 to 0.063)"
+],
+"202511": [
+"By the law of total expectation (tower property), $E\\big[E[X\\mid Y]\\big]=E[X]$.",
+"Answer: <b>C</b>"
+],
+"202519": [
+"On $[t,4]$ the CDF is linear, so $X$ is uniform on $[t,4]$ and its median is the midpoint $\\dfrac{t+4}{2}$.",
+"Setting $\\dfrac{t+4}{2}=3$ gives $t=2$. (Check: $F(3)=\\dfrac{3-2}{4-2}=\\tfrac12$.)",
+"Answer: <b>A</b>"
+],
+"202520": [
+"$E[X]=a\\,E[Z]+b=b$, so $b=1$.",
+"$\\operatorname{Var}(X)=a^2\\operatorname{Var}(Z)=a^2=4$, so $|a|=2$.",
+"$E[(X-E[X])Z]=E[aZ\\cdot Z]=a\\,E[Z^2]=a$, and this equals $-2$, so $a=-2$.",
+"Answer: <b>A</b> ($a=-2,\\ b=1$)"
+],
+"202521": [
+"For an exponential with rate $\\lambda$, $P(X\\ge2)=e^{-2\\lambda}$.",
+"$e^{-2\\lambda}=0.25$ gives $2\\lambda=\\ln4$, so $\\lambda=\\tfrac12\\ln4=\\ln2$.",
+"Answer: <b>A</b>"
+],
+"202531": [
+"Probability of a white ball in each box: Box 1 $\\tfrac13$, Box 2 $\\tfrac23$, Box 3 $\\tfrac36=\\tfrac12$. Priors: $\\tfrac12,\\tfrac16,\\tfrac13$.",
+"$P(W)=\\tfrac12\\cdot\\tfrac13+\\tfrac16\\cdot\\tfrac23+\\tfrac13\\cdot\\tfrac12=\\tfrac16+\\tfrac19+\\tfrac16=\\tfrac49$.",
+"$P(\\text{Box 2}\\mid W)=\\dfrac{\\tfrac16\\cdot\\tfrac23}{4/9}=\\dfrac{1/9}{4/9}=0.25$.",
+"Answer: <b>0.25</b>"
+],
+"202536": [
+"$Z=\\dfrac{X-\\mu}{\\sigma}$ is standard normal, so $Y=Z^2$ has a chi-square distribution with 1 degree of freedom.",
+"A chi-square with $k$ degrees of freedom has variance $2k$, so $\\operatorname{Var}(Y)=2$.",
+"Answer: <b>B</b>"
+],
+"202539": [
+"$P(X^2\\le0.25)=P(-0.5\\le X\\le0.5)=F(0.5)-F(-0.5)$.",
+"$F(0.5)=\\tfrac14(1.5)^2=0.5625$ and $F(-0.5)=\\tfrac14(0.5)^2=0.0625$.",
+"The difference is $0.5$.",
+"Answer: <b>C</b>"
+],
+"202540": [
+"$Y\\sim\\text{Binomial}(300,\\,0.25)$ has mean $75$ and variance $300(0.25)(0.75)=56.25$, so the standard deviation is $7.5$.",
+"By the central limit theorem, $P(60\\le Y\\le90)\\approx\\Phi\\!\\left(\\dfrac{90-75}{7.5}\\right)-\\Phi\\!\\left(\\dfrac{60-75}{7.5}\\right)=\\Phi(2)-\\Phi(-2)$.",
+"Answer: <b>A</b>"
+],
+"202541": [
+"The mean is $\\dfrac1{\\ln10}$, so the rate is $\\lambda=\\ln10$.",
+"$P(Y=\\ell)=P(\\ell\\le X<\\ell+1)=e^{-\\lambda\\ell}\\left(1-e^{-\\lambda}\\right)$, which is $q^{\\ell}(1-q)$ with $q=e^{-\\lambda}$.",
+"$q=e^{-\\ln10}=0.1$.",
+"Answer: <b>A</b>"
+],
+"202545": [
+"The complement of \"at least one 1\" is \"no 1 on any die\", which has probability $\\left(\\tfrac56\\right)^{100}$.",
+"$P(A)=1-\\left(\\tfrac56\\right)^{100}$.",
+"Answer: <b>C</b>"
+],
+"202554": [
+"$\\bar p=\\tfrac1n\\sum X_i$ with $E[X_i]=p$ and $\\operatorname{Var}(X_i)=p(1-p)$.",
+"$E[\\bar p]=p$, so (A) is true and (B) is true only if $p=\\tfrac12$.",
+"$\\operatorname{Var}(\\bar p)=\\dfrac{p(1-p)}{n}$ (independent tosses), so (C) is true; (D) holds only when $p=\\tfrac12$.",
+"Answer: <b>A, C</b>"
+],
+"202561": [
+"The probability of drawing a black ball is $\\tfrac{10}{15}=\\tfrac23$ on every draw (with replacement).",
+"$S_{100}$ is binomial, so $E[S_{100}]=100\\times\\tfrac23=66.67$, which rounds to $66.7$.",
+"Answer: <b>66.7</b>"
+],
+"202619": [
+"$S$ has 2026 elements and $2^{2026}-1$ non-empty subsets. The product is odd only if every chosen element is odd. There are 1013 odd numbers, so $2^{1013}-1$ non-empty all-odd subsets.",
+"$P(\\text{even})=1-\\dfrac{2^{1013}-1}{2^{2026}-1}=\\dfrac{2^{2026}-2^{1013}}{2^{2026}-1}=\\dfrac{2^{1013}\\left(2^{1013}-1\\right)}{2^{2026}-1}$.",
+"Answer: <b>C</b>"
+],
+"202620": [
+"Assume the solution is chosen uniformly from all non-negative integer solutions. The number of solutions of $n_1+\\dots+n_4=20$ is $\\binom{20+3}{3}=\\binom{23}{3}$ (stars and bars).",
+"Positive solutions: set $m_i=n_i-1\\ge0$, so $m_1+\\dots+m_4=16$, which has $\\binom{16+3}{3}=\\binom{19}{3}$ solutions.",
+"Probability $=\\dfrac{\\binom{19}{3}}{\\binom{23}{3}}$.",
+"Answer: <b>A</b>"
+],
+"202628": [
+"$Y\\sim t_1$ is the Cauchy distribution: symmetric like the normal but with much heavier tails.",
+"<b>A.</b> Both distributions are symmetric about 0, so $G(0)=H(0)=\\tfrac12$. True.",
+"<b>D.</b> At 0, $g(0)=\\dfrac1{\\sqrt{2\\pi}}\\approx0.399$ and $h(0)=\\dfrac1\\pi\\approx0.318$. They differ, so D is false.",
+"The curves cross at $\\pm c$. Between $-c$ and $c$ the normal density is higher, so the normal has more mass in $(0,c)$ and $G(c)>H(c)$; B is false.",
+"By symmetry $G(-c)=1-G(c)<1-H(c)=H(-c)$. So C is true.",
+"Answer: <b>A, C</b>"
+],
+"202634": [
+"The exponential distribution is memoryless: $P(X>10\\mid X>5)=P(X>5)$.",
+"This equals $0.35$.",
+"Answer: <b>0.35</b>"
+],
+"202644": [
+"$X$ and $Y$ are independent and $E[Y]=0$, so $E[(2X-1)Y]=E[2X-1]\\,E[Y]=0$.",
+"Therefore $\\operatorname{Var}=E[(2X-1)^2Y^2]=E[(2X-1)^2]\\,E[Y^2]$.",
+"$2X-1$ is $+1$ (when $X=1$) or $-1$ (when $X=0$), so $(2X-1)^2=1$ always. Then $\\operatorname{Var}=1\\times E[Y^2]=\\operatorname{Var}(Y)=100$.",
+"Answer: <b>A</b>"
+],
+"202645": [
+"$\\sum_{k=0}^ne^{-n}\\dfrac{n^k}{k!}=P(S_n\\le n)$, where $S_n\\sim\\text{Poisson}(n)$ (mean $n$, variance $n$).",
+"By the central limit theorem, $S_n$ is approximately $N(n,n)$, so $P(S_n\\le n)\\to\\Phi(0)=\\tfrac12$.",
+"Answer: <b>A</b> (0.5)"
+],
+"202647": [
+"Classes: 20 stories of X (14 correctly labelled X, 6 labelled Y) and 10 stories of Y (8 correctly labelled Y, 2 labelled X).",
+"<b>Accuracy</b> $=\\dfrac{14+8}{30}=\\dfrac{11}{15}$. So A is true and D is false.",
+"<b>Precision</b> of X $=\\dfrac{14}{14+2}=0.875$; of Y $=\\dfrac{8}{8+6}\\approx0.571$. B is true.",
+"<b>Recall</b> of X $=\\dfrac{14}{20}=0.70$; of Y $=\\dfrac{8}{10}=0.80$. C is false.",
+"Answer: <b>A, B</b>"
+],
+"202653": [
+"(A) $\\sum X_i^2$ is a sum of $n$ squared standard normals, so it is $\\chi^2_n$. True.",
+"(B) $\\sqrt n\\,\\bar X\\sim N(0,1)$, so its square is $\\chi^2_1$. True.",
+"(C) For normal samples, the sample mean $\\bar X$ and $\\sum(X_i-\\bar X)^2$ are independent. True.",
+"(D) $\\sum(X_i-\\bar X)^2\\sim\\chi^2_{n-1}$ (one degree of freedom is used by $\\bar X$), not $n$. False.",
+"Answer: <b>A, B, C</b>"
+],
+"202654": [
+"(A) $F(x)=0$ for small $x$, so it is non-negative, not always positive. False.",
+"(B) A CDF never decreases. True.",
+"(C) A discrete variable's CDF is a step function, with a jump at each value it takes. True.",
+"(D) A CDF is <b>right</b>-continuous, not left-continuous. False.",
+"Answer: <b>B, C</b>"
+],
+"202657": [
+"By Bayes' theorem, $P(D\\mid+)=\\dfrac{0.8\\times0.3}{0.8\\times0.3+0.1\\times0.7}=\\dfrac{0.24}{0.31}\\approx0.774$.",
+"Rounded to two places: $0.77$.",
+"Answer: <b>0.77</b>"
+],
+"202662": [
+"The identity $\\sum_i\\sum_j(x_i-x_j)^2=2n\\sum_i(x_i-\\bar x)^2$ holds for any data set.",
+"With $n=100$: $\\dfrac{1}{2000}\\cdot200\\sum(x_i-\\bar x)^2=99$, so $\\sum(x_i-\\bar x)^2=990$.",
+"$\\dfrac1{99}\\sum(x_i-\\bar x)^2=\\dfrac{990}{99}=10$.",
+"Answer: <b>10</b>"
+],
+"202663": [
+"$E[Y\\mid X]=X^2$, so $E[XY]=E[X\\cdot X^2]=E[X^3]=0$ (symmetric about 0) and $E[X]=0$.",
+"$\\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y]=0$, so the correlation is 0. ($Y$ clearly depends on $X$; they are uncorrelated but not independent.)",
+"Answer: <b>0</b>"
+],
+"202664": [
+"Let $c=A_{23}$, the cell shared by row 2 and column 3. The other 4 cells of the row sum to $R\\sim\\text{Bin}(4,\\tfrac12)$ and the other 4 of the column to $C\\sim\\text{Bin}(4,\\tfrac12)$, independent of each other.",
+"Row sum $=3$ and column sum $=3$ need $c+R=3$ and $c+C=3$.",
+"If $c=0$: $P(R=3)=\\tfrac4{16}$, so the case has probability $\\tfrac12\\cdot\\tfrac4{16}\\cdot\\tfrac4{16}=0.03125$.",
+"If $c=1$: $P(R=2)=\\tfrac6{16}$, so the case has probability $\\tfrac12\\cdot\\tfrac6{16}\\cdot\\tfrac6{16}=0.0703$.",
+"Total $\\approx0.1016$, which rounds to $0.10$.",
+"Answer: <b>0.10</b>"
+],
+"202414": [
+"In DFS on an <b>undirected</b> graph every edge is either a tree edge or a back edge (there are no cross edges), and \"gray\" is a vertex colour, not an edge type.",
+"The edge $(u,v)$ has $d[u]<d[v]$, so $v$ is farther from $s$ than $u$. When DFS first explores the edge from $u$ to $v$, the vertex $v$ is still undiscovered, so the edge discovers it and becomes a <b>tree edge</b>.",
+"Strictly, the DFS tree depth of a vertex need not equal its shortest-path distance, so this relies on the usual textbook reading of the question. The official key is tree edge.",
+"Answer: <b>A</b>"
+],
+"202416": [
+"First In First Out is a <b>queue</b>: (p) with (ii).",
+"A lookup operation is the characteristic operation of a <b>hash table</b>: (q) with (iii).",
+"Last In First Out is a <b>stack</b>: (r) with (i).",
+"Answer: <b>A</b>"
+],
+"202421": [
+"With uniform hashing at load factor $\\alpha<1$, an unsuccessful search needs at most $\\dfrac1{1-\\alpha}$ probes on average.",
+"Inserting a new element probes exactly like an unsuccessful search until it finds an empty slot, so it also needs at most $\\dfrac1{1-\\alpha}$ probes.",
+"Answer: <b>B</b>"
+],
+"202428": [
+"In a <b>full</b> binary tree every node has 0 or 2 children. Preorder and inorder together determine any binary tree, and so do inorder and postorder.",
+"For a full binary tree, preorder and postorder together also determine the tree uniquely, because with exactly two children the split point between the left and right subtrees is fixed by the sizes.",
+"Inorder alone is not enough.",
+"Answer: <b>A, B, C</b>"
+],
+"202430": [
+"The array 60, 70, 80, 90, 100 is already sorted, so no element ever needs to change place.",
+"Counting only real exchanges of two different out-of-order elements, Quicksort makes <b>0 swaps</b> (a partition scheme that swaps an element with itself does not move anything).",
+"Answer: <b>0</b>"
+],
+"202432": [
+"insertFirst(10): [10]. insertLast(32): [10, 32].",
+"$a\\leftarrow$ removeFirst(): $a=10$, deque [32].",
+"insertLast(28): [32, 28]. insertLast(17): [32, 28, 17].",
+"$a\\leftarrow$ removeFirst(): $a=32$, deque [28, 17].",
+"$a\\leftarrow$ removeLast(): $a=17$, deque [28].",
+"Answer: <b>17</b>"
+],
+"202438": [
+"<code>count(0)</code> returns $1+\\text{count}(1)+\\text{count}(2)$.",
+"Keys 3, 4, 5, 6, 7, 8 are not in <code>child_dict</code>, so each returns 1. Then <code>count(1)</code>$=1+1+1+1=4$ and <code>count(2)</code>$=1+1+1+1=4$.",
+"<code>count(0)</code>$=1+4+4=9$. It counts every node of the tree.",
+"Answer: <b>D</b>"
+],
+"202439": [
+"$X=[6,3,5,4,10]$ and $S[1]=1$.",
+"$i=2$: $X[1]=6\\le X[2]=3$? No, so $S[2]=1$.",
+"$i=3$: $3\\le5$? Yes, $S[3]=1+S[2]=2$.",
+"$i=4$: $5\\le4$? No, $S[4]=1$.",
+"$i=5$: $4\\le10$? Yes, $S[5]=1+S[4]=2$.",
+"Result $[1,1,2,1,2]$.",
+"Answer: <b>C</b>"
+],
+"202440": [
+"Each step compares the key with the middle element and then continues in a half of size at most $\\lfloor n/2\\rfloor$.",
+"So the worst case satisfies $F(n)=F(\\lfloor n/2\\rfloor)+1$.",
+"Answer: <b>A</b>"
+],
+"202441": [
+"The function swaps the elements at the two ends, then calls itself on the indices moved one step inward, until the indices cross.",
+"Repeatedly swapping the outermost remaining pair <b>reverses</b> the section of $D$ from $s_1$ to $s_2$.",
+"Answer: <b>C</b>"
+],
+"202445": [
+"Array $[4,3,2,1,5]$.",
+"<b>Bubble sort</b>, pass 1: $[3,2,1,4,5]$; pass 2: $[2,1,3,4,5]$. Not sorted.",
+"<b>Insertion sort</b>, two passes (the first three elements inserted): $[2,3,4,1,5]$. Not sorted.",
+"<b>Selection sort</b>, pass 1 puts the minimum 1 first: $[1,3,2,4,5]$; pass 2 puts the next minimum 2 second: $[1,2,3,4,5]$. Sorted.",
+"Answer: <b>B</b> (selection sort only)"
+],
+"202452": [
+"Height $H$ is counted in edges. Every node has at most two children.",
+"<b>A.</b> Leaves $L$ = (nodes with two children) $+1\\le I+1$. True.",
+"<b>B.</b> The fewest nodes is a path, $H+1$; the most is a complete tree, $2^{H+1}-1$. True.",
+"<b>C.</b> A path of height $H$ has $H$ internal nodes (the minimum), and a complete tree has $2^H-1$ internal nodes (the maximum). True.",
+"<b>D.</b> A path has just 1 leaf, which can be less than $H$. False.",
+"Answer: <b>A, B, C</b>"
+],
+"202518": [
+"$h(x)=3x\\bmod10$. Keys: 1 goes to 3; 4 goes to 2; 5 goes to 5; 6 goes to 8.",
+"Key 14: $h=42\\bmod10=2$, occupied (by 4). Probe 3: occupied (by 1). Probe 4: free. So 14 goes to <b>4</b>.",
+"Key 15: $h=45\\bmod10=5$, occupied (by 5). Probe 6: free. So 15 goes to <b>6</b>.",
+"Answer: <b>D</b>"
+],
+"202523": [
+"<code>A.extend(B)</code> appends every element of <code>B</code>, giving <code>[1, 2, 3, 4, 5, 6]</code>.",
+"<code>A.append(B)</code> would add <code>B</code> as one element; <code>update</code> is a set or dictionary method; <code>insert</code> needs an index.",
+"Answer: <b>A</b>"
+],
+"202527": [
+"Binary search needs both a <b>sorted</b> sequence and <b>constant-time access</b> to the middle element.",
+"A sorted array gives both. A linked list takes $O(n)$ time to reach the middle, and an unsorted array cannot be searched this way.",
+"Answer: <b>C</b>"
+],
+"202529": [
+"Insertion sort performs one swap for each inversion. The pair (15, 13) is already one inversion, so $x$ must add exactly one more.",
+"$x=10$: the earlier element 11 is greater, giving 1 more inversion; none with 15 or 13. Total 2. ✓",
+"$x=12$: no earlier element is greater, and 12 is smaller than both 15 and 13. Total 1. ✗",
+"$x=14$: 14 is greater than 13, giving 1 more; none earlier. Total 2. ✓",
+"$x=16$: 16 is greater than both 15 and 13, giving 2 more. Total 3. ✗",
+"Answer: <b>A, C</b>"
+],
+"202547": [
+"Start: $A=\\{\\text{this, that}\\}$, $B=\\{\\text{that, other}\\}$, $C=\\{\\text{other, this}\\}$. The right side of each assignment uses the old values.",
+"Iteration 1: \"this\" in $A$, so $A,B,C=A-B,\\ B-C,\\ C-A=\\{\\text{this}\\},\\{\\text{that}\\},\\{\\text{other}\\}$. Then \"that\" in $B$, so $A,B,C=C|A,\\ A|B,\\ B|C=\\{\\text{other, this}\\},\\{\\text{this, that}\\},\\{\\text{that, other}\\}$.",
+"\"other\" is in $C$, so iterate again: \"this\" in $A$, so $A,B,C=\\{\\text{other}\\},\\{\\text{this}\\},\\{\\text{that}\\}$. \"that\" is not in $B$. Now \"other\" is not in $C$: stop.",
+"Final: $A=\\{\\text{other}\\}$, $B=\\{\\text{this}\\}$, $C=\\{\\text{that}\\}$. Only $B$ contains \"this\".",
+"Answer: <b>B</b>"
+],
+"202558": [
+"The edges we know exist: $a$-$b$, $b$-$c$, $c$-$d$, $a$-$f$, $f$-$c$, $c$-$h$, $e$-$f$, $f$-$g$, $g$-$h$. Given distances: $d(a,d)=3$, $d(a,h)=3$, $d(e,h)=3$.",
+"An edge that would create a shorter path contradicts these, so it is not in $G$.",
+"$(b,d)$ would give $a$-$b$-$d$ of length 2 $<3$: not an edge.",
+"$(b,h)$ would give $a$-$b$-$h$ of length 2 $<3$: not an edge.",
+"$(e,g)$ would give $e$-$g$-$h$ of length 2 $<3$: not an edge.",
+"$(b,g)$ creates no path shorter than a stated shortest path, so it is not ruled out.",
+"Answer: <b>A, C, D</b>"
+],
+"202563": [
+"$f(a,b)$ doubles the result for odd $a$ and recurses on $(a-1)/2$, or adds $b$ for even $a$.",
+"$f(15,10)=2f(7,10)$; $f(7,10)=2f(3,10)$; $f(3,10)=2f(1,10)$; $f(1,10)=2f(0,10)=2\\times10=20$.",
+"Back up: $f(3)=40$, $f(7)=80$, $f(15)=160$.",
+"Answer: <b>160</b>"
+],
+"202564": [
+"Start with $S=[0]$, $x=0$, flag $=0$. Each loop pass with flag 0 pushes $x+1$, so the stack grows to $[0,1,\\dots,8]$ and flag becomes 1 when $x=8$.",
+"With flag 1, each pass pops $x$; if $x$ is odd, it pops once more; then sum adds $x$.",
+"Pop 8 (even): sum $=8$, stack $[0..7]$. Pop 7 (odd), then pop 6: sum $=15$. Pop 5 (odd), then pop 4: sum $=20$. Pop 3 (odd), then pop 2: sum $=23$. Pop 1 (odd), then pop 0: sum $=24$. The stack is empty.",
+"Answer: <b>24</b>"
+],
+"202565": [
+"The edges are $i\\to i+1$ and $i\\to i+2$, and the lists are in decreasing order, so DFS always tries $i+2$ before $i+1$.",
+"From 0 it goes 0, 2, 4, ..., 100 (all the even vertices). On the way back it discovers the odd vertices: 99 (from 98), then 97, 95, ..., 1.",
+"After vertex 50 is discovered, the later discoveries are the even vertices 52 to 100 (25 of them) and all 50 odd vertices.",
+"$25+50=75$.",
+"Answer: <b>75</b>"
+],
+"202615": [
+"With a random array and the first element as pivot, the pivot's final position $k$ is equally likely to be any of $0,\\dots,n-1$.",
+"So $T(n)=\\dfrac1n\\sum_{k=0}^{n-1}\\big[T(k)+T(n-k-1)\\big]+O(n)$.",
+"Answer: <b>D</b>"
+],
+"202616": [
+"The default list <code>lst=[]</code> is created once, when the function is defined, and is shared by calls that do not pass <code>lst</code>.",
+"<code>append_to_lst(1)</code> prints <code>[1]</code>. <code>append_to_lst(2)</code> uses the same list and prints <code>[1, 2]</code>. <code>append_to_lst(3, [])</code> uses a new list and prints <code>[3]</code>.",
+"Answer: <b>B</b>"
+],
+"202625": [
+"The first preorder element is the root: $P$. In the inorder sequence the left subtree is S Q E and the right subtree is F R G.",
+"Left subtree: preorder Q S E gives root $Q$ with left child $S$ and right child $E$. Right subtree: preorder R F G gives root $R$ with left child $F$ and right child $G$.",
+"Postorder: S E Q (left), F G R (right), then P: <b>S E Q F G R P</b>.",
+"A is true and B is true. $Q$ has two children, so C is false. The left child of $R$ is $F$ and $G$ is its right child, so D is false.",
+"Answer: <b>A, B</b>"
+],
+"202631": [
+"A failed search must go all the way to an empty range. With a three-way comparison at each step, the worst case is $\\lfloor\\log_2n\\rfloor+1$ comparisons.",
+"$\\lfloor\\log_21000\\rfloor+1=9+1=10$ (since $2^9=512\\le1000<1024=2^{10}$).",
+"Answer: <b>10</b>"
+],
+"202633": [
+"A bijection with $f(f(n))=n$ is an involution: it consists of fixed points and swapped pairs.",
+"Identity: 1. One swapped pair and two fixed points: $\\binom42=6$. Two swapped pairs: 3.",
+"Total $1+6+3=10$.",
+"Answer: <b>10</b>"
+],
+"202639": [
+"Let $C(n)$ be the number of calls. $C(n)=1$ for $n\\le0$, and $C(n)=1+C(n-1)+C(n-2)$ otherwise.",
+"$C(1)=1+1+1=3$; $C(2)=1+3+1=5$; $C(3)=1+5+3=9$; $C(4)=1+9+5=15$.",
+"Answer: <b>C</b>"
+],
+"202640": [
+"If DFS of $G$ from $v$ reaches $u$, there is a path $v\\to u$ in $G$. Reversing every edge gives a path $u\\to v$ in $G^R$, so BFS of $G^R$ from $u$ reaches $v$. D is true.",
+"A compares different sets: vertices reachable from $v$ in $G^R$ are those that can reach $v$ in $G$, not those reachable from $v$. Not guaranteed.",
+"B and C are false in general: the reachable sets differ and BFS order is not the reverse of DFS order.",
+"Answer: <b>D</b>"
+],
+"202649": [
+"$P=[1,2,3,5,4]$.",
+"<b>Bubble sort</b> (four passes) makes $4+3+2+1=10$ comparisons, so $N_1=10$.",
+"<b>Insertion sort</b>: inserting 2, 3 and 5 takes one comparison each; inserting 4 compares with 5 (swap) and with 3 (stop): 2. So $N_2=1+1+1+2=5$.",
+"(A) says $N_2=4$: false. (B) $N_1>N_2$: true. (C) Insertion sort swaps only 4 and 5: one swap, true.",
+"(D) Both algorithms make comparisons between elements already in order (bubble compares sorted pairs; insertion compares 4 with 3). True.",
+"Answer: <b>B, C, D</b>"
+],
+"202650": [
+"Each call to <code>outer()</code> creates its own list <code>x</code> and its own closure, so <code>f1</code> and <code>f2</code> do not share a list. A is false.",
+"<code>f1(10)</code> gives <code>[10]</code>; <code>f1(20)</code> gives <code>[10, 20]</code> (Line Q), so B is true.",
+"<code>f2(30)</code> uses <code>f2</code>'s own list, giving <code>[30]</code>, not <code>[10, 20, 30]</code>. C is false.",
+"<code>f1(40)</code> gives <code>[10, 20, 40]</code> (Line S). D is true.",
+"Answer: <b>B, D</b>"
+],
+"202658": [
+"One call of <code>fun</code> does one bubble pass and returns the number of swaps it made. The loop calls it 5 times on the same list.",
+"Pass 1 on $[5,3,4,1,2]$: swaps 5 with 3, 4, 1, 2: 4 swaps, giving $[3,4,1,2,5]$.",
+"Pass 2: swaps 4 with 1 and 4 with 2: 2 swaps, giving $[3,1,2,4,5]$.",
+"Pass 3: swaps 3 with 1 and 3 with 2: 2 swaps, giving $[1,2,3,4,5]$. Passes 4 and 5: 0 swaps.",
+"Total $4+2+2=8$, which equals the number of inversions of the original array.",
+"Answer: <b>8</b>"
+]
+}

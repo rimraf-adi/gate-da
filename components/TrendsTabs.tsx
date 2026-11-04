@@ -5,9 +5,9 @@ import { usePathname } from 'next/navigation';
 
 export default function TrendsTabs() {
   const path = usePathname();
-  const tabs = [['/', 'Trends'], ['/pyq-bank', 'Question bank']];
+  const tabs = [['/', 'Trends'], ['/pyq-bank', 'Question bank'], ['/mock', 'Mock tests'], ['/exam', 'Exam guide']];
   return (
-    <div className="border-b border-zinc-200 dark:border-white/10">
+    <div className="print:hidden border-b border-zinc-200 dark:border-white/10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex gap-1">
         {tabs.map(([href, label]) => (
           <Link key={href} href={href} aria-current={path === href ? 'page' : undefined}

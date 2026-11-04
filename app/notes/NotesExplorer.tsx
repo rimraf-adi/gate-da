@@ -2,14 +2,15 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Check, ChevronDown, Search, Flame, AlertTriangle, Play } from 'lucide-react';
+import { Check, ChevronDown, Search, Flame, Play, Sigma } from 'lucide-react';
 
 type Ch = { num: number; slug: string; title: string; label: string; min: number; pyqMarks: number; topics: number; sections: { id: string; title: string }[] };
 type Group = { tag: string; chapters: Ch[] };
 const DONE_KEY = 'gate-da-notes-done-v1';
 const LAST_KEY = 'gate-da-last-chapter';
 
-export default function NotesExplorer({ groups, missing }: { groups: Group[]; missing: { tag: string; marks: number }[] }) {
+export default function NotesExplorer({ groups, missing, sheetHrefs, hotMin }: { groups: Group[]; missing: { tag: string; marks: number }[]; sheetHrefs: Record<string, string>; hotMin: number }) {
+  const sheetHref = (tag: string) => sheetHrefs[tag] ?? '/cheatsheet';
   const [done, setDone] = useState<Record<string, boolean>>({});
   const [last, setLast] = useState<string | null>(null);
   const [q, setQ] = useState('');
@@ -43,8 +44,8 @@ export default function NotesExplorer({ groups, missing }: { groups: Group[]; mi
   const doneCount = all.filter((c) => done[c.slug]).length;
   const doneMin = all.filter((c) => done[c.slug]).reduce((a, c) => a + c.min, 0);
   const totalMin = all.reduce((a, c) => a + c.min, 0);
-  const hot = (c: Ch) => c.pyqMarks >= 12;
-  const thin = (c: Ch) => c.min <= 2 && c.pyqMarks > 0;
+  const hot = (c: Ch) => c.pyqMarks >= hotMin;
+  const thin = (c: Ch) => c.min <= 2 && c.pyqMarks >= 3;
 
   const needle = q.trim().toLowerCase();
   const view = groups
@@ -100,21 +101,25 @@ export default function NotesExplorer({ groups, missing }: { groups: Group[]; mi
         ))}
       </div>
       <p className="mt-3 text-xs text-zinc-500">
-        <Flame className="inline h-3 w-3 text-amber-500" /> High-yield = chapter covers topics worth 12+ marks across the 2024–26 papers.{' '}
-        <AlertTriangle className="inline h-3 w-3 text-rose-500" /> Thin = one or two minutes of notes on a topic that is asked.
+        Right of each chapter: marks it was worth across the 2024–26 papers, then reading time.{' '}
+        <Flame className="inline h-3 w-3 text-amber-500" /> High-yield = {hotMin}+ marks.{' '}
+        <span className="rounded border border-zinc-300 dark:border-white/20 px-1 py-px font-mono text-[10px] uppercase text-zinc-500">short</span> = under two minutes of notes on a topic that is asked.
       </p>
 
       {/* subjects */}
-      <div className="mt-6 grid md:grid-cols-2 gap-5">
+      <div className="mt-6 gap-5 md:columns-2">
         {view.map((g) => {
           const gd = g.chapters.filter((c) => done[c.slug]).length;
           const gAll = groups.find((x) => x.tag === g.tag)!.chapters;
           const gDone = gAll.filter((c) => done[c.slug]).length;
           return (
-            <section key={g.tag} className="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-zinc-900/40 p-5 self-start">
+            <section key={g.tag} className="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-zinc-900/40 p-5 mb-5 break-inside-avoid">
               <div className="flex items-baseline justify-between gap-3">
                 <h2 className="font-serif text-xl">{g.tag}</h2>
-                <span className="font-mono text-xs text-zinc-500">{gDone}/{gAll.length}</span>
+                <span className="flex items-center gap-3">
+                  <Link href={sheetHref(g.tag)} className="inline-flex items-center gap-1 text-xs text-amber-700 dark:text-amber-300 hover:underline"><Sigma className="h-3 w-3" />Formulas</Link>
+                  <span className="font-mono text-xs text-zinc-500">{gDone}/{gAll.length}</span>
+                </span>
               </div>
               <div className="mt-2 h-1.5 rounded-full bg-zinc-200 dark:bg-white/10"><div className="h-1.5 rounded-full bg-amber-500 transition-all" style={{ width: `${(gDone / gAll.length) * 100}%` }} /></div>
               <ol className="mt-3 space-y-1">
@@ -131,9 +136,9 @@ export default function NotesExplorer({ groups, missing }: { groups: Group[]; mi
                           <span className="font-mono text-xs text-zinc-500 w-5 shrink-0">{c.label}</span>
                           <span className="truncate">{c.title}</span>
                           {hot(c) && <Flame className="h-3.5 w-3.5 shrink-0 text-amber-500" aria-label="High-yield" />}
-                          {thin(c) && <AlertTriangle className="h-3.5 w-3.5 shrink-0 text-rose-500" aria-label="Thin notes" />}
+                          {thin(c) && <span title="Only a minute or two of notes on a topic the exam asks" className="shrink-0 rounded border border-zinc-300 dark:border-white/20 px-1 py-px font-mono text-[10px] uppercase tracking-wide text-zinc-500">short</span>}
                         </Link>
-                        <span className="font-mono text-[11px] text-zinc-500 shrink-0" title="PYQ marks over 2024–26 for topics taught here">{c.pyqMarks ? `${c.pyqMarks}M` : '–'}</span>
+                        <span className="font-mono text-[11px] text-zinc-500 shrink-0" title="PYQ marks over 2024–26 for topics taught here">{c.pyqMarks >= 0.5 ? `${Math.round(c.pyqMarks)}M` : '–'}</span>
                         <span className="font-mono text-[11px] text-zinc-500 w-8 text-right shrink-0">{c.min}m</span>
                         <button onClick={() => setOpen((o) => ({ ...o, [c.slug]: !isOpen }))} aria-label="Show sections" aria-expanded={isOpen} className="p-1 text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200">
                           <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -159,7 +164,7 @@ export default function NotesExplorer({ groups, missing }: { groups: Group[]; mi
           );
         })}
         {subject === 'All' && !needle && !hotOnly ? missing.map((m) => (
-          <section key={m.tag} className="rounded-2xl border border-dashed border-rose-400/50 p-5 self-start">
+          <section key={m.tag} className="rounded-2xl border border-dashed border-zinc-400/50 p-5 mb-5 break-inside-avoid">
             <h2 className="font-serif text-xl">{m.tag}</h2>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">No notes yet. About {m.marks}M a paper in 2024–26.</p>
           </section>

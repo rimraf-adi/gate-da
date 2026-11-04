@@ -48,7 +48,7 @@ export default function CommandPalette({ isOpen, onClose }: { isOpen: boolean; o
             </li>
           ))}
           {q && !hits.length && <li className="px-4 py-6 text-sm text-zinc-500">No results.</li>}
-          {!q && <li className="px-4 py-6 text-sm text-zinc-500">Type to search the syllabus and all 60 chapters.</li>}
+          {!q && <li className="px-4 py-6 text-sm text-zinc-500">Type to search every chapter and section.</li>}
         </ul>
       </div>
     </div>

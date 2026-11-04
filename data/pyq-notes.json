@@ -1,0 +1,10 @@
+{
+ "202417": "In the source this question runs off the edge of the page, so the last data point is not visible: x6 = (−2, −2).",
+ "202659": "In the source the last line of the expression is cut off. It ends: m[S] > 1)}.",
+ "202408": "In the source the header of the last column is cut off. The column is Mutual fund C.",
+ "202442": "In the source the answer options are diagrams that are not shown. The correct clustering is ((x1, x2), (x3, (x4, x5))), merging at distances 1, 1, 2 and 3.",
+ "202549": "Key check: with the function exactly as printed, the maximum on [-8, 0] is 66.5 at x = 0 and the minimum is about 39.8 at x = -8, so neither C nor D can hold. The book's key may be wrong. See the solution.",
+ "202553": "Key check: working the SVM through gives w = (1, 1), b = -1 and margin sqrt(2), so A and C hold. The book's key says B and C. See the solution.",
+ "202642": "Key check: evaluating the expression exactly as printed gives 0 tuples (option A). The book's key says D. See the solution.",
+ "202604": "Key check: x = n log10(m) and y = m log10(n) depend on the numbers (x > y for m = 3, n = 2; x = y for m = 4, n = 2; x < y for m = 10, n = 2), so no relation holds for every m > n. The book's key is C. See the solution."
+}

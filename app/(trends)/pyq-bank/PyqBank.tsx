@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import MathText from '@/components/book/MathText';
 import { Check, ChevronDown, Eye, EyeOff, Shuffle, RotateCcw, Flag, Search, SlidersHorizontal } from 'lucide-react';
 
 type Q = { id: string; no: number; subject: string; year: number; type: string; marks: number; area: string; topic: string; key: string };
@@ -8,7 +9,9 @@ type Status = 'solved' | 'review';
 const KEY = 'gate-da-pyq-v1';
 const chip = (on: boolean) => `rounded-full border px-3 py-1 text-xs ${on ? 'border-amber-500 bg-amber-500/10' : 'border-zinc-200 dark:border-white/10 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400'}`;
 
-export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]; subjects: string[]; sizes: Record<string, { w: number; h: number }> }) {
+export default function PyqBank({ questions, subjects, sizes, chapterFor, solutions, notes }: { questions: Q[]; subjects: string[]; sizes: Record<string, { w: number; h: number }>; chapterFor: Record<string, { num: number; slug: string; title: string }>; solutions: Record<string, string[]>; notes: Record<string, string> }) {
+  const [solOpen, setSolOpen] = useState<Record<string, boolean>>({});
+  const [idFilter, setIdFilter] = useState<Set<string> | null>(null);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [status, setStatus] = useState<Record<string, Status>>({});
   const [revealed, setRevealed] = useState<Record<string, boolean>>({});
@@ -23,6 +26,14 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
   const [focus, setFocus] = useState<string | null>(null);
 
   useEffect(() => { try { setStatus(JSON.parse(localStorage.getItem(KEY) ?? '{}')); } catch {} }, []);
+  useEffect(() => {
+    const ids = new URLSearchParams(window.location.search).get('ids');
+    if (ids) {
+      const set = new Set(ids.split(',').filter(Boolean));
+      setIdFilter(set);
+      if (set.size <= 3) setExpanded(Object.fromEntries([...set].map((i) => [i, true])));
+    }
+  }, []);
   const mark = (id: string, s: Status) => setStatus((p) => {
     const n = { ...p }; if (n[id] === s) delete n[id]; else n[id] = s;
     try { localStorage.setItem(KEY, JSON.stringify(n)); } catch {}
@@ -32,7 +43,7 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
 
   const needle = q.trim().toLowerCase();
   const base = (x: Q) =>
-    (!years.length || years.includes(x.year)) && (!types.length || types.includes(x.type)) && (!marks.length || marks.includes(x.marks)) &&
+    (!idFilter || idFilter.has(x.id)) && (!years.length || years.includes(x.year)) && (!types.length || types.includes(x.type)) && (!marks.length || marks.includes(x.marks)) &&
     (!needle || `${x.topic} ${x.area}`.toLowerCase().includes(needle)) &&
     (show === 'all' || (show === 'todo' ? !status[x.id] : status[x.id] === show));
   const inScope = questions.filter(base);
@@ -61,8 +72,8 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
     setExpanded((e) => ({ ...e, [pick.id]: true }));
     setTimeout(() => document.getElementById(pick.id)?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
   };
-  const reset = () => { setQ(''); setSubject('All'); setYears([]); setTypes([]); setMarks([]); setShow('all'); };
-  const filtered = !!(q || subject !== 'All' || years.length || types.length || marks.length || show !== 'all');
+  const reset = () => { setIdFilter(null); if (typeof window !== 'undefined') window.history.replaceState(null, '', '/pyq-bank'); setQ(''); setSubject('All'); setYears([]); setTypes([]); setMarks([]); setShow('all'); };
+  const filtered = !!(idFilter || q || subject !== 'All' || years.length || types.length || marks.length || show !== 'all');
 
   const sidebar = (
     <div className="space-y-5 text-sm">
@@ -112,7 +123,7 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-zinc-900/40 px-4 py-3">
           <div>
             <p className="font-serif text-lg">{list.length} question{list.length === 1 ? '' : 's'}</p>
-            <p className="text-xs text-zinc-500">{solvedAll} of {questions.length} solved overall · {list.reduce((a, x) => a + x.marks, 0)} marks in view</p>
+            <p className="text-xs text-zinc-500">{solvedAll} of {questions.length} solved overall · {list.reduce((a, x) => a + x.marks, 0)} marks in view · worked solutions for {Object.keys(solutions).length} questions</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <button onClick={random} className="inline-flex items-center gap-1.5 rounded-full bg-amber-600 hover:bg-amber-500 text-white px-3.5 py-1.5 text-sm font-medium"><Shuffle className="h-3.5 w-3.5" /> Random unattempted</button>
@@ -121,6 +132,7 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
             </button>
           </div>
         </div>
+        {idFilter && <p className="mt-2 rounded-lg border border-amber-500/40 bg-amber-500/5 px-3 py-2 text-sm">Showing {idFilter.size} question{idFilter.size > 1 ? 's' : ''} linked from a chapter. <button onClick={reset} className="underline">Show the whole bank</button></p>}
         <p className="mt-2 text-xs text-zinc-500">Click a question to open it, attempt it, then reveal the key to check. Keys are hidden by default so you can self-test.</p>
 
         {grouped.length === 0 && <p className="mt-10 text-sm text-zinc-500">No questions match these filters. <button onClick={reset} className="underline">Clear filters</button></p>}
@@ -130,7 +142,7 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
               {subject === 'All' && <h2 className="font-serif text-2xl mb-3">{g.subject}</h2>}
               <div className="space-y-3">
                 {g.areas.map((a) => (
-                  <details key={a.area} open={needle !== ''} className="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-zinc-900/40 p-4">
+                  <details key={a.area} open={needle !== '' || idFilter !== null} className="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-zinc-900/40 p-4">
                     <summary className="cursor-pointer font-medium">{a.area} <span className="ml-2 font-mono text-xs text-zinc-500">{a.topics.reduce((n, t) => n + t.qs.length, 0)} Qs · {a.marks}M</span></summary>
                     <div className="mt-3 grid gap-1.5">
                       {a.topics.flatMap((t) => t.qs).sort((p, q2) => q2.year - p.year || q2.marks - p.marks).map((x) => {
@@ -155,13 +167,23 @@ export default function PyqBank({ questions, subjects, sizes }: { questions: Q[]
                                       {/* eslint-disable-next-line @next/next/no-img-element */}
                                       <img src={`/pyq/${x.id}.webp`} alt={`GATE DA ${x.year} question ${x.no}, ${x.area}`} width={dim?.w} height={dim?.h} loading="lazy"
                                         className="w-full max-w-xl h-auto rounded-md bg-white border border-zinc-200" />
+                                      {notes[x.id] && <p className="rounded-md border border-amber-500/40 bg-amber-500/5 px-3 py-2 text-xs">Note: {notes[x.id]}</p>}
+                                      {chapterFor[x.id] && (
+                                        <p className="text-xs"><a href={`/notes/${chapterFor[x.id].slug}`} className="underline text-amber-700 dark:text-amber-300">Study this: Chapter {chapterFor[x.id].num}, {chapterFor[x.id].title}</a></p>
+                                      )}
                                       <div className="flex flex-wrap items-center gap-2">
                                         <button onClick={() => setRevealed((r) => ({ ...r, [x.id]: !r[x.id] }))} className="rounded-md border border-zinc-300 dark:border-white/15 px-3 py-1 font-mono hover:border-amber-500">
                                           {open ? <>Key: <span className="text-amber-700 dark:text-amber-300 font-semibold">{x.key}</span></> : 'Reveal answer key'}
                                         </button>
                                         <button onClick={() => mark(x.id, 'solved')} className="rounded-md border border-zinc-300 dark:border-white/15 px-3 py-1 hover:border-emerald-500">{st === 'solved' ? 'Solved ✓' : 'Mark solved'}</button>
                                         <button onClick={() => mark(x.id, 'review')} className="rounded-md border border-zinc-300 dark:border-white/15 px-3 py-1 hover:border-amber-500">{st === 'review' ? 'In review list' : 'Review later'}</button>
+                                        {solutions[x.id] && <button onClick={() => setSolOpen((s) => ({ ...s, [x.id]: !s[x.id] }))} aria-expanded={!!solOpen[x.id]} className="rounded-md border border-zinc-300 dark:border-white/15 px-3 py-1 hover:border-amber-500">{solOpen[x.id] ? 'Hide solution' : 'Show solution'}</button>}
                                       </div>
+                                      {solutions[x.id] && solOpen[x.id] && (
+                                        <ol className="space-y-1.5 rounded-lg border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5 p-3 text-sm list-decimal pl-7">
+                                          {solutions[x.id].map((s, i) => <li key={i}><MathText x={s} /></li>)}
+                                        </ol>
+                                      )}
                                     </div>
                                   )}
                                 </div>

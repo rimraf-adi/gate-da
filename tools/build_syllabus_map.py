@@ -72,6 +72,7 @@ TOPICS = [
  (5, 'File organisation and indexing', r'b\+|index', r'b\+|indexing|file organi'),
  (5, 'Data transformation: normalisation, discretisation, sampling, compression', r'z-score|normalization|discretiz|compression', r'discretiz|normalization|compression|sampling'),
  (5, 'Warehouse schemas, concept hierarchies, measures, OLAP', r'warehous|olap|concept hierarch|roll-up|cube', r'star schema|snowflake|concept hierarch|olap|measure'),
+ (5, 'Transactions and serializability (asked, not listed in the syllabus)', r'transactions|acid|serializab', r'serializab|acid properties'),
  (6, 'Simple, multiple and ridge regression', r'least squares|regression', r'linear regression|ridge'),
  (6, 'Logistic regression', r'logistic', r'logistic regression'),
  (6, 'k-nearest neighbour', r'nearest|knn', r'nearest neighbo'),
@@ -79,7 +80,7 @@ TOPICS = [
  (6, 'Linear discriminant analysis', r'fisher|discriminant|linear separab', r'discriminant'),
  (6, 'Support vector machine', r'svm|margin', r'support vector|\bsvm\b'),
  (6, 'Decision trees', r'decision tree|information gain', r'decision tree'),
- (6, 'Bias-variance trade-off', r'bias', r'bias.variance'),
+ (6, 'Bias-variance trade-off', r'bias', r'bias\W*variance'),
  (6, 'Cross-validation (LOO, k-fold)', r'cross-valid|loocv|leave-one', r'cross.validation|leave.one'),
  (6, 'MLP and feed-forward networks', r'neural|perceptron|relu|backprop|gradient descent|sgd', r'perceptron|neural network|feed.forward|backprop'),
  (6, 'k-means / k-medoid clustering', r'k-means|clustering convergence', r'k-means|k-medoid'),
@@ -92,10 +93,10 @@ TOPICS = [
  (7, 'Conditional independence, Bayesian networks', r'bayesian network|d-separation', r'bayesian network|d.separation|conditional independence'),
  (7, 'Exact inference (variable elimination)', r'inference algorithms|variable elimination|network inference', r'variable elimination'),
  (7, 'Approximate inference (sampling)', r'sampling|approximate inference', r'forward sampling|rejection sampling|gibbs|approximate inference'),
- (8, 'Verbal aptitude', r'^general aptitude \| (grammar|logical inf|phrasal|prepos|reading|vocab)|verbal', r'$^'),
- (8, 'Quantitative aptitude', r'quantitative', r'$^'),
- (8, 'Analytical aptitude', r'analytical', r'$^'),
- (8, 'Spatial aptitude', r'spatial', r'$^'),
+ (8, 'Verbal aptitude', r'^general aptitude \| (grammar|logical inf|phrasal|prepos|reading|vocab)|verbal', r'grammar|vocabulary|reading comprehension|para jumble'),
+ (8, 'Quantitative aptitude', r'quantitative', r'percentages|speed and distance|interest|number system'),
+ (8, 'Analytical aptitude', r'analytical', r'syllogism|arrangements|series and patterns|truth.tellers'),
+ (8, 'Spatial aptitude', r'spatial', r'paper folding|mirror and water|dice and cubes|counting figures'),
 ]
 
 idx = json.load(open(os.path.join(D, 'index.json')))
@@ -132,12 +133,31 @@ for i, (sec, name, qre, nre) in enumerate(TOPICS):
                 'trend': trend, 'pyq': [q['id'] for q in mq]})
 
 extra = [q for q in qs if q['id'] not in matched]
+# Chapter marks: each question counts once overall. Its marks go to the best-matching chapter of every topic it
+# touches, split evenly if that is more than one chapter (so overlapping topics do not inflate the totals).
+marks_of = {q['id']: q['marks'] for q in qs}
+best = collections.defaultdict(set)
+for t in out:
+    if t['chapters']:
+        for qid in t['pyq']:
+            best[qid].add(t['chapters'][0]['num'])
+chapter_marks = collections.Counter()
+for qid, nums in best.items():
+    for n in nums:
+        chapter_marks[n] += marks_of[qid] / len(nums)
+# One home chapter per question, for "related questions" lists and the study plan: the best chapter of the
+# first syllabus topic (in syllabus order) that the question matches.
+qchap = {}
+for t in out:
+    if t['chapters']:
+        for qid in t['pyq']:
+            qchap.setdefault(qid, t['chapters'][0]['num'])
 chapters = []
 for c in chs:
     mapped = [t for t in out if any(x['num'] == c['num'] for x in t['chapters'])]
     chapters.append({'num': c['num'], 'title': c['title'], 'tag': c['tag'], 'min': c['readingTimeMin'], 'words': c['wordCount'],
-                     'topics': len(mapped), 'pyqMarks': sum(t['totalMarks'] for t in mapped)})
-json.dump({'syllabus': 'GATE 2027 DA (IIT Madras); content identical to GATE 2026 DA (IIT Guwahati)', 'topics': out, 'chapters': chapters,
+                     'topics': len(mapped), 'pyqMarks': round(chapter_marks[c['num']], 1)})
+json.dump({'questionChapters': qchap, 'syllabus': 'GATE 2027 DA (IIT Madras); content identical to GATE 2026 DA (IIT Guwahati)', 'topics': out, 'chapters': chapters,
            'unmapped': [{'id': q['id'], 'year': q['year'], 'subject': q['subject'], 'area': q['area'], 'topic': q['topic'], 'marks': q['marks']} for q in extra]},
           open(os.path.join(D, 'syllabus-map.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 st = collections.Counter(t['status'] for t in out)

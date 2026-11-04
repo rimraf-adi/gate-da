@@ -37,6 +37,7 @@ for pn, page in enumerate(doc):
         continue
     body = [b for b in blocks if TOP <= b[1] and b[3] <= BOTTOM and not re.fullmatch(r'\d+\s*', b[4])]
     draws = [d['rect'] for d in page.get_drawings() if TOP < d['rect'].y0 and d['rect'].y1 < BOTTOM and d['rect'].width < 300]
+    draws += [pymupdf.Rect(i['bbox']) for i in page.get_image_info() if TOP < i['bbox'][1] and i['bbox'][3] < BOTTOM]  # embedded raster figures
     new_chapter = any(re.match(r'Part \d', b[4]) for b in body)
     for col, (x0, x1) in enumerate(((0, MID), (MID, page.rect.width))):
         cb = sorted([b for b in body if (b[0] < MID) == (col == 0)], key=lambda b: b[1])
@@ -46,9 +47,12 @@ for pn, page in enumerate(doc):
         # leading text before the first heading continues the previous question
         first = starts[0][1] if starts else col_bottom + 1
         lead = [b for b in cb if b[1] < first]
-        if lead and last and not new_chapter:
+        # a chapter-opening page starts fresh in its left column, but its right column can still continue a question
+        if (lead or any(r.y0 < first for r in cd)) and last and not (new_chapter and col == 0):
             bottom = max([b[3] for b in lead] + [r.y1 for r in cd if r.y0 < first] + [TOP])
-            pieces[last].append(shot(page, pymupdf.Rect(x0 + 38 if col == 0 else x0 + 12, TOP, 309 if col == 0 else x1 - 38, min(bottom + PAD, first - 2))))
+            # start at the first real content, not the top of the page, so no blank gap is stitched in
+            top = min([b[1] for b in lead] + [r.y0 for r in cd if r.y0 < first] + [bottom]) - PAD
+            pieces[last].append(shot(page, pymupdf.Rect(x0 + 38 if col == 0 else x0 + 12, max(TOP, top), 309 if col == 0 else x1 - 6, min(bottom + PAD, first - 2))))
         for i, s in enumerate(starts):
             if not s[4].startswith('▶'):
                 last = None
@@ -61,7 +65,7 @@ for pn, page in enumerate(doc):
             qid = m.group(0)
             qb = next((b for b in cb if s[1] <= b[1] < end and QID.search(b[4])), s)
             # start below the book's header strip (topic line and Q-number badge row); only the question itself is kept
-            pieces[qid] = [shot(page, pymupdf.Rect(x0 + 38 if col == 0 else x0 + 12, qb[3] + 6, 309 if col == 0 else x1 - 38, min(end, BOTTOM)))]
+            pieces[qid] = [shot(page, pymupdf.Rect(x0 + 38 if col == 0 else x0 + 12, qb[3] + 6, 309 if col == 0 else x1 - 6, min(end, BOTTOM)))]
             last = qid
 
 sizes = {}

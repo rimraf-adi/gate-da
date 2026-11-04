@@ -9,3 +9,7 @@ next-env.d.ts
 
 # third-party book used only to build data/images locally; never publish
 /source/
+
+# scratch audit output
+/data/_audit*.json
+.claude/
