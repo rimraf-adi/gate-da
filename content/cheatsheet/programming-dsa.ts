@@ -54,6 +54,20 @@ export const programmingDsa: SheetSubject = {
         { label: 'Shortest paths', tex: r`BFS (unweighted); Dijkstra (non-negative); Bellman–Ford $O(VE)$` },
       ],
     },
+    {
+      title: 'Python and graph facts',
+      items: [
+        { label: 'Mutable and immutable', tex: r`mutable: list, dict, set; immutable: int, str, tuple, frozenset` },
+        { label: 'Copying', tex: r`<code>b = a</code> shares the object; <code>a[:]</code> and <code>a.copy()</code> copy one level; <code>copy.deepcopy</code> copies all levels` },
+        { label: 'Comprehension', tex: r`<code>[f(x) for x in s if c(x)]</code>; a generator expression uses <code>(...)</code> and produces values lazily` },
+        { label: 'Generator', tex: r`a function with <code>yield</code> returns an iterator; it resumes after each <code>yield</code>` },
+        { label: 'Set operations', tex: r`<code>|</code> union, <code>&</code> intersection, <code>-</code> difference, <code>^</code> symmetric difference` },
+        { label: 'Average costs', tex: r`list append $O(1)$, insert or <code>in</code> $O(n)$; dict and set lookup $O(1)$ average` },
+        { label: 'Topological sort', tex: r`exists iff the directed graph is acyclic (a DAG); $O(V+E)$` },
+        { label: 'DFS edge types (directed)', tex: r`tree, back (to an ancestor), forward, cross; a back edge means a cycle` },
+        { label: 'Connected components', tex: r`one BFS or DFS per unvisited vertex: $O(V+E)$` },
+      ],
+    },
   ],
   tables: [
     {
@@ -71,6 +85,7 @@ export const programmingDsa: SheetSubject = {
     },
   ],
   traps: [
+    r`Scope: a name assigned inside a function is local unless declared <code>global</code> or <code>nonlocal</code>; reading a global does not need a declaration.`,
     r`Closures capture variables, not values: a loop that builds lambdas often shares the last value.`,
     r`<code>is</code> compares identity, <code>==</code> compares value; <code>//</code> floors toward $-\infty$.`,
     r`Slicing <code>a[:]</code> copies one level only; nested lists still share inner objects.`,

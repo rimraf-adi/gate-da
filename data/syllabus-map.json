@@ -125,8 +125,8 @@
   "202637": 53,
   "202655": 53,
   "202534": 53,
-  "202555": 54,
-  "202463": 54,
+  "202555": 84,
+  "202463": 84,
   "202535": 54,
   "202418": 54,
   "202420": 54,
@@ -146,8 +146,8 @@
   "202636": 59,
   "202530": 59,
   "202442": 59,
-  "202611": 60,
-  "202560": 60,
+  "202611": 82,
+  "202560": 82,
   "202613": 61,
   "202544": 61,
   "202423": 61,
@@ -413,6 +413,12 @@
    "topic": "Correlation and covariance",
    "status": "covered",
    "chapters": [
+    {
+     "num": 83,
+     "slug": "83-probability-statistics-joint-marginal-and-conditional-distributions",
+     "title": "Joint, Marginal and Conditional Distributions",
+     "min": 3
+    },
     {
      "num": 5,
      "slug": "05-probability-statistics-mean-and-variance-of-a-random-variable",
@@ -1130,6 +1136,12 @@
      "slug": "19-vector-spaces-singular-value-decomposition-svd",
      "title": "Singular Value Decomposition (SVD)",
      "min": 6
+    },
+    {
+     "num": 82,
+     "slug": "82-machine-learning-unsupervised-principal-component-analysis-in-depth",
+     "title": "Principal Component Analysis in Depth",
+     "min": 4
     }
    ],
    "marks": {
@@ -2127,6 +2139,12 @@
    "status": "covered",
    "chapters": [
     {
+     "num": 84,
+     "slug": "84-machine-learning-supervised-k-nearest-neighbours-and-the-perceptron",
+     "title": "k-Nearest Neighbours and the Perceptron",
+     "min": 3
+    },
+    {
      "num": 54,
      "slug": "54-ml-supervised-classification-models-i",
      "title": "Classification Models - I",
@@ -2328,6 +2346,12 @@
      "slug": "57-ml-supervised-regression-classification-models",
      "title": "Regression & Classification Models",
      "min": 13
+    },
+    {
+     "num": 84,
+     "slug": "84-machine-learning-supervised-k-nearest-neighbours-and-the-perceptron",
+     "title": "k-Nearest Neighbours and the Perceptron",
+     "min": 3
     }
    ],
    "marks": {
@@ -2359,6 +2383,12 @@
      "slug": "59-ml-unsupervised-clustering-algorithms",
      "title": "Clustering Algorithms",
      "min": 9
+    },
+    {
+     "num": 86,
+     "slug": "86-machine-learning-unsupervised-clustering-models-and-choosing-k",
+     "title": "Clustering Models and Choosing k",
+     "min": 2
     }
    ],
    "marks": {
@@ -2386,6 +2416,12 @@
      "slug": "59-ml-unsupervised-clustering-algorithms",
      "title": "Clustering Algorithms",
      "min": 9
+    },
+    {
+     "num": 86,
+     "slug": "86-machine-learning-unsupervised-clustering-models-and-choosing-k",
+     "title": "Clustering Models and Choosing k",
+     "min": 2
     }
    ],
    "marks": {
@@ -2409,6 +2445,12 @@
    "topic": "Principal component analysis",
    "status": "covered",
    "chapters": [
+    {
+     "num": 82,
+     "slug": "82-machine-learning-unsupervised-principal-component-analysis-in-depth",
+     "title": "Principal Component Analysis in Depth",
+     "min": 4
+    },
     {
      "num": 60,
      "slug": "60-ml-unsupervised-dimensionality-reduction",
@@ -2818,7 +2860,7 @@
    "min": 6,
    "words": 1212,
    "topics": 2,
-   "pyqMarks": 2.0
+   "pyqMarks": 0
   },
   {
    "num": 6,
@@ -3259,7 +3301,7 @@
    "min": 5,
    "words": 1079,
    "topics": 4,
-   "pyqMarks": 6.3
+   "pyqMarks": 2.3
   },
   {
    "num": 55,
@@ -3313,7 +3355,7 @@
    "min": 2,
    "words": 412,
    "topics": 1,
-   "pyqMarks": 3.8
+   "pyqMarks": 0
   },
   {
    "num": 61,
@@ -3503,6 +3545,60 @@
    "words": 1057,
    "topics": 2,
    "pyqMarks": 6.2
+  },
+  {
+   "num": 82,
+   "title": "Principal Component Analysis in Depth",
+   "tag": "Machine Learning: Unsupervised",
+   "min": 4,
+   "words": 866,
+   "topics": 2,
+   "pyqMarks": 3.8
+  },
+  {
+   "num": 83,
+   "title": "Joint, Marginal and Conditional Distributions",
+   "tag": "Probability & Statistics",
+   "min": 3,
+   "words": 789,
+   "topics": 1,
+   "pyqMarks": 2.0
+  },
+  {
+   "num": 84,
+   "title": "k-Nearest Neighbours and the Perceptron",
+   "tag": "Machine Learning: Supervised",
+   "min": 3,
+   "words": 648,
+   "topics": 2,
+   "pyqMarks": 4.0
+  },
+  {
+   "num": 85,
+   "title": "Iterators and Generators in Depth",
+   "tag": "Python Programming",
+   "min": 2,
+   "words": 389,
+   "topics": 0,
+   "pyqMarks": 0
+  },
+  {
+   "num": 86,
+   "title": "Clustering Models and Choosing k",
+   "tag": "Machine Learning: Unsupervised",
+   "min": 2,
+   "words": 417,
+   "topics": 2,
+   "pyqMarks": 0
+  },
+  {
+   "num": 87,
+   "title": "Linear Systems: Decision Guide and Worked Cases",
+   "tag": "Matrices & Linear Algebra",
+   "min": 1,
+   "words": 323,
+   "topics": 0,
+   "pyqMarks": 0
   }
  ],
  "unmapped": []

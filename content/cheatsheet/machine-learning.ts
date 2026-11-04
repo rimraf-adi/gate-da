@@ -62,6 +62,20 @@ export const machineLearning: SheetSubject = {
         { label: 'PCA via SVD', tex: r`$X_c=U\Sigma V^T$; components are the columns of $V$` },
       ],
     },
+    {
+      title: 'k-NN, perceptron, k-medoid and PCA',
+      items: [
+        { label: 'k-NN', tex: r`majority vote of the $k$ nearest points; scale features; use odd $k$; $k=1$ has zero training error` },
+        { label: 'Minkowski distance', tex: r`$\left(\sum|x_i-y_i|^p\right)^{1/p}$: $p=1$ Manhattan, $p=2$ Euclidean` },
+        { label: 'Perceptron update', tex: r`on a mistake: $w\leftarrow w+yx,\ b\leftarrow b+y$; score of $x$ rises by $\|x\|^2+1$ (for $y=1$)` },
+        { label: 'Perceptron convergence', tex: r`finite mistakes if the data are linearly separable; never converges on XOR` },
+        { label: 'k-medoid', tex: r`centres are actual data points, so it is more robust to outliers than k-means` },
+        { label: 'PCA steps', tex: r`centre, covariance $S$, eigenvectors of $S$ (orthogonal), project $z=U_k^T(x-\mu)$` },
+        { label: 'PCA variance', tex: r`variance along $u_i$ is $\lambda_i$; explained share $=\sum_{i\le k}\lambda_i/\sum\lambda_i$` },
+        { label: 'PCA via SVD', tex: r`$X_c=U\Sigma V^T$; components are the columns of $V$; $\lambda_i=\sigma_i^2/(n-1)$` },
+        { label: 'Reconstruction error', tex: r`$(n-1)\sum_{i>k}\lambda_i$ over the data` },
+      ],
+    },
   ],
   traps: [
     r`Single linkage can chain clusters together; complete linkage prefers compact ones.`,

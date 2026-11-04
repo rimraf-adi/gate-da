@@ -60,7 +60,7 @@ export const linearAlgebra: SheetSubject = {
       title: 'Quadratic forms and SVD',
       items: [
         { label: 'Positive definite', tex: r`symmetric $A$ with $x^TAx>0$ iff all $\lambda_i>0$` },
-        { label: 'Rayleigh quotient', tex: r`$\lambda_{\min}\le\dfrac{x^TAx}{x^Tx}\le\lambda_{\max}$` },
+        { label: 'Rayleigh quotient', tex: r`For symmetric $A$: $\lambda_{\min}\le\dfrac{x^TAx}{x^Tx}\le\lambda_{\max}$` },
         { label: 'SVD', tex: r`$A=U\Sigma V^T,\ \sigma_i=\sqrt{\lambda_i(A^TA)}$` },
         { label: 'Rank and norm from SVD', tex: r`rank $=$ number of non-zero $\sigma_i$; $\|A\|_F^2=\sum\sigma_i^2$` },
       ],

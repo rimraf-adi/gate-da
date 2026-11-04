@@ -8,6 +8,7 @@ export const probabilityStatistics: SheetSubject = {
   marks: '~18M',
   notes: 'Probability & Statistics',
   points: [
+    r`Independence needs the **whole** joint table or density to factorise, not one cell; a triangular support always means dependence.`,
     r`Always ask first: discrete or continuous, independent or not, with or without replacement.`,
     r`$P(A\mid B)$ restricts the sample space to $B$; Bayes just reverses the conditioning.`,
     r`For NAT questions, keep full precision until the last step and round once.`,
@@ -52,7 +53,7 @@ export const probabilityStatistics: SheetSubject = {
     {
       title: 'Sampling and inference',
       items: [
-        { label: 'Sample mean', tex: r`$\bar X\sim N(\mu,\sigma^2/n)$` },
+        { label: 'Sample mean', tex: r`$\bar X\sim N(\mu,\sigma^2/n)$ exactly if the parent is normal; approximately for large $n$ otherwise (CLT)` },
         { label: 'Sample variance', tex: r`$S^2=\dfrac{1}{n-1}\sum (X_i-\bar X)^2$` },
         { label: 'Chi-square from normals', tex: r`$\sum_{i=1}^n Z_i^2\sim\chi^2_n,\quad \dfrac{(n-1)S^2}{\sigma^2}\sim\chi^2_{n-1}$` },
         { label: 't statistic', tex: r`$t=\dfrac{\bar X-\mu}{S/\sqrt n}\sim t_{n-1}$` },
@@ -60,6 +61,21 @@ export const probabilityStatistics: SheetSubject = {
         { label: 'z-test statistic', tex: r`$z=\dfrac{\bar x-\mu_0}{\sigma/\sqrt n}$` },
         { label: 'Chi-squared test', tex: r`$\chi^2=\sum \dfrac{(O-E)^2}{E}$` },
         { label: 'Critical z values', tex: r`$90\%:1.645,\;95\%:1.96,\;99\%:2.576$` },
+      ],
+    },
+    {
+      title: 'Continuous, joint and conditional distributions',
+      items: [
+        { label: 'CDF and density', tex: r`$F(x)=\int_{-\infty}^xf(t)\,dt,\ \ f=F',\ \ P(a<X<b)=F(b)-F(a)$` },
+        { label: 'Median', tex: r`$F(m)=\tfrac12$` },
+        { label: 'Marginal (continuous)', tex: r`$f_X(x)=\int f(x,y)\,dy$` },
+        { label: 'Conditional density', tex: r`$f(y\mid x)=\dfrac{f(x,y)}{f_X(x)}$` },
+        { label: 'Independence', tex: r`$f(x,y)=f_X(x)f_Y(y)$; needs a rectangular support` },
+        { label: 'Sum of independent normals', tex: r`$N(\mu_1+\mu_2,\ \sigma_1^2+\sigma_2^2)$` },
+        { label: 'Sums with the same family', tex: r`For independent variables: Poisson$(\lambda_1+\lambda_2)$; Binomial$(n+m,p)$ (same $p$); $\chi^2_{a+b}$` },
+        { label: 'Minimum of exponentials', tex: r`$\min(X_1,X_2)\sim\mathrm{Exp}(\lambda_1+\lambda_2)$` },
+        { label: 'Function of a variable', tex: r`CDF method: $F_Y(y)=P(g(X)\le y)$; then differentiate` },
+        { label: 'Variance of a combination', tex: r`$\mathrm{Var}(aX+bY)=a^2\mathrm{Var}X+b^2\mathrm{Var}Y+2ab\,\mathrm{Cov}(X,Y)$` },
       ],
     },
   ],

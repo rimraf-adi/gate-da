@@ -56,6 +56,20 @@ export const databaseWarehousing: SheetSubject = {
         { label: 'Measures', tex: r`distributive: sum, count, min, max; algebraic: avg; holistic: median, mode` },
       ],
     },
+    {
+      title: 'ER to relational mapping and transactions',
+      items: [
+        { label: 'Strong entity', tex: r`one table; its key becomes the primary key` },
+        { label: 'Multivalued attribute', tex: r`its own table: (entity key, value)` },
+        { label: 'Many-to-many relationship', tex: r`its own table holding both keys (plus relationship attributes)` },
+        { label: 'One-to-many', tex: r`foreign key on the "many" side, no new table needed` },
+        { label: 'Weak entity', tex: r`table with the owner's key plus its partial key` },
+        { label: 'ACID', tex: r`atomicity, consistency, isolation, durability` },
+        { label: 'Conflict serializable', tex: r`iff the precedence graph is acyclic; serial order = topological order` },
+        { label: 'Two-phase locking', tex: r`growing phase then shrinking phase; guarantees conflict serializability` },
+        { label: 'Recoverability', tex: r`strict $\subset$ cascadeless $\subset$ recoverable` },
+      ],
+    },
   ],
   traps: [
     r`<code>GROUP BY</code> queries cannot select a non-grouped, non-aggregated column.`,

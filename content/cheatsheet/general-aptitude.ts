@@ -23,7 +23,7 @@ export const generalAptitude: SheetSubject = {
         { label: 'Compound interest', tex: r`$A=P\left(1+\tfrac{r}{100}\right)^n$` },
         { label: 'Average speed (equal distances)', tex: r`$\dfrac{2ab}{a+b}$` },
         { label: 'Work together', tex: r`$\dfrac1{t}=\dfrac1{t_1}+\dfrac1{t_2}$` },
-        { label: 'LCM and HCF', tex: r`$\mathrm{LCM}\times\mathrm{HCF}=a\times b$` },
+        { label: 'LCM and HCF', tex: r`$\mathrm{LCM}\times\mathrm{HCF}=a\times b$ for exactly two numbers $a,b$` },
       ],
     },
     {
@@ -41,7 +41,7 @@ export const generalAptitude: SheetSubject = {
         { label: 'Circle', tex: r`area $\pi r^2$, circumference $2\pi r$` },
         { label: 'Regular polygon interior angle', tex: r`$\dfrac{(n-2)\,180^\circ}{n}$` },
         { label: 'Pythagoras', tex: r`$a^2+b^2=c^2$` },
-        { label: 'Planar graphs', tex: r`$V-E+F=2$; four colours always suffice` },
+        { label: 'Planar graphs', tex: r`$V-E+F=2$ for a connected planar graph ($1+c$ with $c$ components); four colours always suffice` },
         { label: 'Dice', tex: r`opposite faces sum to 7 on a standard die` },
       ],
     },

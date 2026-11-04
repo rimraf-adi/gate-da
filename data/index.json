@@ -3140,6 +3140,206 @@
      "title": "What the exam asks"
     }
    ]
+  },
+  {
+   "book": "gate-da",
+   "num": 82,
+   "label": "82",
+   "slug": "82-machine-learning-unsupervised-principal-component-analysis-in-depth",
+   "title": "Principal Component Analysis in Depth",
+   "tag": "Machine Learning: Unsupervised",
+   "summary": "Principal component analysis (PCA) finds the directions along which data vary the most and uses them as a smaller set of coordinates. It ties together three ideas from earlier chapters: the covariance matrix, eigenvectors of symmetric matri…",
+   "wordCount": 866,
+   "readingTimeMin": 4,
+   "sectionCount": 8,
+   "sections": [
+    {
+     "id": "82.1",
+     "title": "The idea"
+    },
+    {
+     "id": "82.2",
+     "title": "Algorithm"
+    },
+    {
+     "id": "82.3",
+     "title": "Why the eigenvectors"
+    },
+    {
+     "id": "82.4",
+     "title": "Reconstruction and error"
+    },
+    {
+     "id": "82.5",
+     "title": "PCA through the SVD"
+    },
+    {
+     "id": "82.6",
+     "title": "Worked examples"
+    },
+    {
+     "id": "82.7",
+     "title": "Limits"
+    },
+    {
+     "id": "82.8",
+     "title": "What the exam asks"
+    }
+   ]
+  },
+  {
+   "book": "gate-da",
+   "num": 83,
+   "label": "83",
+   "slug": "83-probability-statistics-joint-marginal-and-conditional-distributions",
+   "title": "Joint, Marginal and Conditional Distributions",
+   "tag": "Probability & Statistics",
+   "summary": "Most real problems involve several random variables at once. A <b>joint distribution</b> describes them together; marginal and conditional distributions describe one of them alone or given the other.",
+   "wordCount": 789,
+   "readingTimeMin": 3,
+   "sectionCount": 6,
+   "sections": [
+    {
+     "id": "83.1",
+     "title": "Discrete case"
+    },
+    {
+     "id": "83.2",
+     "title": "Continuous case"
+    },
+    {
+     "id": "83.3",
+     "title": "Covariance, correlation and sums"
+    },
+    {
+     "id": "83.4",
+     "title": "Sums of independent variables"
+    },
+    {
+     "id": "83.5",
+     "title": "Functions of a random variable (CDF method)"
+    },
+    {
+     "id": "83.6",
+     "title": "What the exam asks"
+    }
+   ]
+  },
+  {
+   "book": "gate-da",
+   "num": 84,
+   "label": "84",
+   "slug": "84-machine-learning-supervised-k-nearest-neighbours-and-the-perceptron",
+   "title": "k-Nearest Neighbours and the Perceptron",
+   "tag": "Machine Learning: Supervised",
+   "summary": "Two of the simplest classifiers show up often: k-nearest neighbours (no training at all) and the perceptron (the ancestor of neural networks).",
+   "wordCount": 648,
+   "readingTimeMin": 3,
+   "sectionCount": 3,
+   "sections": [
+    {
+     "id": "84.1",
+     "title": "k-nearest neighbours (k-NN)"
+    },
+    {
+     "id": "84.2",
+     "title": "The perceptron"
+    },
+    {
+     "id": "84.3",
+     "title": "What the exam asks"
+    }
+   ]
+  },
+  {
+   "book": "gate-da",
+   "num": 85,
+   "label": "85",
+   "slug": "85-python-programming-iterators-and-generators-in-depth",
+   "title": "Iterators and Generators in Depth",
+   "tag": "Python Programming",
+   "summary": "Comprehensions build whole collections; generators produce values one at a time. This chapter explains the protocol behind both so that output-prediction questions become mechanical.",
+   "wordCount": 389,
+   "readingTimeMin": 2,
+   "sectionCount": 4,
+   "sections": [
+    {
+     "id": "85.1",
+     "title": "Iterables and iterators"
+    },
+    {
+     "id": "85.2",
+     "title": "Generator functions"
+    },
+    {
+     "id": "85.3",
+     "title": "Laziness and memory"
+    },
+    {
+     "id": "85.4",
+     "title": "Useful tools"
+    }
+   ]
+  },
+  {
+   "book": "gate-da",
+   "num": 86,
+   "label": "86",
+   "slug": "86-machine-learning-unsupervised-clustering-models-and-choosing-k",
+   "title": "Clustering Models and Choosing k",
+   "tag": "Machine Learning: Unsupervised",
+   "summary": "Chapter 58 introduced unsupervised learning and k-means. This chapter covers the other clustering families and how to judge a clustering.",
+   "wordCount": 417,
+   "readingTimeMin": 2,
+   "sectionCount": 4,
+   "sections": [
+    {
+     "id": "86.1",
+     "title": "Hierarchical clustering"
+    },
+    {
+     "id": "86.2",
+     "title": "DBSCAN"
+    },
+    {
+     "id": "86.3",
+     "title": "Gaussian mixtures and EM"
+    },
+    {
+     "id": "86.4",
+     "title": "Choosing and judging clusterings"
+    }
+   ]
+  },
+  {
+   "book": "gate-da",
+   "num": 87,
+   "label": "87",
+   "slug": "87-matrices-linear-algebra-linear-systems-decision-guide-and-worked-cases",
+   "title": "Linear Systems: Decision Guide and Worked Cases",
+   "tag": "Matrices & Linear Algebra",
+   "summary": "Chapter 15 lists the rules; this chapter shows how to apply them in the order an exam question needs.",
+   "wordCount": 323,
+   "readingTimeMin": 1,
+   "sectionCount": 4,
+   "sections": [
+    {
+     "id": "87.1",
+     "title": "Decision procedure for $Ax=b$ with $A$ of size $m\\times n$"
+    },
+    {
+     "id": "87.2",
+     "title": "Square systems with a parameter"
+    },
+    {
+     "id": "87.3",
+     "title": "Shape shortcuts"
+    },
+    {
+     "id": "87.4",
+     "title": "Links to other facts"
+    }
+   ]
   }
  ],
  "figureCount": 1070

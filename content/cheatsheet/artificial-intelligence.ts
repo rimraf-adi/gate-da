@@ -22,7 +22,7 @@ export const artificialIntelligence: SheetSubject = {
         { label: 'BFS / DFS time', tex: r`BFS $O(b^d)$ time and space; DFS $O(b^m)$ time, $O(bm)$ space` },
         { label: 'A*', tex: r`$f(n)=g(n)+h(n)$` },
         { label: 'Admissible', tex: r`$h(n)\le h^*(n)$ (never overestimates)` },
-        { label: 'Consistent', tex: r`$h(n)\le c(n,n')+h(n')$; consistent $\Rightarrow$ admissible` },
+        { label: 'Consistent', tex: r`$h(n)\le c(n,n')+h(n')$; consistent $\Rightarrow$ admissible (with $h(\text{goal})=0$)` },
         { label: 'Dominance', tex: r`$h_2\ge h_1$ both admissible: $h_2$ expands no more nodes` },
         { label: 'Greedy best-first', tex: r`$f(n)=h(n)$: fast, neither optimal nor complete` },
         { label: 'Bidirectional search', tex: r`time and space $O(b^{d/2})$` },
